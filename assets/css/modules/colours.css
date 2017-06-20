@@ -1,0 +1,75 @@
+body {
+  color: #000000;
+}
+
+.bg-grey {background: #F0F0F0;}
+
+.bg-black {background: #000000;}
+
+.bg-white {background: #FFFFFF;}
+
+.bg-green {background: #00C17B;}
+
+.bg-blue {background: #005399;}
+
+.bg-yellow {background: #FFC000;}
+
+.bg-red {background: #FF4337;}
+
+.bg-tan {background: #EAB8A6;}
+
+.bg-pink {background: #FA9ABA;}
+
+.bg-lightBlue {background: #0070CD;}
+
+.bg-lightGreen {background: #3FD4AD;}
+
+.bg-neonGreen {background: #6EFF00;}
+
+.grey {color: #F0F0F0;}
+
+.black {color: #000000;}
+
+.white {color: #FFFFFF;}
+
+.green {color: #00C17B;}
+
+.blue {color: #005399;}
+
+.yellow {color: #FFC000;}
+
+.red {color: #FF4337;}
+
+.tan {color: #EAB8A6;}
+
+.pink {color: #FA9ABA;}
+
+.lightBlue {color: #0070CD;}
+
+.lightGreen {color: #3FD4AD;}
+
+.neonGreen {color: #6EFF00;}
+
+.grey-hover:hover {color: #F0F0F0;}
+
+.black-hover:hover {color: #000000;}
+
+.white-hover:hover {color: #FFFFFF;}
+
+.green-hover:hover {color: #00C17B;}
+
+.blue-hover:hover {color: #005399;}
+
+.yellow-hover:hover {color: #FFC000;}
+
+.red-hover:hover {color: #FF4337;}
+
+.tan-hover:hover {color: #EAB8A6;}
+
+.pink-hover:hover {color: #FA9ABA;}
+
+.lightBlue-hover:hover {color: #0070CD;}
+
+.lightGreen-hover:hover {color: #3FD4AD;}
+
+.neonGreen-hover:hover {color: #6EFF00;}

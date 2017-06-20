@@ -1,0 +1,33 @@
+/*
+
+   Tachyons
+   COLOR VARIABLES
+
+   Grayscale
+   - Solids
+   - Transparencies
+*/
+
+.bg-black {
+  background: #181818;
+}
+
+.bg-black-90 {
+  background: rgba(00,00,00,.9);
+}
+
+.bg-red {
+  background: red;
+}
+
+.bg-blue {
+  background: blue;
+}
+
+.bg-green {
+  background: green;
+}
+
+.bg-yellow {
+  background: yellow;
+}
