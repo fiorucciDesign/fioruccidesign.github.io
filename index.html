@@ -1,22 +1,89 @@
 ---
 layout: default
 ---
-
+<div class="fixed w-100 left-0 right-0 bottom-0 bg-blue intro top-0" id="intro"></div>
 <video playsinline autoplay muted loop id="bgvid">
   <source src="assets/images/bg.mp4" type="video/mp4">
 </video>
 
-<div class="content mt5">
+<div class="content w-100 w-80-ns ph4 center">
   <div class="contentBlock flex flex-column justify-center items-center center">
-    <h1 class="f1 neonGreen tc w-100 mb1" style="font-size: 40px">POP-UP SHOP</h1>
-    <a href="" class="f1 neonGreen no-underline btn center ba b--neonGreen pt2 pb2 pl3 pr3">SHOP NOW</a>
-  </div>
-  <div class="contentBlock flex flex-column justify-center items-center center">
-    <h1 class="f1 red tc w-100 mb1" style="font-size: 40px">JOIN US, SUBSCRIBE</h1>
-    <a href="" class="f1 red no-underline btn center ba b--red pt2 pb2 pl3 pr3">GO GO GO</a>
-    <div class="f5 red tc w-100 mt2">FREE STICKERS FOR ALL</div>
+    <form id="emailForm" accept-charset="UTF-8" action="https://formkeep.com/f/23e3f2d53b58" method="POST">
+      <h1 class="f1 red tc w-100 mb1" style="font-size: 40px">JOIN US 4 STICKERS</h1>
+      <input type="hidden" name="utf8" value="✓">
+      <div class="w-50 center">
+        <input type="email" placeholder="Your Email" id="email-address-first" name="email" class="bg-none f1 center ba b--red pt2 pb1 pl3 pr3 tc w-100 ttu ph-red input-red">
+        <button id="emailSubmitButton" type="submit" class="mt2 w-100 f1 bg-red white no-underline btn center ba b--red pt2 pb1 pl3 pr3">
+          <span class="blink_me w-100">GO GO GO</span>
+        </button>
+      </div>
+    </form>
+
+    <div id="emailSignUpThanks" class="dn">
+      <h3 class="f1 red tc w-100 mb0 pb0">TYSM xx</h3>
+      <h3 class="f4 red tc w-100 mb1 ttu mt0 pt0">You're in! See you in your inbox</h3>
+    </div>
+
+    <div id="addressSignUpThanks" class="dn">
+      <h3 class="f1 red tc w-100 mb0 pb0 ttu">Stickers incoming!</h3>
+      <h3 class="f4 red tc w-100 mb1 ttu mt0 pt0">Your Fiorucci stickers are on their way</h3>
+    </div>
+
+    <div class="addressSignup fixed top-0 left-0 w-100 h-100 bg-pink z-999 pt5 pt0-ns pa5-ns overflow-y-scroll">
+      <a href="" id="addressBack" class="top-1 left-1 fixed blink_me">
+        <img src="assets/images/backButtonBlue.svg" />
+      </a>
+      <form id="addressForm" accept-charset="UTF-8" action="https://formkeep.com/f/3c2b95459d22" method="POST">
+        <div class="w-40 dn db-ns fl tc">
+          <img src="assets/images/stickers.jpg" />
+        </div>
+        <div class="w-100 w-60-ns fr ph2 ph4-ns">
+          <h2 class="f1 tc ttu blue">
+            Where shall we send your free stickers?
+
+          </h2>
+          <div class="stickerImg db dn-ns tc mb3">
+            <img src="assets/images/stickers.jpg" />
+          </div>
+          <input type="hidden" name="utf8" value="✓">
+          <input type="email" placeholder="Your Email" class="dn bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" name="email" id="email-address-hidden" value="">
+          <input type="text" placeholder="First Name" id="first-name" name="firstname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Surame" id="surname" name="surname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Address 1" id="address-1" name="address1" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Address 2" id="address=2" name="address" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="City / Town" id="city" name="citytown" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="State/Province/Region" id="state" name="state-province-region" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Zip/Postal Code" id="zip" name="zip-postal" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Country" id="country" name="country" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <button type="submit" id="addressSubmitButton" class="blink_me_inside mt2 w-100 f3 bg-blue white no-underline btn center ba b--blue pt2 pb1 pl3 pr3">
+            <span class="w-100">GO GO GO</span>
+          </button>
+
+          <div class="blue mt4">
+            <h3 class="f5">TERMS + CONDITIONS</h3>
+            <ul class="b4">
+              <li>We will protect your personal information and it'll not be passed to third parties. Your address will only be used for sending the stickers, for further information please visit our privacy policy.</li>
+              <li>No purchase or payment of any kind is necessary to enter.</li>
+              <li>One sticker per household.</li>
+              <li>Each person will recieved a sticker from the Fiorucci archive.</li>
+              <li>Fiorucci reserves the right to end the Free Sticker Giveaway at any point.</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
+  <div id="addressSignupSuccess" class="dn fixed top-0 left-0 w-100 h-100 z-999 pa5 flex flex-column justify-center items-center center z-999">
+  <div class="w-100 tc">
+    <img src="assets/images/tick.svg" />
+  </div>
+</div>
+
+  <div class="contentBlock flex flex-column justify-center items-center center">
+    <h1 class="f1 neonGreen tc w-100 mb1" style="font-size: 40px">POP-UP SHOP</h1>
+    <a href="http://popup.fiorucci.com" class="f1 neonGreen no-underline btn center ba b--neonGreen pt2 pb2 pl3 pr3">SHOP NOW</a>
+  </div>
 
   <div class="contentBlock flex flex-column justify-center items-center center">
     <h1 class="f1 blue tc w-100 mb1" style="font-size: 40px">FOLLOW FIORUCCI</h1>
@@ -24,15 +91,20 @@ layout: default
   </div>
 </div>
 
-<div class="marquee">
+<!-- <div class="marquee">
   <img class="cat" src="assets/images/cat.svg" />
-</div>
+</div> -->
 
 <div class="frame">
-<div class="blk leo-l blk-col-half bg-yellow h-100"></div>
-<div class="blk leo-r blk-col-half bg-green h-100"></div>
 
-<div class="blk denim-l blk-col bg-tan tc">
+  <div class="dn db-ns blk leo-l blk-col-half bg-yellow h-100 overflow-hidden">
+    <div class="sea"></div>
+  </div>
+  <div class="dn db-ns blk leo-r blk-col-half bg-green h-100 overflow-hidden">
+    <div class="sea"></div>
+  </div>
+
+<div class="dn db-ns blk denim-l blk-col bg-denimTan tc">
   <div class="pt1">
     <img src="assets/images/fiorucciDenimLogo.svg" />
     <img src="assets/images/fiorucciDenimLogo.svg" />
@@ -40,7 +112,7 @@ layout: default
   </div>
 </div>
 
-<div class="blk denim-r blk-col bg-tan tc">
+<div class="dn db-ns blk denim-r blk-col bg-denimTan tc">
   <div class="pt1">
     <img src="assets/images/fiorucciDenimLogo.svg" />
     <img src="assets/images/fiorucciDenimLogo.svg" />
@@ -48,61 +120,117 @@ layout: default
   </div>
 </div>
 
-<div class="marquee3k blk row-top-1 blk-row-half bg-red"
-  data-speed="0.40"
->
- <h2 class="f1 mr4 blue" style="font-size: 60px;">Love is</h2>
-</div>
-
-<div class="marquee3k blk row-top-2 blk-row-half bg-blue"
-  data-speed="0.40"
-  data-reverse="true"
-  style="line-height: 100%;"
->
- <h2 class="f1 red mr4" style="font-size: 60px;">Love is</h2>
-</div>
-
-<div class="marquee3k blk row-bottom-1 blk-row-half bg-blue"
-  data-speed="0.40"
->
- <h2 class="f1 yellow" style="font-size: 60px;">Love Is</h2>
-</div>
-
-<div class="marquee3k blk row-bottom-2 blk-row-half bg-yellow"
-  data-speed="0.40"
-  data-reverse="true"
-  style="line-height: 100%;"
->
- <h2 class="f1 blue" style="font-size: 60px;">Love Is</h2>
-</div>
-
-
-<div class="marquee3k blk join-top blk-row bg-yellow"
+<div class="marquee3k blk row-top-1 w-100 blk-row-half bg-red"
   data-speed="0.40"
   data-pausable="true"
 >
-    <a href="google.com" class="join-top-a f1 mr4 red no-underline" style="font-size: 60px;">Join now, sign up</a>
+  <div class="instaBlue mr2"></div>
+</div>
+
+<div class="marquee3k blk row-top-2 w-100 blk-row-half bg-blue"
+  data-speed="0.40"
+  data-pausable="true"
+  data-reverse="true"
+>
+ <a href="http://instagram.com/fiorucci" target="_blank" class="instaRed mr2"></a>
+</div>
+
+<div class="marquee3k blk join-top blk-row bg-pink"
+  data-speed="0.40"
+  data-pausable="true"
+>
+  <a href="" class="getStickers blink_me h-100 db flex flex-column justify-center items-center mr2">
+    <img class="imgTxt" data-originalWidth="2422" data-originalHeight="96" src="assets/images/topText.png" />
+  </a>
+
 </div>
 
 <div
   class="marquee3k blk join-bottom blk-row bg-neonGreen"
   data-speed="0.40"
   data-reverse="true"
+  data-pausable="true"
 >
-  <a href="" class="join-bottom-a f1 mr4 black no-underline" style="font-size: 60px;">Pop-up Shop</a>
-
+  <a href="http://popup.fiorucci.com" class="blink_me h-100 db flex flex-column justify-center items-center mr2">
+    <img class="imgTxt" data-originalWidth="1588" data-originalHeight="156" src="assets/images/popupText.png" />
+  </a>
 </div>
 
-<div class="blk sq-tl blk-sq bg-pink"></div>
-<div class="blk sq-tr blk-sq bg-black"></div>
 <div
-  class="marquee3k blk sq-bl blk-sq bg-yellow"
-  data-speed="0.40">
-  <div class="h-100 db" style="width: 136px; background-image:url('assets/images/cowboy.svg');">
+  class="marquee3k blk free-bottom blk-row bg-tan"
+  data-speed="0.40"
+>
+  <div class="h-100 db pv2" style="width: 136px; background-image:url('assets/images/cowboys.svg');">
   </div>
 </div>
-<div class="blk sq-br blk-sq bg-green"></div>
 
-<div class="blk piccol-l blk-col bg-red"></div>
-<div class="blk piccol-r blk-col bg-blue"></div>
+<div class="blk sq-tl blk-sq bg-yellow dn db-ns">
+  <div class="pa1 w-100 h-100">
+    <div class="felixBlue w-100 h-100"></div>
+  </div>
+</div>
+<div class="blk sq-tr blk-sq bg-green dn db-ns">
+  <a href="http://facebook.com/fiorucci" class="blink_me db pa1 w-100 h-100">
+    <div class="fbLink w-100 h-100"></div>
+  </a>
+</div>
+<div class="blk sq-br blk-sq bg-red dn db-ns">
+  <div class="pa1 w-100 h-100">
+    <div class="felixBlue w-100 h-100"></div>
+  </div>
+</div>
+
+<div class="blk sq-bl blk-sq bg-red dn db-ns">
+  <div class="pa1 w-100 h-100">
+    <div class="smile w-100 h-100"></div>
+  </div>
+</div>
+
+<div class="blk piccol-l blk-col bg-white dn db-ns" style="top: -3000px; height: 5000px;">
+   <div>
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+  </div>
+</div>
+
+<div class="blk piccol-r blk-col dn db-ns" style="top: -3000px; height: 5000px;">
+  <div>
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+  </div>
+</div>
 </div>

@@ -5296,6 +5296,11 @@ img { max-width: 100%; }
 */
 
 
+.bg-none {
+  background: none;
+}
+
+
 .bg-black {
   background: #181818;
 }

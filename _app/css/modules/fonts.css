@@ -19,3 +19,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'sssta';
+  src: url('../fonts/sssta.eot');
+  src: url('../fonts/sssta.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/sssta.woff2') format('woff2'),
+  url('../fonts/sssta.woff') format('woff'),
+  url('../fonts/sssta.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

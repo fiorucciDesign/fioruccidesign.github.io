@@ -15,6 +15,7 @@
   --lightGreen: #3FD4AD;
 
   --neonGreen: #6EFF00;
+  --denimTan: #FDE2C4;
 }
 
 body {
@@ -38,6 +39,8 @@ body {
 
 .bg-neonGreen {background: var(--neonGreen);}
 
+.bg-denimTan {background: var(--denimTan);}
+
 
 .grey {color: var(--grey);}
 .black {color: var(--black);}
@@ -53,6 +56,8 @@ body {
 .pink {color: var(--pink);}
 .lightBlue {color: var(--lightBlue);}
 .lightGreen {color: var(--lightGreen);}
+
+.denimTan {color: var(--denimTan);}
 
 .neonGreen {color: var(--neonGreen);}
 
@@ -71,3 +76,6 @@ body {
 .lightBlue-hover:hover {color: var(--lightBlue);}
 .lightGreen-hover:hover {color: var(--lightGreen);}
 .neonGreen-hover:hover {color: var(--neonGreen);}
+
+.ph-red::placeholder {color: var(--red); opacity: 1;}
+.ph-blue::placeholder {color: var(--blue); opacity: 1;}

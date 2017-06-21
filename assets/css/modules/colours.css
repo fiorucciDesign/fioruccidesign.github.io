@@ -26,6 +26,8 @@ body {
 
 .bg-neonGreen {background: #6EFF00;}
 
+.bg-denimTan {background: #FDE2C4;}
+
 .grey {color: #F0F0F0;}
 
 .black {color: #000000;}
@@ -47,6 +49,8 @@ body {
 .lightBlue {color: #0070CD;}
 
 .lightGreen {color: #3FD4AD;}
+
+.denimTan {color: #FDE2C4;}
 
 .neonGreen {color: #6EFF00;}
 
@@ -73,3 +77,7 @@ body {
 .lightGreen-hover:hover {color: #3FD4AD;}
 
 .neonGreen-hover:hover {color: #6EFF00;}
+
+.ph-red::placeholder {color: #FF4337; opacity: 1;}
+
+.ph-blue::placeholder {color: #005399; opacity: 1;}

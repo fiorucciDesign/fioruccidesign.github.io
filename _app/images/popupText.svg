@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760px" height="51px" viewBox="0 0 760 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>popupText</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="popupText" transform="translate(-25.000000, -12.000000)">
+            <rect id="Rectangle-14" x="0" y="0" width="1213" height="80"></rect>
+            <g id="Group-7" transform="translate(21.000000, 4.000000)" fill="#FFFFFF">
+                <text id="POP-UP-SHOP" transform="translate(320.000000, 32.865626) rotate(-360.000000) translate(-320.000000, -32.865626) " font-family="HelveticaNeueLTPro-BlkEx, Helvetica Neue LT Pro" font-size="61" font-style="expanded" font-weight="700" line-spacing="60">
+                    <tspan x="0" y="44">POP-UP SHOP</tspan>
+                </text>
+                <polygon id="Page-1" points="600.000053 42.5628696 624.878439 42.5628696 624.852566 58.5865406 650.223942 33.2400427 624.910284 7.92638433 624.878439 23.90408 600.000053 23.9062693"></polygon>
+                <polygon id="Page-1-Copy-5" points="656.918407 42.5628696 681.796793 42.5628696 681.770919 58.5865406 707.142296 33.2400427 681.828637 7.92638433 681.796793 23.90408 656.918407 23.9062693"></polygon>
+                <polygon id="Page-1-Copy-13" points="713.83676 42.5628696 738.715146 42.5628696 738.689273 58.5865406 764.060649 33.2400427 738.746991 7.92638433 738.715146 23.90408 713.83676 23.9062693"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -7,4 +7,45 @@
 
 body {
   font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-size: 14px;
+}
+
+.ss-icon {
+  font-family: 'sssta';
+}
+
+.f1x {font-size: 61px; line-height: 60px;}
+.f1a {font-size: 20px; line-height: 36px;}
+.f2  {font-size: 34px; line-height: 36px;}
+.f3  {font-size: 18px; line-height: 24px;}
+.f4  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+.f5  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+/*.f6 avenir*/
+
+.b1 {font-size: 30px; line-height: 36px;}
+.b2 {font-size: 18px; line-height: 36px;}
+.b3 {font-size: 12px; line-height: 24px;}
+/*.b4 avenir*/
+
+@media (--breakpoint-not-small) {
+  .f1x {font-size: 108px; line-height: 90px;}
+  .f1a {font-size: 20px; line-height: 36px;}
+  .f2  {font-size: 30px; line-height: 36px;}
+  .f3  {font-size: 18px; line-height: 36px;}
+  .f4  {font-size: 14px; line-height: 24px;}
+  .f5  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+  /*.f6 avenir*/
+
+  .b1 {font-size: 30px; line-height: 36px;}
+  .b2 {font-size: 18px; line-height: 36px;}
+  .b3 {font-size: 12px; line-height: 24px;}
+  /*.b4 avenir*/
+}
+
+.b4 {
+  font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-size: 12px;
+  /*mobile 10px*/
+  line-height: 24px;
+  /*mobile 12px*/
 }

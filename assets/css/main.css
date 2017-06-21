@@ -5296,6 +5296,11 @@ img { max-width: 100%; }
 */
 
 
+.bg-none {
+  background: none;
+}
+
+
 .bg-black {
   background: #181818;
 }
@@ -5427,6 +5432,9 @@ body {
 .bg-neonGreen {background: #6EFF00;}
 
 
+.bg-denimTan {background: #FDE2C4;}
+
+
 .grey {color: #F0F0F0;}
 
 
@@ -5458,6 +5466,9 @@ body {
 
 
 .lightGreen {color: #3FD4AD;}
+
+
+.denimTan {color: #FDE2C4;}
 
 
 .neonGreen {color: #6EFF00;}
@@ -5499,6 +5510,12 @@ body {
 .neonGreen-hover:hover {color: #6EFF00;}
 
 
+.ph-red::placeholder {color: #FF4337; opacity: 1;}
+
+
+.ph-blue::placeholder {color: #005399; opacity: 1;}
+
+
 @font-face {
   font-family: 'Helvetica Neue LT Pro 93 Black Extended';
   src: url('../fonts/HelveticaNeueLTPro-BlkEx.eot');
@@ -5518,6 +5535,18 @@ body {
   url('../fonts/HelveticaNeueLTStd-Ex.woff2') format('woff2'),
   url('../fonts/HelveticaNeueLTStd-Ex.woff') format('woff'),
   url('../fonts/HelveticaNeueLTStd-Ex.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'sssta';
+  src: url('../fonts/sssta.eot');
+  src: url('../fonts/sssta.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/sssta.woff2') format('woff2'),
+  url('../fonts/sssta.woff') format('woff'),
+  url('../fonts/sssta.svg#webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -5543,6 +5572,241 @@ body {
 
 body {
   font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-size: 14px;
+}
+
+
+.ss-icon {
+  font-family: 'sssta';
+}
+
+
+.f1x {font-size: 61px; line-height: 60px;}
+
+
+.f1a {font-size: 20px; line-height: 36px;}
+
+
+.f2  {font-size: 34px; line-height: 36px;}
+
+
+.f3  {font-size: 18px; line-height: 24px;}
+
+
+.f4  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+
+
+.f5  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+
+
+/*.f6 avenir*/
+
+
+.b1 {font-size: 30px; line-height: 36px;}
+
+
+.b2 {font-size: 18px; line-height: 36px;}
+
+
+.b3 {font-size: 12px; line-height: 24px;}
+
+
+/*.b4 avenir*/
+
+
+@media screen and (min-width: 40em) {
+  .f1x {font-size: 108px; line-height: 90px;}
+  .f1a {font-size: 20px; line-height: 36px;}
+  .f2  {font-size: 30px; line-height: 36px;}
+  .f3  {font-size: 18px; line-height: 36px;}
+  .f4  {font-size: 14px; line-height: 24px;}
+  .f5  {font-size: 13px; line-height: 24px; font-family: 'Helvetica Neue LT Std 53 Extended';}
+  /*.f6 avenir*/
+
+  .b1 {font-size: 30px; line-height: 36px;}
+  .b2 {font-size: 18px; line-height: 36px;}
+  .b3 {font-size: 12px; line-height: 24px;}
+  /*.b4 avenir*/
+}
+
+
+.b4 {
+  font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-size: 12px;
+  /*mobile 10px*/
+  line-height: 24px;
+  /*mobile 12px*/
+}
+
+
+input:hover,
+input:focus  {
+  background: #fff;
+  outline: none;
+}
+
+
+button {
+  outline: none;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+.blink_me:hover,
+.blink_me_inside:hover > span {
+  animation: blinker .2s linear infinite;
+}
+
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+
+.addressSignup,
+#addressSignupSuccess {
+  display: none;
+}
+
+
+.intro {
+  background-image: url('/assets/images/introLogoRed.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  z-index: 999999999;
+}
+
+
+.lockedScroll {
+  overflow: hidden;
+}
+
+
+.imgTxt {
+  /*max-height: 100%;*/
+/*  max-width: 100%;
+  max-height: 100%;*/
+}
+
+
+.row-top-1,
+.row-top-2,
+.free-bottom {
+  z-index: 2 !important;
+}
+
+
+.smile {
+  background-image: url('/assets/images/smile.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-name: spin;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+.fbLink {
+  display: block;
+  background-image: url('/assets/images/fbIcon_blue.svg');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-name: spin;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+.felixBlue {
+  background-image: url('/assets/images/felixBlue.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-name: spin;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+.free-bottom-a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/free.svg');
+  background-size: contain;
+  background-position: center;
+}
+
+
+.sea {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/leopard.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+
+.instaBlue,
+.instaRed,
+.fbRed,
+.fbBlue {
+  width: 100px;
+  height: 200%;
+  background-position: center;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+
+.instaBlue {
+  background-image: url('/assets/images/instaIcon_blue.svg');
+}
+
+
+.instaRed {
+  background-image: url('/assets/images/instaIcon_red.svg');
+  background-position: top center;
+}
+
+
+.fbRed {
+  background-image: url('/assets/images/fbIcon_red.svg');
+  background-position: top center;
+}
+
+
+.fbBlue {
+  background-image: url('/assets/images/fbIcon_blue.svg');
 }
 
 
@@ -5551,7 +5815,7 @@ body {
   left: 0;
   position: absolute;
   top: 0;
-  z-index: 9;
+  z-index: 999;
   -webkit-animation:spin 8s linear infinite;
   -moz-animation:spin 8s linear infinite;
   animation:spin 8s linear infinite;
@@ -5628,7 +5892,6 @@ html, body {
 
 .blk-col,
 .blk {
-  display: block;
   position: fixed;
 }
 
@@ -5692,7 +5955,7 @@ html, body {
 
 
 .blk-sq {
-  z-index: 5;
+  z-index: 7;
 }
 
 

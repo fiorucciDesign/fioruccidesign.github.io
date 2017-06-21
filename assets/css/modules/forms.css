@@ -1,0 +1,27 @@
+input:hover,
+input:focus  {
+  background: #fff;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.blink_me:hover,
+.blink_me_inside:hover > span {
+  animation: blinker .2s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.addressSignup,
+#addressSignupSuccess {
+  display: none;
+}

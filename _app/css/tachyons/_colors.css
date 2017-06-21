@@ -79,6 +79,10 @@
 
 }
 
+.bg-none {
+  background: none;
+}
+
 .bg-black {
   background: #181818;
 }

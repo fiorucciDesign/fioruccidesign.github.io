@@ -174,4 +174,5 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', ['scripts', 'build:images', 'build:fonts', 'build:styles', 'jekyll', 'serve']);
+gulp.task('build', ['scripts', 'build:images', 'build:fonts', 'build:styles', 'jekyll']);
 
