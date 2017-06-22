@@ -5684,8 +5684,8 @@ button {
 
 @media screen and (min-width: 40em) {
   .cat {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -5717,6 +5717,12 @@ button {
 
 
 .intro {
+  z-index: 999999999;
+}
+
+
+.introLogo {
+  display: none;
   background-image: url('/assets/images/logoPink.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -5780,7 +5786,7 @@ button {
 
 .felixBlue {
   background-image: url('/assets/images/felixBlue.svg');
-  background-size: contain;
+  background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
   animation-name: spin;

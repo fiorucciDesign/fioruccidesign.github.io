@@ -746,10 +746,11 @@ module.exports = function () {
   });
 
 
-  $(document).ready(function(){
+  $(document).ready(function() {
+    $('.introLogo').fadeIn();
     sizeBlocks();
     calcImageMarqueesHeight();
-    setTimeout(hideIntro, 2000)
+    setTimeout(hideIntro, 4000)
   });
 
   // window.onresize = function(event) {
