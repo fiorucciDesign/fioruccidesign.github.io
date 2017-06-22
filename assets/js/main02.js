@@ -769,7 +769,38 @@ module.exports = function () {
         $(document).scrollTop(0);
       }
     });
+
+//  $(document).on('scroll', function (e) {
+//     var $this = $(this),
+//         $items = $(".content"),
+//         scrollPosition = $this.scrollTop();
+//     if (scrollPosition > ($this.data('scroll-position') || 0)) {
+//       console.log('down')
+//         // Scrolling down
+//         var threshold = $this.height() - 800;
+
+//         if (scrollPosition > threshold) {
+//             var $firstResult = $('.contentBlock:first-child');
+//             $items.append($firstResult);
+//             scrollPosition -= $firstResult.height();
+//             $this.scrollTop(scrollPosition);
+//         }
+//     } else {
+//       console.log('up')
+//         // Scrolling up
+//         var threshold = $('.contentBlock:first-child').height();
+//         if (scrollPosition < threshold) {
+//             var $lastResult = $('.contentBlock:last-child');
+//             $items.prepend($lastResult);
+//             scrollPosition += $lastResult.height();
+//             $this.scrollTop(scrollPosition);
+//         }
+//     }
+//     $this.data('scroll-position', scrollPosition)
+// });
   });
+
+
 
 }
 

@@ -1,4 +1,8 @@
-  .cat {
+.cowboy {
+  background-size: contain;
+}
+
+.cat {
     width: 80px;
     height: 80px;
   }
