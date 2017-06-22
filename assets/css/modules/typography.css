@@ -1,9 +1,10 @@
-.f1 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
-.f2 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
-.f3 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
-.f4 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
-.f5 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
-.f6 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f1 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f1x { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f2 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f3 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f4 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f5 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+.f6 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 body {
   font-family: 'Helvetica Neue LT Std 53 Extended';
   font-size: 14px;
@@ -11,7 +12,7 @@ body {
 .ss-icon {
   font-family: 'sssta';
 }
-.f1x {font-size: 61px; line-height: 60px;}
+.f1x {font-size: 51px; line-height: 60px;}
 .f1a {font-size: 20px; line-height: 36px;}
 .f2  {font-size: 34px; line-height: 36px;}
 .f3  {font-size: 18px; line-height: 24px;}

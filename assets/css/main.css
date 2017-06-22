@@ -5552,22 +5552,25 @@ body {
 }
 
 
-.f1 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f1 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
-.f2 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f1x { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
-.f3 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f2 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
-.f4 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f3 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
-.f5 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f4 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
-.f6 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', serif }
+.f5 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
+
+
+.f6 { font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif }
 
 
 body {
@@ -5581,7 +5584,7 @@ body {
 }
 
 
-.f1x {font-size: 61px; line-height: 60px;}
+.f1x {font-size: 51px; line-height: 60px;}
 
 
 .f1a {font-size: 20px; line-height: 36px;}
@@ -5673,6 +5676,20 @@ button {
 }
 
 
+.cat {
+    width: 80px;
+    height: 80px;
+  }
+
+
+@media screen and (min-width: 40em) {
+  .cat {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
 #felixContainer {
   pointer-events: none;
 }
@@ -5684,6 +5701,13 @@ button {
   background-position: center;
   background-size: cover;
   z-index: -1;
+}
+
+
+@media screen and (min-width: 40em) {
+  .bodyBg {
+    background-size: 75%;
+  }
 }
 
 

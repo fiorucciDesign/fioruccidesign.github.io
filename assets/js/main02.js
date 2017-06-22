@@ -660,12 +660,7 @@ module.exports = function () {
       var oHeight = $(this).attr('data-originalHeight');
       $(this).height(hUnit());
       var newWidth = hUnit()/(oHeight/oWidth);
-      console.log('oH', 80);
-      console.log('oW', oWidth);
-      console.log('nH', oHeight);
-      console.log('nW', newWidth);
       $(this).width(newWidth);
-      console.log('nw', newWidth);
     });
   }
 
@@ -743,15 +738,6 @@ module.exports = function () {
     $(this).closest('.join-top').removeClass('bg-yellow').addClass('bg-pink');
   });
 
-  // $(document).on('mouseenter', '.join-bottom-a', function() {
-  //   $('.join-bottom-a').removeClass('black').addClass('neonGreen');
-  //   $('.join-bottom').removeClass('bg-neonGreen').addClass('bg-black');
-  // });
-  // $(document).on('mouseleave', '.join-bottom-a', function() {
-  //   $('.join-bottom-a').removeClass('neonGreen').addClass('black');
-  //   $('.join-bottom').removeClass('bg-black').addClass('bg-neonGreen');
-  // });
-
   $(document).on('click', '.cat', function() {
     var w = $('.cat').width() + 50;
     var h = $('.cat').height() + 50;
@@ -759,17 +745,6 @@ module.exports = function () {
     $('.cat').css('height', h + 'px');
   });
 
-//   console.log('ffs')
-//   $( ".join-top a" ).hover(
-//   function() {
-//     console.log('hover')
-//     $( this ).removeClass('green').addClass('yellow');
-//     $(this).children('a').removeClass('yellow').addClass('green');
-//   }, function() {
-//     $( this ).removeClass('bg-yellow').addClass('bg-green');
-//     $(this).children('a').removeClass('green').addClass('yellow');
-//   }
-// );
 
   $(document).ready(function(){
     sizeBlocks();
@@ -777,9 +752,15 @@ module.exports = function () {
     setTimeout(hideIntro, 2000)
   });
 
-  window.onresize = function(event) {
+  // window.onresize = function(event) {
+  //   sizeBlocks();
+  // };
+
+  $( window ).resize(function() {
+    console.log('resized')
     sizeBlocks();
-  };
+    calcImageMarqueesHeight();
+  });
 
  $('document').ready(function() {
     $(document).scroll(function(){

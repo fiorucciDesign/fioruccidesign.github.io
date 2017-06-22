@@ -9,10 +9,10 @@ layout: default
 <div class="content w-100 w-80-ns ph4 center">
   <div class="contentBlock flex flex-column justify-center items-center center w-100">
     <form id="emailForm" accept-charset="UTF-8" action="https://formkeep.com/f/23e3f2d53b58" method="POST">
-      <h1 class="f1 red tc w-100 mb1">JOIN US 4 STICKERS</h1>
+      <h1 class="f1x red tc w-100 mb1">JOIN US 4 STICKERS</h1>
       <input type="hidden" name="utf8" value="✓">
       <div class="w-100 w-50-ns center">
-        <input type="email" placeholder="Your Email" id="email-address-first" name="email" class="bg-none f1 center ba b--red pt2 pb1 pl3 pr3 tc w-100 ttu ph-red input-red">
+        <input type="email" placeholder="Your Email" id="email-address-first" name="email" class="bg-none f1 center ba b--red pt2 pb1 pl3 pr3 tc w-100 ttu ph-red input-red" required>
         <button id="emailSubmitButton" type="submit" class="mt2 w-100 f1 bg-red white no-underline btn center ba b--red pt2 pb1 pl3 pr3">
           <span class="blink_me w-100">GO GO GO</span>
         </button>
@@ -46,15 +46,15 @@ layout: default
             <img src="assets/images/stickers.jpg" />
           </div>
           <input type="hidden" name="utf8" value="✓">
-          <input type="email" placeholder="Your Email" class="dn bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" name="email" id="email-address-hidden" value="">
-          <input type="text" placeholder="First Name" id="first-name" name="firstname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
-          <input type="text" placeholder="Surname" id="surname" name="surname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
-          <input type="text" placeholder="Address 1" id="address-1" name="address1" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="email" placeholder="Your Email" class="dn bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" name="email" id="email-address-hidden" value="" required>
+          <input type="text" placeholder="First Name" id="first-name" name="firstname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
+          <input type="text" placeholder="Surname" id="surname" name="surname" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
+          <input type="text" placeholder="Address 1" id="address-1" name="address1" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
           <input type="text" placeholder="Address 2" id="address=2" name="address" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
-          <input type="text" placeholder="City / Town" id="city" name="citytown" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="City / Town" id="city" name="citytown" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
           <input type="text" placeholder="State/Province/Region" id="state" name="state-province-region" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
-          <input type="text" placeholder="Zip/Postal Code" id="zip" name="zip-postal" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
-          <input type="text" placeholder="Country" id="country" name="country" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2">
+          <input type="text" placeholder="Zip/Postal Code" id="zip" name="zip-postal" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
+          <input type="text" placeholder="Country" id="country" name="country" class="bg-none f3 center ba b--blue pt2 pb1 pl3 pr3 tc w-100 ttu ph-blue input-blue mb2" required>
           <button type="submit" id="addressSubmitButton" class="blink_me_inside mt2 w-100 f3 bg-blue white no-underline btn center ba b--blue pt2 pb1 pl3 pr3">
             <span class="w-100">GO GO GO</span>
           </button>
@@ -81,13 +81,13 @@ layout: default
 </div>
 
   <div class="contentBlock flex flex-column justify-center items-center center">
-    <h1 class="f1 neonGreen tc w-100 mb1" style="font-size: 40px">POP-UP SHOP</h1>
+    <h1 class="f1x neonGreen tc w-100 mb1">POP-UP SHOP</h1>
     <a href="http://popup.fiorucci.com" class="w-100 w-auto-ns f1 neonGreen no-underline btn center ba b--neonGreen pt2 pb2 ph3-ns tc blink_me">SHOP NOW</a>
   </div>
 
   <div class="contentBlock flex flex-column justify-center items-center center">
     <div>
-      <h1 class="f1 blue tc w-100 mb1" style="font-size: 40px">FOLLOW FIORUCCI</h1>
+      <h1 class="f1x blue tc w-100 mb1">FOLLOW FIORUCCI</h1>
       <div class="tc">
         <a href="http://instagram.com/fiorucci" class="mr-2 dib f1 blue no-underline btn center ba b--blue pt2 pb2 ph3-ns tc h3 w3 center no-repeat blink_me" style="background-image:url('assets/images/instaIcon_blue.svg')">
         </a>
@@ -99,11 +99,10 @@ layout: default
 </div>
 
 <div class="marquee">
-  <img class="cat" src="assets/images/cat.svg" width="150" height="150" />
+  <img class="cat" src="assets/images/cat.svg" />
 </div>
 
 <div class="frame">
-
   <div class="dn db-ns blk leo-l blk-col-half bg-yellow h-100 overflow-hidden">
     <div class="sea"></div>
   </div>
@@ -151,7 +150,7 @@ layout: default
 </div>
 
 <div
-  class="marquee3k blk join-bottom blk-row bg-neonGreen"
+  class="marquee3k blk join-bottom blk-row bg-yellow"
   data-speed="1"
   data-pausable="true"
 >
@@ -208,11 +207,18 @@ layout: default
     <img class="db mb0 w-100" src="assets/images/scrollWoman.jpg" />
     <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
     <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
+    <img class="db mb0 w-100"  src="assets/images/scrollWoman.jpg" />
   </div>
 </div>
 
 <div class="blk piccol-r blk-col dn db-ns" style="top: -3000px; height: 5000px;">
   <div>
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
+    <img class="db mb0 w-100" src="assets/images/man.jpg" />
     <img class="db mb0 w-100" src="assets/images/man.jpg" />
     <img class="db mb0 w-100" src="assets/images/man.jpg" />
     <img class="db mb0 w-100" src="assets/images/man.jpg" />

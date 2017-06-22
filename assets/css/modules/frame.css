@@ -1,7 +1,10 @@
+  .cat {
+    width: 80px;
+    height: 80px;
+  }
 #felixContainer {
   pointer-events: none;
 }
-
 .bodyBg {
   background-image: url('/assets/images/bodyBg.jpg');
   background-repeat: no-repeat;
@@ -9,11 +12,9 @@
   background-size: cover;
   z-index: -1;
 }
-
 .content {
   z-index: 1;
 }
-
 .intro {
   background-image: url('/assets/images/introLogoRed.svg');
   background-position: center;
@@ -21,30 +22,24 @@
   background-size: 20%;
   z-index: 999999999;
 }
-
 .lockedScroll {
   overflow: hidden;
 }
-
 .imgTxt {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .popupLink {
   background-image:url("/assets/images/popupText.png");
 }
-
 .getStickers {
   background-image: url('/assets/images/topText.png');
 }
-
 .row-top-1,
 .row-top-2,
 .free-bottom {
   z-index: 2 !important;
 }
-
 .smile {
   background-image: url('/assets/images/smile.png');
   background-size: 100%;
@@ -55,7 +50,6 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
 .fbLink {
   display: block;
   background-image: url('/assets/images/fbIcon_blue.svg');
@@ -67,7 +61,6 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
 .felixBlue {
   background-image: url('/assets/images/felixBlue.svg');
   background-size: contain;
@@ -78,22 +71,18 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
 @-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(360deg); }
 }
-
 @-webkit-keyframes spin {
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(360deg); }
 }
-
 @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
-
 .free-bottom-a {
   display: block;
   width: 100%;
@@ -102,7 +91,6 @@
   background-size: contain;
   background-position: center;
 }
-
 .sea {
   width: 100%;
   height: 100%;
@@ -111,7 +99,6 @@
   background-position: center;
   background-size: cover;
 }
-
 .instaBlue,
 .instaRed,
 .fbRed,
@@ -123,25 +110,20 @@
   display: block;
   background-repeat: no-repeat;
 }
-
 .instaBlue {
   background-image: url('/assets/images/instaIcon_blue.svg');
 }
-
 .instaRed {
   background-image: url('/assets/images/instaIcon_red.svg');
   background-position: top center;
 }
-
 .fbRed {
   background-image: url('/assets/images/fbIcon_red.svg');
   background-position: top center;
 }
-
 .fbBlue {
   background-image: url('/assets/images/fbIcon_blue.svg');
 }
-
 .marquee {
   display: block;
   left: 0;
@@ -152,7 +134,6 @@
   -moz-animation:spin 8s linear infinite;
   animation:spin 8s linear infinite;
 }
-
 video#bgvid {
     position: fixed;
     top: 50%;
@@ -169,13 +150,9 @@ video#bgvid {
     background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
-
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
 /*
 html, body {
   height: 100%;
@@ -184,15 +161,12 @@ html, body {
   overflow: hidden;
   position: relative;
 }*/
-
 .blk-vert {
   transform: rotate(90deg);
 }
-
 .blk-row-half {
   overflow: hidden;
 }
-
 .frame .f1,
 .frame .f2,
 .frame .f3,
@@ -201,77 +175,60 @@ html, body {
   margin-bottom: 0;
   padding: 0;
 }
-
 .blk {
   text-transform: uppercase;
 }
-
 .blk-col {
   height: 100%;
   overflow: hidden;
 }
-
 .blk-col,
 .blk {
   position: fixed;
 }
-
 .blk-col,
 .blk-col-half {
   width: 100%;
 }
-
 .leo-l { top: 0; left: 0; }
-
 .leo-r { top: 0; right: 0; }
-
 .denim-l,
 .denim-r,
 .blk-col {
   top: 0;
 }
-
 .blk-row {
   width: 100%;
   left: 0;
   z-index: 0;
 }
-
 /*.blk-col,
 .blk-col-half {
   z-index: 1;
 }*/
-
 .denim-l,
 .denim-r {
   z-index: 1;
 }
-
 .join-top,
 .join-bottom {
   z-index: 2;
 }
-
 .piccol-l,
 .piccol-r {
   z-index: 1;
 }
-
 .denim-r,
 .denim-l,
 .leo-r,
 .leo-l {
   z-index: 4;
 }
-
 .blk-sq {
   z-index: 7;
 }
-
 .row-top {top: 0;}
-
 .row-bottom {bottom: 0;}
-
 .marquee3k__wrapper {
   height: 100%;
 }
