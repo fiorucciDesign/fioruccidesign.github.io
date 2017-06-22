@@ -5584,7 +5584,7 @@ body {
 }
 
 
-.f1x {font-size: 51px; line-height: 60px;}
+.f1x {font-size: 41px; line-height: 60px;}
 
 
 .f1a {font-size: 20px; line-height: 36px;}
@@ -5717,10 +5717,10 @@ button {
 
 
 .intro {
-  background-image: url('/assets/images/introLogoRed.svg');
+  background-image: url('/assets/images/logoPink.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 20%;
+  background-size: 30%;
   z-index: 999999999;
 }
 
@@ -5755,7 +5755,7 @@ button {
 
 .smile {
   background-image: url('/assets/images/smile.png');
-  background-size: 100%;
+  background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
   animation-name: spin;
