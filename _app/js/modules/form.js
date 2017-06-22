@@ -62,6 +62,7 @@ module.exports = function () {
         }
         $('#addressSignupSuccess').fadeIn();
         $('#emailSignUpThanks').hide();
+        $('#emailForm').hide();
         $('#addressSignUpThanks').show();
         $('#addressSignupSuccess').removeClass('dn');
         setTimeout(delayedShow, 1000)
@@ -72,6 +73,7 @@ module.exports = function () {
   $(document).on('click', '#addressBack', function(e) {
     e.preventDefault();
     $('.addressSignup').fadeOut();
+    $('#emailSubmitButton').html('GO GO GO');
     unlockScroll();
   });
 

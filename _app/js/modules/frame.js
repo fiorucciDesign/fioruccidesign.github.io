@@ -9,12 +9,12 @@ module.exports = function () {
   var winWidth = $(window).width();
 
   var wUnit = function() {
-    var height = winWidth/16;
+    var height = winWidth/20;
     return height;
   }
 
   var hUnit = function() {
-    var height = winHeight/8;
+    var height = winHeight/12;
     return height;
   }
 

@@ -438,7 +438,7 @@ module.exports = function () {
       horizontal: true,
       vertical: true,
       speed: 200, // In pixels per second
-      container: $(this).parent(),
+      container: $('#felixContainer'),
       bumpEdge: function () {}
     }, options);
 
@@ -491,6 +491,10 @@ module.exports = function () {
 
       // Make that shit responsive!
       $(window).resize( function() {
+        getSizes();
+      });
+
+      $(window).scroll(function() {
         getSizes();
       });
     });
@@ -575,6 +579,7 @@ module.exports = function () {
         }
         $('#addressSignupSuccess').fadeIn();
         $('#emailSignUpThanks').hide();
+        $('#emailForm').hide();
         $('#addressSignUpThanks').show();
         $('#addressSignupSuccess').removeClass('dn');
         setTimeout(delayedShow, 1000)
@@ -585,6 +590,7 @@ module.exports = function () {
   $(document).on('click', '#addressBack', function(e) {
     e.preventDefault();
     $('.addressSignup').fadeOut();
+    $('#emailSubmitButton').html('GO GO GO');
     unlockScroll();
   });
 
@@ -609,12 +615,12 @@ module.exports = function () {
   var winWidth = $(window).width();
 
   var wUnit = function() {
-    var height = winWidth/16;
+    var height = winWidth/20;
     return height;
   }
 
   var hUnit = function() {
-    var height = winHeight/8;
+    var height = winHeight/12;
     return height;
   }
 

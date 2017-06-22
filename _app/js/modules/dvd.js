@@ -5,7 +5,7 @@ module.exports = function () {
       horizontal: true,
       vertical: true,
       speed: 200, // In pixels per second
-      container: $(this).parent(),
+      container: $('#felixContainer'),
       bumpEdge: function () {}
     }, options);
 
@@ -58,6 +58,10 @@ module.exports = function () {
 
       // Make that shit responsive!
       $(window).resize( function() {
+        getSizes();
+      });
+
+      $(window).scroll(function() {
         getSizes();
       });
     });
