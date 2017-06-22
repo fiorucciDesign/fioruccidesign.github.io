@@ -817,7 +817,7 @@ input[type="url"],
 .b--dark-red { border-color:  #f00008; }
 
 
-.b--red { border-color:  #FF4337; }
+.b--red { border-color:  #FF0000; }
 
 
 .b--orange { border-color:  #f3a801; }
@@ -2989,7 +2989,7 @@ code, .code {
 .dark-red { color: #f00008; }
 
 
-.red { color: #FF4337; }
+.red { color: #FF0000; }
 
 
 .orange { color: #f3a801; }
@@ -3154,7 +3154,7 @@ code, .code {
 .bg-dark-red { background-color: #f00008; }
 
 
-.bg-red { background-color: #FF4337; }
+.bg-red { background-color: #FF0000; }
 
 
 .bg-orange { background-color: #f3a801; }
@@ -3295,7 +3295,7 @@ code, .code {
 .hover-bg-dark-red:hover { background-color: #f00008; }
 
 
-.hover-bg-red:hover { background-color: #FF4337; }
+.hover-bg-red:hover { background-color: #FF0000; }
 
 
 .hover-bg-orange:hover { background-color: #f3a801; }
@@ -5414,7 +5414,7 @@ body {
 .bg-yellow {background: #FFC000;}
 
 
-.bg-red {background: #FF4337;}
+.bg-red {background: #FF0000;}
 
 
 .bg-tan {background: #EAB8A6;}
@@ -5453,7 +5453,7 @@ body {
 .yellow {color: #FFC000;}
 
 
-.red {color: #FF4337;}
+.red {color: #FF0000;}
 
 
 .tan {color: #EAB8A6;}
@@ -5492,7 +5492,7 @@ body {
 .yellow-hover:hover {color: #FFC000;}
 
 
-.red-hover:hover {color: #FF4337;}
+.red-hover:hover {color: #FF0000;}
 
 
 .tan-hover:hover {color: #EAB8A6;}
@@ -5510,7 +5510,7 @@ body {
 .neonGreen-hover:hover {color: #6EFF00;}
 
 
-.ph-red::placeholder {color: #FF4337; opacity: 1;}
+.ph-red::placeholder {color: #FF0000; opacity: 1;}
 
 
 .ph-blue::placeholder {color: #005399; opacity: 1;}

@@ -14,7 +14,7 @@ body {
 
 .bg-yellow {background: #FFC000;}
 
-.bg-red {background: #FF4337;}
+.bg-red {background: #FF0000;}
 
 .bg-tan {background: #EAB8A6;}
 
@@ -40,7 +40,7 @@ body {
 
 .yellow {color: #FFC000;}
 
-.red {color: #FF4337;}
+.red {color: #FF0000;}
 
 .tan {color: #EAB8A6;}
 
@@ -66,7 +66,7 @@ body {
 
 .yellow-hover:hover {color: #FFC000;}
 
-.red-hover:hover {color: #FF4337;}
+.red-hover:hover {color: #FF0000;}
 
 .tan-hover:hover {color: #EAB8A6;}
 
@@ -78,6 +78,6 @@ body {
 
 .neonGreen-hover:hover {color: #6EFF00;}
 
-.ph-red::placeholder {color: #FF4337; opacity: 1;}
+.ph-red::placeholder {color: #FF0000; opacity: 1;}
 
 .ph-blue::placeholder {color: #005399; opacity: 1;}
