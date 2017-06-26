@@ -124,7 +124,7 @@ gulp.task('build:images', function() {
 
 // Concatenates and uglifies JS files and outputs result to
 // the appropriate location(s).
-gulp.task('scripts', function() {
+gulp.task('build:scripts', function() {
   var bundleStream = browserify({entries: appJsFilesGlob});
 
   return bundleStream.bundle()
@@ -165,7 +165,7 @@ gulp.task('serve', () => {
   });
 
   gulp.watch('_app/css/**/*.css', ['build:styles']);
-  gulp.watch('_app/js/**/*.js', ['scripts']);
+  gulp.watch('_app/js/**/*.js', ['build:scripts']);
   gulp.watch(['_app/images/**/*'], ['build:images']);
 
   // Watch Jekyll html files
@@ -173,6 +173,6 @@ gulp.task('serve', () => {
 
 });
 
-gulp.task('default', ['scripts', 'build:images', 'build:fonts', 'build:styles', 'jekyll', 'serve']);
-gulp.task('build', ['scripts', 'build:images', 'build:fonts', 'build:styles', 'jekyll']);
+gulp.task('default', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'jekyll', 'serve']);
+gulp.task('build', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'jekyll']);
 

@@ -64,8 +64,11 @@ module.exports = function () {
       // $(this).css('width', contentWidth() + 'px');
       $(this).css('height', contentHeight() + 'px');
     });
-    $('.content').css('margin-top', hUnit()*2 + 'px');
-    $('.content').css('margin-bottom', hUnit()*2 + contentHeight() + 'px');
+    $('.contentBlock-1').css('margin-top', hUnit()*2 + 'px');
+    $('.contentBlock-1').css('margin-bottom', 200 + 'px');
+    $('.contentBlock-2').css('margin-bottom', 200 + 'px');
+    $('.content').css('margin-bottom', winHeight + 'px');
+    $('.content').css('margin-top', winHeight + 'px');
 
     var sqM = (wUnit()/2);
 
@@ -157,41 +160,40 @@ module.exports = function () {
     calcImageMarqueesHeight();
   });
 
- $('document').ready(function() {
-    $(document).scroll(function(){
-      if (document.documentElement.clientHeight + $(window).scrollTop() >= $(document).height()) {
+ $(document).ready(function() {
+
+  $(document).scrollTop(winHeight - hUnit()*2);
+
+   $(document).scroll(function(){
+      console.log($(document).scrollTop())
+      var docHeight = $('.content').outerHeight(true);
+      docHeight = docHeight - winHeight;
+      console.log('docHeight', docHeight);
+      if($(document).scrollTop() >= docHeight  ) {
         $(document).scrollTop(0);
       }
-    });
+   });
 
-//  $(document).on('scroll', function (e) {
-//     var $this = $(this),
-//         $items = $(".content"),
-//         scrollPosition = $this.scrollTop();
-//     if (scrollPosition > ($this.data('scroll-position') || 0)) {
-//       console.log('down')
-//         // Scrolling down
-//         var threshold = $this.height() - 800;
+  // $('document').ready(function() {
 
-//         if (scrollPosition > threshold) {
-//             var $firstResult = $('.contentBlock:first-child');
-//             $items.append($firstResult);
-//             scrollPosition -= $firstResult.height();
-//             $this.scrollTop(scrollPosition);
-//         }
-//     } else {
-//       console.log('up')
-//         // Scrolling up
-//         var threshold = $('.contentBlock:first-child').height();
-//         if (scrollPosition < threshold) {
-//             var $lastResult = $('.contentBlock:last-child');
-//             $items.prepend($lastResult);
-//             scrollPosition += $lastResult.height();
-//             $this.scrollTop(scrollPosition);
-//         }
-//     }
-//     $this.data('scroll-position', scrollPosition)
-// });
+  //      // We need to duplicate the whole body of the website so if you scroll down you can see both the bottom and the top at the same time. Before we do this we need to know the original height of the website.
+
+  //      var origDocHeight = $('.content').height() + 700 + $('.content').css('margin-top');
+  //      // now we know the height we can duplicate the body
+  //      $(".content").contents().clone().appendTo(".content");
+
+
+  //      $(document).scroll(function(){ // detect scrolling
+
+  //          var scrollWindowPos = $(document).scrollTop(); // store how far we have scrolled
+
+  //          if(scrollWindowPos >= docHeight - 120 ) { // if we scrolled further then the original doc height
+  //              $(document).scrollTop(0); // then scroll to the top
+  //          }
+  //      });
+
+  //  });
+
   });
 
 

@@ -432,86 +432,85 @@ form();
 
 },{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/dvd.js":4,"./modules/form.js":5,"./modules/frame.js":6,"jquery":7}],4:[function(require,module,exports){
 module.exports = function () {
-(function ($, window, undefined) {
-  $.fn.marqueeify = function (options) {
-    var settings = $.extend({
-      horizontal: true,
-      vertical: true,
-      speed: 200, // In pixels per second
-      container: $('#felixContainer'),
-      bumpEdge: function () {}
-    }, options);
+  (function ($, window, undefined) {
+    $.fn.marqueeify = function (options) {
+      var settings = $.extend({
+        horizontal: true,
+        vertical: true,
+        speed: 200, // In pixels per second
+        container: $('#felixContainer'),
+        bumpEdge: function () {}
+      }, options);
 
-    return this.each(function () {
-      var containerWidth, containerHeight, elWidth, elHeight, move, getSizes,
-        $el = $(this);
+      return this.each(function () {
+        var containerWidth, containerHeight, elWidth, elHeight, move, getSizes,
+          $el = $(this);
 
-      getSizes = function () {
-        containerWidth = settings.container.outerWidth();
-        containerHeight = settings.container.outerHeight();
-        elWidth = $el.outerWidth();
-        elHeight = $el.outerHeight();
-      };
+        getSizes = function () {
+          containerWidth = settings.container.outerWidth();
+          containerHeight = settings.container.outerHeight();
+          elWidth = $el.outerWidth();
+          elHeight = $el.outerHeight();
+        };
 
-      move = {
-        right: function () {
-          $el.animate({left: (containerWidth - elWidth)}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-            settings.bumpEdge();
-            move.left();
-          }});
-        },
-        left: function () {
-          $el.animate({left: 0}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-            settings.bumpEdge();
-            move.right();
-          }});
-        },
-        down: function () {
-          $el.animate({top: (containerHeight - elHeight)}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-            settings.bumpEdge();
-            move.up();
-          }});
-        },
-        up: function () {
-          $el.animate({top: 0}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-            settings.bumpEdge();
-            move.down();
-          }});
+        move = {
+          right: function () {
+            $el.animate({left: (containerWidth - elWidth)}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+              settings.bumpEdge();
+              move.left();
+            }});
+          },
+          left: function () {
+            $el.animate({left: 0}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+              settings.bumpEdge();
+              move.right();
+            }});
+          },
+          down: function () {
+            $el.animate({top: (containerHeight - elHeight)}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+              settings.bumpEdge();
+              move.up();
+            }});
+          },
+          up: function () {
+            $el.animate({top: 0}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+              settings.bumpEdge();
+              move.down();
+            }});
+          }
+        };
+
+        getSizes();
+
+        if (settings.horizontal) {
+          move.right();
         }
-      };
+        if (settings.vertical) {
+          move.down();
+        }
 
-      getSizes();
+        // Make that shit responsive!
+        $(window).resize( function() {
+          getSizes();
+        });
 
-      if (settings.horizontal) {
-        move.right();
-      }
-      if (settings.vertical) {
-        move.down();
-      }
-
-      // Make that shit responsive!
-      $(window).resize( function() {
-        getSizes();
+        $(window).scroll(function() {
+          getSizes();
+        });
       });
+    };
+  })(jQuery, window);
 
-      $(window).scroll(function() {
-        getSizes();
-      });
+  $(document).ready( function() {
+
+    $('.marquee').marqueeify({
+      speed: 100,
+      bumpEdge: function () {
+        var newColor = "hsl(" + Math.floor(Math.random()*360) + ", 100%, 50%)";
+        $('.marquee .logo').css('fill', newColor);
+      }
     });
-  };
-})(jQuery, window);
-
-$(document).ready( function() {
-
-  $('.marquee').marqueeify({
-    speed: 100,
-    bumpEdge: function () {
-      var newColor = "hsl(" + Math.floor(Math.random()*360) + ", 100%, 50%)";
-      $('.marquee .logo').css('fill', newColor);
-    }
   });
-});
-
 }
 
 },{}],5:[function(require,module,exports){
@@ -670,8 +669,11 @@ module.exports = function () {
       // $(this).css('width', contentWidth() + 'px');
       $(this).css('height', contentHeight() + 'px');
     });
-    $('.content').css('margin-top', hUnit()*2 + 'px');
-    $('.content').css('margin-bottom', hUnit()*2 + contentHeight() + 'px');
+    $('.contentBlock-1').css('margin-top', hUnit()*2 + 'px');
+    $('.contentBlock-1').css('margin-bottom', 200 + 'px');
+    $('.contentBlock-2').css('margin-bottom', 200 + 'px');
+    $('.content').css('margin-bottom', winHeight + 'px');
+    $('.content').css('margin-top', winHeight + 'px');
 
     var sqM = (wUnit()/2);
 
@@ -763,41 +765,40 @@ module.exports = function () {
     calcImageMarqueesHeight();
   });
 
- $('document').ready(function() {
-    $(document).scroll(function(){
-      if (document.documentElement.clientHeight + $(window).scrollTop() >= $(document).height()) {
+ $(document).ready(function() {
+
+  $(document).scrollTop(winHeight - hUnit()*2);
+
+   $(document).scroll(function(){
+      console.log($(document).scrollTop())
+      var docHeight = $('.content').outerHeight(true);
+      docHeight = docHeight - winHeight;
+      console.log('docHeight', docHeight);
+      if($(document).scrollTop() >= docHeight  ) {
         $(document).scrollTop(0);
       }
-    });
+   });
 
-//  $(document).on('scroll', function (e) {
-//     var $this = $(this),
-//         $items = $(".content"),
-//         scrollPosition = $this.scrollTop();
-//     if (scrollPosition > ($this.data('scroll-position') || 0)) {
-//       console.log('down')
-//         // Scrolling down
-//         var threshold = $this.height() - 800;
+  // $('document').ready(function() {
 
-//         if (scrollPosition > threshold) {
-//             var $firstResult = $('.contentBlock:first-child');
-//             $items.append($firstResult);
-//             scrollPosition -= $firstResult.height();
-//             $this.scrollTop(scrollPosition);
-//         }
-//     } else {
-//       console.log('up')
-//         // Scrolling up
-//         var threshold = $('.contentBlock:first-child').height();
-//         if (scrollPosition < threshold) {
-//             var $lastResult = $('.contentBlock:last-child');
-//             $items.prepend($lastResult);
-//             scrollPosition += $lastResult.height();
-//             $this.scrollTop(scrollPosition);
-//         }
-//     }
-//     $this.data('scroll-position', scrollPosition)
-// });
+  //      // We need to duplicate the whole body of the website so if you scroll down you can see both the bottom and the top at the same time. Before we do this we need to know the original height of the website.
+
+  //      var origDocHeight = $('.content').height() + 700 + $('.content').css('margin-top');
+  //      // now we know the height we can duplicate the body
+  //      $(".content").contents().clone().appendTo(".content");
+
+
+  //      $(document).scroll(function(){ // detect scrolling
+
+  //          var scrollWindowPos = $(document).scrollTop(); // store how far we have scrolled
+
+  //          if(scrollWindowPos >= docHeight - 120 ) { // if we scrolled further then the original doc height
+  //              $(document).scrollTop(0); // then scroll to the top
+  //          }
+  //      });
+
+  //  });
+
   });
 
 
