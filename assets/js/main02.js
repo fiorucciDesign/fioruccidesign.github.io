@@ -775,7 +775,7 @@ module.exports = function () {
       docHeight = docHeight - winHeight;
       console.log('docHeight', docHeight);
       if($(document).scrollTop() >= docHeight  ) {
-        $(document).scrollTop(0);
+        $(document).scrollTop(20);
       }
    });
 
