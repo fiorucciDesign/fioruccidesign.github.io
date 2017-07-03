@@ -1,3 +1,7 @@
+.btn-padding {
+  padding-bottom: 0px;
+}
+
 .cowboy {
   background-size: contain;
 }
@@ -17,9 +21,9 @@
 }
 
 .cat {
-    width: 80px;
-    height: 80px;
-  }
+  width: 80px;
+  height: 80px;
+}
 
 /*@keyframes moveX {from { left: 0; } to { left: 1000px; }}
 @keyframes moveY {from { transform: translateY(0px); } to { transform: translateY(700px); }}*/

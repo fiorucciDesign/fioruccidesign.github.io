@@ -5676,6 +5676,11 @@ button {
 }
 
 
+.btn-padding {
+  padding-bottom: 0px;
+}
+
+
 .cowboy {
   background-size: contain;
 }
@@ -5697,9 +5702,9 @@ button {
 
 
 .cat {
-    width: 80px;
-    height: 80px;
-  }
+  width: 80px;
+  height: 80px;
+}
 
 
 /*@keyframes moveX {from { left: 0; } to { left: 1000px; }}
