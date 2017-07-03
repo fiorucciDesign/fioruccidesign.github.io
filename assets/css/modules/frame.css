@@ -2,10 +2,46 @@
   background-size: contain;
 }
 
+.marquee {
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
+  -moz-animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
+  animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
+  animation-timing-function: linear;
+}
+
 .cat {
     width: 80px;
     height: 80px;
   }
+
+/*@keyframes moveX {from { left: 0; } to { left: 1000px; }}
+@keyframes moveY {from { transform: translateY(0px); } to { transform: translateY(700px); }}*/
+
+/*@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 100%; }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 99%; }
+}*/
 
 #felixContainer {
   pointer-events: none;
@@ -154,17 +190,6 @@
 
 .fbBlue {
   background-image: url('/assets/images/fbIcon_blue.svg');
-}
-
-.marquee {
-  display: block;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 999;
-  -webkit-animation:spin 8s linear infinite;
-  -moz-animation:spin 8s linear infinite;
-  animation:spin 8s linear infinite;
 }
 
 video#bgvid {
