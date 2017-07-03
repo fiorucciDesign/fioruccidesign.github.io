@@ -19,23 +19,30 @@ var KeyFrame =
      //get the left position
      var pushLeft = $(window).width() - sq;
      var pushTop = $(window).height() + $(document).scrollTop() - sq;
+     var winHeight = $(window).height();
      console.log('pushTop', pushTop);
      var top = $(document).scrollTop();
      //set the style and append to head
      $('#catKeyframes').remove();
 
-     var css=$('<style id="catKeyframes">@keyframes moveX {from { left: 0; } to { left: '+pushLeft+'px; }} @keyframes moveY {from { transform: translateY(' + top + 'px) rotate(0deg); } to { transform: translateY(' + pushTop + 'px) rotate(360deg); }}</style>').appendTo('head');
-
-     //make sure you don't carriage return the css inline statement, or else it'll be error as ILLEGAL
-     //so u don't keep appending style to head
-     // KeyFrame.check = true;
+     var css=$('<style id="catKeyframes">@keyframes moveX {from { left: 0; } to { left: '+pushLeft+'px; }} @keyframes moveY {from { transform: translateY(' + winHeight + 'px) rotate(0deg); } to { transform: translateY(' + pushTop + 'px) rotate(360deg); }}</style>').appendTo('head');
   }
 }
 KeyFrame.init();
 
-$(window).scroll(function() {
-  KeyFrame.init();
-});
+// $(window).scroll(function() {
+//   $(".marquee").css("-webkit-animation", "none");
+//   $(".marquee").css("-moz-animation", "none");
+//   $(".marquee").css("-ms-animation", "none");
+//   $(".marquee").css("animation", "none");
+//   $(".marquee").css("-webkit-animation", "moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate");
+//   $(".marquee").css("-moz-animation", "moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate");
+//   $(".marquee").css("-ms-animation", "moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate");
+//   $(".marquee").css("animation", "moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate");
+//   KeyFrame.init();
+// });
+  // KeyFrame.init();
+  // setTimeout(KeyFrame.init(), 500);
 
 $(window).resize( function() {
   KeyFrame.init();

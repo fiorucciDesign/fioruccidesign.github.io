@@ -5584,7 +5584,7 @@ body {
 }
 
 
-.f1x {font-size: 41px; line-height: 60px;}
+.f1x {font-size: 41px; line-height: 40px;}
 
 
 .f1a {font-size: 20px; line-height: 36px;}
@@ -5689,9 +5689,9 @@ button {
   z-index: 999;
   width: 80px;
   height: 80px;
-  -webkit-animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
-  -moz-animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
-  animation: moveX 7.05s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
+  -webkit-animation: moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate;
+  -moz-animation: moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate;
+  animation: moveX 15.05s linear infinite alternate, moveY 15.4s linear infinite alternate;
   animation-timing-function: linear;
 }
 
