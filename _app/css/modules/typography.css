@@ -29,7 +29,7 @@ body {
 /*.b4 avenir*/
 
 @media (--breakpoint-not-small) {
-  .f1x {font-size: 108px; line-height: 90px;}
+  .f1x {font-size: 80px; line-height: 85px;}
   .f1a {font-size: 20px; line-height: 36px;}
   .f2  {font-size: 30px; line-height: 36px;}
   .f3  {font-size: 18px; line-height: 36px;}
