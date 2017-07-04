@@ -68,14 +68,12 @@ module.exports = function () {
     }
 
     $('.contentBlock').each(function() {
-      // $(this).css('width', contentWidth() + 'px');
       $(this).css('height', contentHeight() + 'px');
     });
     $('.contentBlock-1').css('margin-top', hUnit()*2 + 'px');
     $('.contentBlock-1').css('margin-bottom', 200 + 'px');
     $('.contentBlock-2').css('margin-bottom', 200 + 'px');
     $('.content').css('margin-bottom', hUnit()*2 + 'px');
-    // $('.content').css('margin-top', winHeight + 'px');
 
     var sqM = (wUnit()/2);
 
@@ -104,8 +102,6 @@ module.exports = function () {
 
     $('.row-top-1').css('top', 0);
     $('.row-top-2').css('top', hUnit()/2 + 'px');
-    // $('.row-bottom-1').css('bottom', hUnit()/2 + 'px');
-    // $('.row-bottom-2').css('bottom', 0);
 
     $('.free-bottom').css('bottom', 0 + 'px');
 
@@ -149,7 +145,6 @@ module.exports = function () {
     $('.cat').css('height', h + 'px');
   });
 
-
   $(document).ready(function() {
     $('.introLogo').fadeIn();
     sizeBlocks();
@@ -157,52 +152,10 @@ module.exports = function () {
     setTimeout(hideIntro, 4000)
   });
 
-  // window.onresize = function(event) {
-  //   sizeBlocks();
-  // };
-
   $( window ).resize(function() {
     console.log('resized')
     sizeBlocks();
     calcImageMarqueesHeight();
   });
-
- $(document).ready(function() {
-
-  // $(document).scrollTop(winHeight - hUnit()*2);
-
-  //  $(document).scroll(function(){
-  //     console.log($(document).scrollTop())
-  //     var docHeight = $('.content').outerHeight(true);
-  //     docHeight = docHeight - winHeight;
-  //     console.log('docHeight', docHeight);
-  //     if($(document).scrollTop() >= docHeight  ) {
-  //       $(document).scrollTop(20);
-  //     }
-  //  });
-
-  // $('document').ready(function() {
-
-  //      // We need to duplicate the whole body of the website so if you scroll down you can see both the bottom and the top at the same time. Before we do this we need to know the original height of the website.
-
-  //      var origDocHeight = $('.content').height() + 700 + $('.content').css('margin-top');
-  //      // now we know the height we can duplicate the body
-  //      $(".content").contents().clone().appendTo(".content");
-
-
-  //      $(document).scroll(function(){ // detect scrolling
-
-  //          var scrollWindowPos = $(document).scrollTop(); // store how far we have scrolled
-
-  //          if(scrollWindowPos >= docHeight - 120 ) { // if we scrolled further then the original doc height
-  //              $(document).scrollTop(0); // then scroll to the top
-  //          }
-  //      });
-
-  //  });
-
-  });
-
-
 
 }
