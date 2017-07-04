@@ -1,3 +1,15 @@
+input {
+  border-radius: 0;
+}
+
+input:-webkit-autofill {
+    background-color: none !important;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 0px rgba(00,00,00,0) inset;
+}
+
 input:hover,
 input:focus  {
   background: #fff;

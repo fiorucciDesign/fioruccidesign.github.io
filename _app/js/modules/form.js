@@ -58,6 +58,7 @@ module.exports = function () {
         function delayedShow(){
           $('.addressSignup').fadeOut();
           unlockScroll();
+          $("html, body").animate({ scrollTop: "0px" });
           $('#addressSignupSuccess').fadeOut();
         }
         $('#addressSignupSuccess').fadeIn();
