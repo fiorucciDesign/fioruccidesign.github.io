@@ -65,11 +65,23 @@
   background-position: center;
   background-size: cover;
   z-index: -1;
+  margin: 0 auto;
 }
 
 @media (--breakpoint-not-small) {
   .bodyBg {
-    background-size: 75%;
+    background-image: url('/assets/images/bodyBg.jpg');
+  }
+}
+
+@media (--breakpoint-large) {
+  .bodyBg {
+  }
+}
+
+@media (--breakpoint-extra-large) {
+  .bodyBg {
+    background-size: 90%;
   }
 }
 

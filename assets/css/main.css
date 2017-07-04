@@ -5751,12 +5751,26 @@ button {
   background-position: center;
   background-size: cover;
   z-index: -1;
+  margin: 0 auto;
 }
 
 
 @media screen and (min-width: 800px) {
   .bodyBg {
-    background-size: 75%;
+    background-image: url('/assets/images/bodyBg.jpg');
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .bodyBg {
+  }
+}
+
+
+@media screen and (min-width: 1400px) {
+  .bodyBg {
+    background-size: 90%;
   }
 }
 

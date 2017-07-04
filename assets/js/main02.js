@@ -710,9 +710,6 @@ module.exports = function () {
     $('.denim-r').scrollTop(
       $(this).scrollTop()
     );
-    // $('.piccol-l').scrollTop(
-    //   $(this).scrollTop() - ($(this).scrollTop()*2)
-    // );
 
     $('.piccol-l').css('transform', 'translate3d(0,' + $(this).scrollTop()*2 + 'px, 0)');
     $('.piccol-r').css('transform', 'translate3d(0,' + $(this).scrollTop()*2 + 'px, 0)');
@@ -730,6 +727,16 @@ module.exports = function () {
 
 
   var sizeBlocks = function() {
+
+    $('.bodyBg').css('top', hUnit()*2 + 'px');
+    $('.bodyBg').css('height', contentHeight() + 'px');
+    if (winWidth < 800) {
+      $('.bodyBg').css('width', '100%');
+      $('.bodyBg').css('left', '0px');
+    } else {
+      $('.bodyBg').css('width', contentWidth() + 'px');
+    }
+
     $('.contentBlock').each(function() {
       // $(this).css('width', contentWidth() + 'px');
       $(this).css('height', contentHeight() + 'px');
