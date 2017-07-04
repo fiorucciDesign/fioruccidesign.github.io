@@ -1,3 +1,7 @@
+body {
+  background: var(--blue);
+}
+
 .btn-padding {
   padding-bottom: 0px;
 }

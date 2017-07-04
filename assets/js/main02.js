@@ -744,8 +744,8 @@ module.exports = function () {
     $('.contentBlock-1').css('margin-top', hUnit()*2 + 'px');
     $('.contentBlock-1').css('margin-bottom', 200 + 'px');
     $('.contentBlock-2').css('margin-bottom', 200 + 'px');
-    $('.content').css('margin-bottom', winHeight + 'px');
-    $('.content').css('margin-top', winHeight + 'px');
+    $('.content').css('margin-bottom', hUnit()*2 + 'px');
+    // $('.content').css('margin-top', winHeight + 'px');
 
     var sqM = (wUnit()/2);
 
@@ -839,17 +839,17 @@ module.exports = function () {
 
  $(document).ready(function() {
 
-  $(document).scrollTop(winHeight - hUnit()*2);
+  // $(document).scrollTop(winHeight - hUnit()*2);
 
-   $(document).scroll(function(){
-      console.log($(document).scrollTop())
-      var docHeight = $('.content').outerHeight(true);
-      docHeight = docHeight - winHeight;
-      console.log('docHeight', docHeight);
-      if($(document).scrollTop() >= docHeight  ) {
-        $(document).scrollTop(20);
-      }
-   });
+  //  $(document).scroll(function(){
+  //     console.log($(document).scrollTop())
+  //     var docHeight = $('.content').outerHeight(true);
+  //     docHeight = docHeight - winHeight;
+  //     console.log('docHeight', docHeight);
+  //     if($(document).scrollTop() >= docHeight  ) {
+  //       $(document).scrollTop(20);
+  //     }
+  //  });
 
   // $('document').ready(function() {
 

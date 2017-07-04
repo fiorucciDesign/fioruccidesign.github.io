@@ -5676,6 +5676,11 @@ button {
 }
 
 
+body {
+  background: #005399;
+}
+
+
 .btn-padding {
   padding-bottom: 0px;
 }
