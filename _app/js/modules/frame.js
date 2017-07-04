@@ -1,6 +1,11 @@
 module.exports = function () {
 
-  function hideIntro(){
+  $('.bodyBg').on("touchmove", function(){
+    e.preventDefault();
+    console.log('touchmove');
+  }, false);
+
+  function hideIntro() {
     $('#intro').fadeOut(1000);
     $('body').removeClass('lockedScroll');
   }
@@ -9,22 +14,26 @@ module.exports = function () {
   var winWidth = $(window).width();
 
   var wUnit = function() {
+    winWidth = $(window).width();
     var height = winWidth/20;
     return height;
   }
 
   var hUnit = function() {
+    winHeight = $(window).height();
     var height = winHeight/12;
     return height;
   }
 
   var contentWidth = function() {
+    winWidth = $(window).width();
     var sU = wUnit()*5;
     var contentW = winWidth - sU;
     return contentW;
   }
 
   var contentHeight = function() {
+    winHeight = $(window).height();
     var sU = hUnit()*4;
     var contentH = winHeight - sU;
     return contentH;
@@ -55,16 +64,19 @@ module.exports = function () {
     });
   }
 
-
   var sizeBlocks = function() {
+    winHeight = $(window).height();
+    winWidth = $(window).width();
 
     $('.bodyBg').css('top', hUnit()*2 + 'px');
-    $('.bodyBg').css('height', contentHeight() + 'px');
     if (winWidth < 800) {
       $('.bodyBg').css('width', '100%');
       $('.bodyBg').css('left', '0px');
+      $('.bodyBg').css('height', contentHeight() + 100 + 'px');
     } else {
       $('.bodyBg').css('width', contentWidth() + 'px');
+      $('.bodyBg').css('height', contentHeight() + 'px');
+      $('.bodyBg').css('height', contentHeight() + 'px');
     }
 
     $('.contentBlock').each(function() {
@@ -153,9 +165,7 @@ module.exports = function () {
   });
 
   $( window ).resize(function() {
-    console.log('resized')
     sizeBlocks();
     calcImageMarqueesHeight();
   });
-
 }
