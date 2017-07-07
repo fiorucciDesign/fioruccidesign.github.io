@@ -5,7 +5,6 @@ function em(input) {
     return (emSize * input);
 }
 
-
 var KeyFrame =
 {
  init: function(){
