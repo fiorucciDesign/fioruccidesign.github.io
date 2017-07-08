@@ -423,21 +423,72 @@ var Marquee3k = require('./lib/marquee3k.js');
 var frame = require('./modules/frame.js');
 var dvd = require('./modules/dvd.js');
 var form = require('./modules/form.js');
+var analytics = require('./modules/analytics.js');
 
 Marquee3k();
 frame();
 dvd();
 form();
+analytics();
 
 
-},{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/dvd.js":4,"./modules/form.js":5,"./modules/frame.js":6,"jquery":7}],4:[function(require,module,exports){
+},{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/analytics.js":4,"./modules/dvd.js":5,"./modules/form.js":6,"./modules/frame.js":7,"jquery":8}],4:[function(require,module,exports){
+module.exports = function () {
+  var popUpShopClicked = function() {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Popup',
+      eventAction: 'click',
+      eventLabel: 'Popup Shop Click'
+    });
+  }
+
+  var instaClicked = function() {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Insta',
+      eventAction: 'click',
+      eventLabel: 'Instagram clicked'
+    });
+  }
+
+  $('body').on('click', '.popupEvent', function() {
+    popUpShopClicked();
+  });
+
+  $('body').on('click', '.getStickersClick', function() {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Stickers',
+        eventAction: 'click',
+        eventLabel: 'Get Free Stickers Click'
+      });
+  });
+
+  $('body').on('click', '.instaClick', function() {
+    // Remember the link href
+    var href = this.href;
+
+    // Don't follow the link
+    event.preventDefault();
+    console.log('instaClick');
+    // Do the async thing
+    instaClicked(function() {
+        // This is the completion callback for the asynchronous thing;
+        // go to the link
+        window.location = href;
+    });
+  });
+}
+
+
+},{}],5:[function(require,module,exports){
 module.exports = function () {
 
 function em(input) {
     var emSize = parseFloat($("body").css("font-size"));
     return (emSize * input);
 }
-
 
 var KeyFrame =
 {
@@ -453,7 +504,6 @@ var KeyFrame =
      var pushLeft = $(window).width() - sq;
      var pushTop = $(window).height() + $(document).scrollTop() - sq;
      var winHeight = $(window).height();
-     console.log('pushTop', pushTop);
      var top = $(document).scrollTop();
      //set the style and append to head
      $('#catKeyframes').remove();
@@ -578,7 +628,7 @@ $(window).resize( function() {
   // });
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function () {
 
   var email;
@@ -668,7 +718,7 @@ module.exports = function () {
 
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function () {
 
   $('.bodyBg').on("touchmove", function(){
@@ -740,7 +790,7 @@ module.exports = function () {
     winWidth = $(window).width();
 
     $('.bodyBg').css('top', hUnit()*2 + 'px');
-    if (winWidth < 800) {
+    if (winWidth <= 800) {
       $('.bodyBg').css('width', '100%');
       $('.bodyBg').css('left', '0px');
       $('.bodyBg').css('height', contentHeight() + 100 + 'px');
@@ -761,7 +811,7 @@ module.exports = function () {
     var sqM = (wUnit()/2);
 
     $('.blk-col').each(function(){
-     $(this).css('width', wUnit() + '10px');
+     $(this).css('width', wUnit() + 'px');
     });
 
       $('.blk-col-half').each(function(){
@@ -835,13 +885,16 @@ module.exports = function () {
     setTimeout(hideIntro, 4000)
   });
 
-  $( window ).resize(function() {
+
+  $(window).resize( function() {
+    console.log('wU',wUnit());
     sizeBlocks();
+
     calcImageMarqueesHeight();
   });
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/

@@ -69,7 +69,7 @@ module.exports = function () {
     winWidth = $(window).width();
 
     $('.bodyBg').css('top', hUnit()*2 + 'px');
-    if (winWidth < 800) {
+    if (winWidth <= 800) {
       $('.bodyBg').css('width', '100%');
       $('.bodyBg').css('left', '0px');
       $('.bodyBg').css('height', contentHeight() + 100 + 'px');
@@ -90,7 +90,7 @@ module.exports = function () {
     var sqM = (wUnit()/2);
 
     $('.blk-col').each(function(){
-     $(this).css('width', wUnit() + '10px');
+     $(this).css('width', wUnit() + 'px');
     });
 
       $('.blk-col-half').each(function(){
@@ -164,8 +164,11 @@ module.exports = function () {
     setTimeout(hideIntro, 4000)
   });
 
-  $( window ).resize(function() {
+
+  $(window).resize( function() {
+    console.log('wU',wUnit());
     sizeBlocks();
+
     calcImageMarqueesHeight();
   });
 }

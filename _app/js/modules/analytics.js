@@ -17,11 +17,11 @@ module.exports = function () {
     });
   }
 
-  $('body').on('click', '.popupEvent' function() {
+  $('body').on('click', '.popupEvent', function() {
     popUpShopClicked();
   });
 
-  $('body').on('click', '.getStickersClick' function() {
+  $('body').on('click', '.getStickersClick', function() {
       ga('send', {
         hitType: 'event',
         eventCategory: 'Stickers',
@@ -30,7 +30,7 @@ module.exports = function () {
       });
   });
 
-  $('body').on('click', '.instaClick' function() {
+  $('body').on('click', '.instaClick', function() {
     // Remember the link href
     var href = this.href;
 

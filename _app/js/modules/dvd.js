@@ -19,7 +19,6 @@ var KeyFrame =
      var pushLeft = $(window).width() - sq;
      var pushTop = $(window).height() + $(document).scrollTop() - sq;
      var winHeight = $(window).height();
-     console.log('pushTop', pushTop);
      var top = $(document).scrollTop();
      //set the style and append to head
      $('#catKeyframes').remove();
