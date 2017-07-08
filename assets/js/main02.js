@@ -434,6 +434,8 @@ analytics();
 
 },{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/analytics.js":4,"./modules/dvd.js":5,"./modules/form.js":6,"./modules/frame.js":7,"jquery":8}],4:[function(require,module,exports){
 module.exports = function () {
+  $(document).ready(function(){
+
   var popUpShopClicked = function() {
     ga('send', {
       hitType: 'event',
@@ -471,7 +473,6 @@ module.exports = function () {
 
     // Don't follow the link
     event.preventDefault();
-    console.log('instaClick');
     // Do the async thing
     instaClicked(function() {
         // This is the completion callback for the asynchronous thing;
@@ -479,6 +480,9 @@ module.exports = function () {
         window.location = href;
     });
   });
+
+  })
+
 }
 
 
