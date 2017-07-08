@@ -32,19 +32,19 @@ module.exports = function () {
       });
   });
 
-  $('body').on('click', '.instaClick', function() {
-    // Remember the link href
-    var href = this.href;
+  // $('body').on('click', '.instaClick', function() {
+  //   // Remember the link href
+  //   var href = this.href;
 
-    // Don't follow the link
-    event.preventDefault();
-    // Do the async thing
-    instaClicked(function() {
-        // This is the completion callback for the asynchronous thing;
-        // go to the link
-        window.location = href;
-    });
-  });
+  //   // Don't follow the link
+  //   event.preventDefault();
+  //   // Do the async thing
+  //   instaClicked(function() {
+  //       // This is the completion callback for the asynchronous thing;
+  //       // go to the link
+  //       window.location = href;
+  //   });
+  // });
 
   })
 
