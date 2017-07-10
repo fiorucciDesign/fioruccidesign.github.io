@@ -5782,19 +5782,6 @@ body {
 }
 
 
-@media screen and (min-width: 1201px) {
-  .bodyBg {
-  }
-}
-
-
-@media screen and (min-width: 1400px) {
-  .bodyBg {
-    background-size: 90%;
-  }
-}
-
-
 .content {
   z-index: 1;
 }

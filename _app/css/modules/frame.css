@@ -78,17 +78,6 @@ body {
   }
 }
 
-@media (--breakpoint-large) {
-  .bodyBg {
-  }
-}
-
-@media (--breakpoint-extra-large) {
-  .bodyBg {
-    background-size: 90%;
-  }
-}
-
 .content {
   z-index: 1;
 }
