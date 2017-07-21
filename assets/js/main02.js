@@ -410,8 +410,11 @@ module.exports = function () {
     }
   }
 
+
   $(document).ready(function(){
-    Marquee3k.init();
+    Marquee3k.init({
+      selector: 'm3k', // define a custom classname
+    });
   });
 }));
 }
@@ -430,7 +433,6 @@ frame();
 dvd();
 form();
 analytics();
-
 
 },{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/analytics.js":4,"./modules/dvd.js":5,"./modules/form.js":6,"./modules/frame.js":7,"jquery":8}],4:[function(require,module,exports){
 module.exports = function () {
@@ -713,12 +715,13 @@ module.exports = function () {
     unlockScroll();
   });
 
-  $(document).on('click', '.getStickers', function(e) {
-    e.preventDefault();
-    $('.addressSignup').fadeIn();
-    lockScroll();
-    $('#email-address-hidden').show();
-  });
+  // Removed for pop-up link
+  // $(document).on('click', '.getStickers', function(e) {
+  //   e.preventDefault();
+  //   $('.addressSignup').fadeIn();
+  //   lockScroll();
+  //   $('#email-address-hidden').show();
+  // });
 
 }
 
@@ -888,7 +891,6 @@ module.exports = function () {
     calcImageMarqueesHeight();
     setTimeout(hideIntro, 4000)
   });
-
 
   $(window).resize( function() {
     console.log('wU',wUnit());

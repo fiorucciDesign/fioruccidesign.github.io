@@ -164,7 +164,6 @@ module.exports = function () {
     setTimeout(hideIntro, 4000)
   });
 
-
   $(window).resize( function() {
     console.log('wU',wUnit());
     sizeBlocks();

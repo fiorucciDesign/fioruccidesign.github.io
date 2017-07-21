@@ -159,8 +159,11 @@ module.exports = function () {
     }
   }
 
+
   $(document).ready(function(){
-    Marquee3k.init();
+    Marquee3k.init({
+      selector: 'm3k', // define a custom classname
+    });
   });
 }));
 }

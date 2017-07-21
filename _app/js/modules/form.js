@@ -78,11 +78,12 @@ module.exports = function () {
     unlockScroll();
   });
 
-  $(document).on('click', '.getStickers', function(e) {
-    e.preventDefault();
-    $('.addressSignup').fadeIn();
-    lockScroll();
-    $('#email-address-hidden').show();
-  });
+  // Removed for pop-up link
+  // $(document).on('click', '.getStickers', function(e) {
+  //   e.preventDefault();
+  //   $('.addressSignup').fadeIn();
+  //   lockScroll();
+  //   $('#email-address-hidden').show();
+  // });
 
 }
