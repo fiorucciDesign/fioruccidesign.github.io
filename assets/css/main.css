@@ -5823,6 +5823,16 @@ body {
 }
 
 
+.newSoon{
+  background-image:url("/assets/images/marquee_newsoon.png");
+}
+
+
+.siteLaunch {
+  background-image: url('/assets/images/marquee_siteLaunch.png');
+}
+
+
 .row-top-1,
 .row-top-2,
 .free-bottom {
