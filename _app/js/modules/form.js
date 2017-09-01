@@ -30,8 +30,9 @@ module.exports = function () {
           $('#emailSubmitButton').html('LOADING...');
         }
       }).done(function(data) {
-        lockScroll();
-        $('.addressSignup').fadeIn();
+        $('#emailForm').fadeOut();
+        $('#addressSignUpThanks').fadeIn();
+        $('#addressSignupSuccess').removeClass('dn');
       });
     });
   });
