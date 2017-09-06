@@ -6,7 +6,8 @@
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
-.hStd {
+.hStd,
+.interview__answer {
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt' !important;
 }
 .hBlk {
