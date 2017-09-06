@@ -82,12 +82,12 @@
   font-size: 80px;
   line-height: .9em;
   text-transform: none;
-  font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
 .interview__answer,
 .col2-quote {
-  font-family: 'Helvetica Neue LT Std 53 Extended';
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
 .col2-quote {
@@ -97,4 +97,8 @@
   padding: 0 50px;
   font-size: 60px;
   line-height: 1em;
+}
+
+.story {
+  overflow: hidden;
 }
