@@ -2,20 +2,33 @@
   margin: 0;
   text-align: center;
   line-height: 1em;
-  padding-top: 20px;
 }
 
 .story__title__gbts { font-size: 6.5vw; }
 
 .story__container {
-  width: 900px;
+  max-width: 700px;
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .story__lead {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
+@media (--breakpoint-not-small) {
+  .story__container,
+  .story__lead {
+  padding-left: 0px;
+  padding-right: 0px;
+  }
+}
+
 
 .story__fullWidthImg {
   margin-bottom: 50px;
@@ -26,22 +39,43 @@
 }
 
 .col3 {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
   margin-bottom: 50px;
 }
 
+.col3-el {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 .col3-el img {
-  width: 80%;
+  width: 90%;
 }
 
 .col3-el:nth-child(2) {
   text-align: center;
 }
 
+.col3-el:nth-child(2) img {
+  width: 100%;
+}
+
 .col3-el:nth-child(3) {
   text-align: right;
+}
+
+@media (--breakpoint-not-small) {
+  .col3 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .col3-el {
+    width: none;
+    margin-bottom: 0px;
+  }
+  .col3-el img {
+    width: 80%;
+  }
 }
 
 .interview__section {
@@ -49,14 +83,12 @@
 }
 
 .col2 {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
 }
 
 .col2-el {
-  width: 50%;
-  margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .col2-el:first .img {
@@ -67,7 +99,34 @@
 }
 
 .col2-el .img  img {
-  width: 80%;
+  width: 90%;
+}
+
+.col2-quote {
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 50px;
+  line-height: 1em;
+}
+
+@media (--breakpoint-not-small) {
+  .col2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .col2-el {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+  .col2-el .img  img {
+    width: 80%;
+  }
+  .col2-quote {
+    margin: 140px 0;
+  }
 }
 
 .mb-50 {
@@ -78,25 +137,26 @@
   margin-top: 50px;
 }
 
-.quote {
-  font-size: 80px;
+.quote,
+.col2-quote {
+  font-size: 40px;
   line-height: .9em;
   text-transform: none;
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
-.interview__answer,
-.col2-quote {
-  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
+@media (--breakpoint-not-small) {
+  .quote {
+    font-size: 80px;
+    line-height: .9em;
+  }
 }
 
+
+.interview__answer,
 .col2-quote {
-  margin: 140px 0;
-  text-align: center;
-  width: 100%;
-  padding: 0 50px;
-  font-size: 60px;
-  line-height: 1em;
+
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
 .story {
