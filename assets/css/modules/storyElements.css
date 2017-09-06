@@ -17,6 +17,14 @@
   padding-bottom: 50px;
 }
 
+.story__fullWidthImg {
+  margin-bottom: 50px;
+}
+
+.story__fullWidthImg img {
+  width: 100%;
+}
+
 .col3 {
   display: flex;
   width: 100%;
@@ -25,7 +33,15 @@
 }
 
 .col3-el img {
-  width: 100%;
+  width: 80%;
+}
+
+.col3-el:nth-child(2) {
+  text-align: center;
+}
+
+.col3-el:nth-child(3) {
+  text-align: right;
 }
 
 .interview__section {
@@ -52,12 +68,34 @@
 }
 
 .col2-el .img  img {
-  width: 70%;
+  width: 80%;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.quote {
+  font-size: 80px;
+  line-height: .9em;
+  text-transform: none;
+  font-family: 'Helvetica Neue LT Std 53 Extended';
+}
+
+.interview__answer,
+.col2-quote {
+  font-family: 'Helvetica Neue LT Std 53 Extended';
 }
 
 .col2-quote {
-  margin: 100px 0;
+  margin: 140px 0;
   text-align: center;
   width: 100%;
   padding: 0 50px;
+  font-size: 60px;
+  line-height: 1em;
 }

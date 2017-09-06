@@ -1,9 +1,17 @@
-  .f1, .f1a, .f2, .f3, .f4 {
-    font-family: 'Helvetica Neue LT Pro 93 Black Extended', sans-serif;
-  }
-  .f5, .b1, .b2, .b3, {
-    font-family: 'Helvetica Neue LT Std 53 Extended';
-  }
+
+.f1, .f1a, .f2, .f3, .f4 {
+  font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif;
+}
+.f5, .b1, .b2, .b3, {
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
+}
+
+.hStd {
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt' !important;
+}
+.hBlk {
+  font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif !important;
+}
 
 /*  .b4, h6 {
     font-family: 'Avenir', sans-serif;
