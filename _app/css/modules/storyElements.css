@@ -1,0 +1,62 @@
+.story__title {
+  margin: 0;
+  text-align: center;
+  line-height: 1em;
+  padding-top: 20px;
+}
+
+.story__title__gbts { font-size: 6.5vw; }
+
+.story__container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.story__lead {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.col3 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.col3-el img {
+  width: 100%;
+}
+
+.interview__section {
+  padding-bottom: 50px;
+}
+
+.col2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.col2-el {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.col2-el:first .img {
+  text-align: left;
+}
+.col2-el:nth-child(2) .img {
+  text-align: right;
+}
+
+.col2-el .img  img {
+  width: 70%;
+}
+
+.col2-quote {
+  margin: 100px 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 50px;
+}

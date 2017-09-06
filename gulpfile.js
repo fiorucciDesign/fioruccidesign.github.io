@@ -99,6 +99,27 @@ gulp.task('build:styles', function() {
     .pipe(gulp.dest(jekyllStyleFiles))
     .pipe(gulp.dest('_site/assets/css'))
     .on('error', gutil.log);
+
+
+  gulp.src('_app/css/editorial.css')
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(jekyllStyleFiles))
+    .pipe(gulp.dest('_site/assets/css'))
+    .on('error', gutil.log);
+});
+
+gulp.task('build:editorialStyles', function() {
+  var processors = [
+      atImport(),
+      customMedia(),
+      cssvariables()
+  ];
+
+  gulp.src('_app/css/editorial.css')
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(jekyllStyleFiles))
+    .pipe(gulp.dest('_site/assets/css'))
+    .on('error', gutil.log);
 });
 
 // Places all fonts in appropriate location(s)
@@ -164,15 +185,15 @@ gulp.task('serve', () => {
     }
   });
 
-  gulp.watch('_app/css/**/*.css', ['build:styles']);
+  gulp.watch('_app/css/**/*.css', ['build:styles', 'build:editorialStyles']);
   gulp.watch('_app/js/**/*.js', ['build:scripts']);
   gulp.watch(['_app/images/**/*'], ['build:images']);
 
   // Watch Jekyll html files
-  gulp.watch(['*.html', '_includes/**/*.html'], ['jekyll']);
+  gulp.watch(['*.html', 'editorial/**/*.html', '_includes/**/*.html'], ['jekyll']);
 
 });
 
-gulp.task('default', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'jekyll', 'serve']);
-gulp.task('build', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'jekyll']);
+gulp.task('default', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'build:editorialStyles', 'jekyll', 'serve']);
+gulp.task('build', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'build:editorialStyles', 'jekyll']);
 
