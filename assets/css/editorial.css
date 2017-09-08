@@ -5951,8 +5951,8 @@ body, html {
 
 @media screen and (min-width: 800px) {
   .quote {
-    font-size: 80px;
-    line-height: .9em;
+    font-size: 66px;
+    line-height: 1em;
   }
 }
 

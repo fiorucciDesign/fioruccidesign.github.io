@@ -176,8 +176,8 @@ body, html {
 
 @media (--breakpoint-not-small) {
   .quote {
-    font-size: 80px;
-    line-height: .9em;
+    font-size: 66px;
+    line-height: 1em;
   }
 }
 
