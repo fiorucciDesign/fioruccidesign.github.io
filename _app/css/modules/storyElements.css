@@ -1,3 +1,7 @@
+body, html {
+  height: 100%;
+}
+
 .story__title {
   margin: 0;
   text-align: center;
@@ -186,4 +190,36 @@
 
 .story {
   overflow: hidden;
+}
+
+.landingLeft,
+.landingRight {
+  background-image:url('http://placehold.it/700x500');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.landingRight {
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_3row-1_col-3-min.jpg');
+}
+
+.landingLeft {
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/_misc/080917_landing_storeImage.jpg');
+}
+
+@media (--breakpoint-not-small) {
+.landingLeft,
+.landingRight {
+  background-size: 70%;
+  }
+}
+
+.landingButton {
+  text-decoration: none;
+  font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 25px;
+  padding-bottom: 20px;
 }
