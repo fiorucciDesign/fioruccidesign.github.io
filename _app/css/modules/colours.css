@@ -16,6 +16,7 @@
 
   --neonGreen: #6EFF00;
   --denimTan: #FDE2C4;
+  --darkGreen: #179961;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
 .bg-white {background: var(--white);}
 
 .bg-green {background: var(--green);}
+.bg-darkGreen {background: var(--darkGreen);}
 .bg-blue {background: var(--blue);}
 
 .bg-yellow {background: var(--yellow);}

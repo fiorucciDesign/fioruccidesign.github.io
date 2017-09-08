@@ -5,6 +5,9 @@
 .f5, .b1, .b2, .b3, {
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
+.story {
+  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
+}
 .hStd,
 .interview__answer {
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt' !important;
