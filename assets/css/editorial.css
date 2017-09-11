@@ -2619,6 +2619,9 @@ code, .code {
 .w-80 {  width:  80%; }
 
 
+.w-90 {  width:  90%; }
+
+
 .w-100 { width: 100%; }
 
 
@@ -5740,7 +5743,7 @@ body, html {
 .story__title__tomato  {font-size: 10.7vw;}
 
 
-.story__title__archive {font-size: 4.2vw;}
+.story__title__underconstruction {font-size: 6vw;}
 
 
 .story__container {
