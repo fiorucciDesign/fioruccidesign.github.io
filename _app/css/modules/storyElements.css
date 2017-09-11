@@ -10,7 +10,9 @@ body, html {
 
 .story__title__gbts    {font-size: 6.5vw;}
 .story__title__tomato  {font-size: 10.7vw;}
+.story__title__archive {font-size: 4.2vw;}
 .story__title__underconstruction {font-size: 6vw;}
+
 .story__container {
   max-width: 700px;
   margin: 0 auto;
@@ -176,7 +178,7 @@ body, html {
 
 @media (--breakpoint-not-small) {
   .quote {
-    font-size: 66px;
+    font-size: 56px;
     line-height: 1em;
   }
 }

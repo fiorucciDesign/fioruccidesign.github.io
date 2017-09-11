@@ -5743,6 +5743,9 @@ body, html {
 .story__title__tomato  {font-size: 10.7vw;}
 
 
+.story__title__archive {font-size: 4.2vw;}
+
+
 .story__title__underconstruction {font-size: 6vw;}
 
 
@@ -5954,7 +5957,7 @@ body, html {
 
 @media screen and (min-width: 800px) {
   .quote {
-    font-size: 66px;
+    font-size: 56px;
     line-height: 1em;
   }
 }
