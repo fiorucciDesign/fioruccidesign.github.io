@@ -3,27 +3,27 @@ body {
 }
 
 .f1, .f1a, .f2, .f3, .f4 {
-  font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif;
+  font-family: "Helvetica Neue LT Pro 93 Black Extended", "HelveticaExtBQ", sans-serif;
 }
 .f5, .b1, .b2, .b3, {
-  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt', sans-serif !important;
+  font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
 
 .story {
-  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt', sans-serif !important;
+  font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
 
 .hStd,
 .interview__answer,
 .article {
-  font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt', sans-serif !important;
+  font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
 .hBlk {
-  font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif !important;
+  font-family: "Helvetica Neue LT Pro 93 Black Extended", "HelveticaExtBQ", sans-serif !important;
 }
 
   .b4, h6 {
-    font-family: 'Avenir', sans-serif;
+    font-family: "Avenir", sans-serif;
   }
 
   .f1 {
@@ -57,7 +57,7 @@ body {
   }
 
   .f5 {
-    font-size: 1.25em;
+    font-size: .7em;
     line-height: 1em;
   }
 

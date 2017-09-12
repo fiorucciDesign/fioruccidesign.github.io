@@ -2,6 +2,10 @@ body, html {
   height: 100%;
 }
 
+.story a {
+  text-decoration: underline !important;
+}
+
 .story__title {
   margin: 0;
   text-align: center;
@@ -13,6 +17,8 @@ body, html {
 .story__title__tomato  {font-size: 10.7vw;}
 
 .story__title__archive {font-size: 4.1vw;}
+
+.story__title__denim {font-size: 6.5vw;}
 
 .story__title__underconstruction {font-size: 6vw;}
 

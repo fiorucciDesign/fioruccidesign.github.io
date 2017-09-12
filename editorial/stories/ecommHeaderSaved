@@ -1,0 +1,20 @@
+<p><img alt="Fiorucci is back" src="background-min-1.jpeg?$staticlink$" title="Fiorucci is back" /></p>
+
+<p>&nbsp;</p>
+
+<div class="boxForText">
+<div class="header-desktop">
+<h1>Fiorucci is back</h1>
+
+</div>
+
+<div class="header-mobile">
+<p>Fiorucci is back</p>
+</div>
+</div>
+
+<div class="shop-buttons">
+<div class="btn-women"><a href="$url('Search-Show', 'cgid', 'women-newarrivals')$">Shop Women</a></div>
+
+<div class="btn-men"><a href="$url('Search-Show', 'cgid', 'men-newarrivals')$">Shop Men</a></div>
+</div>
