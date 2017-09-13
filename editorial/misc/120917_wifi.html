@@ -1,0 +1,65 @@
+---
+layout: editorial
+---
+<div class="bg-yellow blue h-100">
+  <div class="absolute top-0 pa4 tc w-100">
+    <img class="w-100 w-40-ns" src="/assets/images/wifi/FIORUCCI_LOGO_BLUE.png" />
+  </div>
+  <div class="w-100 w-40-ns center pa4 h-100 flex items-center">
+    <div class="w-100">
+      <form action="/" method="post">
+        <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%">
+        <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
+
+        <div id="ft_sb">
+
+
+          <p id="note" class="f2 tc">
+            <img src="/assets/images/wifi/FIORUCCI_TEXT.png" />
+          </p>
+          <div id="auth">
+            <input name="%%USERNAMEID%%" id="ft_un" type="text" autocorrect="off" autocapitalize="off" class="w-100 bg-none tc pv3 ba bw1 blue" style="border-color: #0070CD;" placeholder="YOUR EMAIL">
+
+            <input type="submit" class="w-100 tc bg-blue ba0 pv3 mt2"  style="border: none; background-image:url('/assets/images/wifi/FIORUCCI_CTA.png'); background-size: 148px; background-repeat: no-repeat; background-position: center;" id="ft_ci" value="">
+            </p>
+          </div>
+        </div>
+      </form>
+      </div>
+  </div>
+</div>
+    <script>
+      var def_msg = "Please enter your e-mail address to continue";
+      var cb = get("ft_ad");
+      var un = get("ft_un");
+      var ci = get("ft_ci");
+      var note = get("note");
+      var adl = get("ft_adl");
+      if (cb && un && note && adl) {
+        cb.onclick = cb_click;
+        cb_click.apply(cb, [def_msg]);
+      }
+      function get(x) {
+        return document.getElementById(x);
+      }
+      function tc(elm, cn, tg) {
+        if (!elm) return;
+        if (tg) elm.className += " " + cn;
+        else elm.className = elm.className.replace(cn,'');
+      }
+      function cb_click(msg) {
+        var en = !this.checked;
+        un.disabled = en;
+        ci.disabled = en;
+        tc(adl, "hl", en);
+        tc(note, "hl", !en);
+        if(typeof msg === "string") {
+          note.innerHTML = msg;
+        }
+        else {
+          note.innerHTML = def_msg;
+        }
+      }
+
+    </script>
+
