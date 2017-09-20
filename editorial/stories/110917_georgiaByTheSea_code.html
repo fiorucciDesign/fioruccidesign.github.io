@@ -1,4 +1,30 @@
 <style type="text/css">
+/*- remove font-face*/
+/* TACHYONS v4.0.8 | github.com/tachyons-css/tachyons */
+
+
+/*
+ *    ████████╗ █████╗  ██████╗██╗  ██╗██╗   ██╗ ██████╗ ███╗   ██╗███████╗
+ *    ╚══██╔══╝██╔══██╗██╔════╝██║  ██║╚██╗ ██╔╝██╔═══██╗████╗  ██║██╔════╝
+ *       ██║   ███████║██║     ███████║ ╚████╔╝ ██║   ██║██╔██╗ ██║███████╗
+ *       ██║   ██╔══██║██║     ██╔══██║  ╚██╔╝  ██║   ██║██║╚██╗██║╚════██║
+ *       ██║   ██║  ██║╚██████╗██║  ██║   ██║   ╚██████╔╝██║ ╚████║███████║
+ *       ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+ *
+ *    TABLE OF CONTENTS
+ *
+ *    1. External Library Includes
+ *       - Normalize.css | http://normalize.css.github.io
+ *    2. Tachyons Modules
+ *    3. Variables
+ *       - Media Queries
+ *       - Colors
+ *    4. Debugging
+ *       - Debug all
+ *       - Debug children
+ *
+ */
+
 
 /* External Library Includes */
 
@@ -13,7 +39,7 @@
  */
 
 
-html {
+.story {
   font-family: sans-serif; /* 1 */
   line-height: 1.15; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
@@ -26,12 +52,12 @@ html {
  */
 
 
-body {
+.story {
   margin: 0;
 }
 
 
-/* HTML5 display definitions
+/* .story5 display definitions
    ========================================================================== */
 
 
@@ -73,22 +99,10 @@ body {
  */
 
 
-a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
-}
-
-
 /**
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
-
-
-a:active,
-a:hover {
-  outline-width: 0;
-}
 
 
 /* Text-level semantics
@@ -293,8 +307,8 @@ img {
 */
 
 
-html,
-body,
+.story,
+.story,
 div {
   box-sizing: border-box;
 }
@@ -314,7 +328,7 @@ div {
 
 /*
   Often used in combination with background image set as an inline style
-  on an html element.
+  on an .story element.
 */
 
 
@@ -752,13 +766,13 @@ div {
 /* Text colors */
 
 
-.blue { color: #005399; }
+.blue { color: #357edd; }
 
 
 /* Background colors */
 
 
-.bg-yellow { background-color: #FFC000; }
+.bg-yellow { background-color: #ffde37; }
 
 
 /* Skins for specific pseudoclasses */
@@ -936,7 +950,7 @@ div {
 
 /*
     Text that is hidden but accessible
-    Ref: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+    Ref: http://snook.ca/archives/.story_and_css/hiding-content-for-accessibility
 */
 
 
@@ -1012,7 +1026,7 @@ div {
   DOCUMENTATION
 
   MDN: https://developer.mozilla.org/en/docs/Web/CSS/z-index
-  Spec: http://www.w3.org/TR/CSS2/zindex.html
+  Spec: http://www.w3.org/TR/CSS2/zindex..story
 
   Tips on extending:
   There might be a time worth using negative z-index values.
@@ -1118,48 +1132,71 @@ body {
   color: #000000;
 }
 
-
 .bg-yellow {background: #FFC000;}
-
 
 .blue {color: #005399;}
 
-
-body {
-  font-size: 16px;
+@font-face {
+  font-family: 'Helvetica Neue LT Pro 93 Black Extended';
+  src: url('../fonts/HelveticaNeueLTPro-BlkEx.eot');
+  src: url('../fonts/HelveticaNeueLTPro-BlkEx.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeueLTPro-BlkEx.woff2') format('woff2'),
+  url('../fonts/HelveticaNeueLTPro-BlkEx.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTPro-BlkEx.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica Neue LT Std 53 Extended';
+  src: url('../fonts/HelveticaNeueLTStd-Ex.eot');
+  src: url('../fonts/HelveticaNeueLTStd-Ex.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeueLTStd-Ex.woff2') format('woff2'),
+  url('../fonts/HelveticaNeueLTStd-Ex.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTStd-Ex.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sssta';
+  src: url('../fonts/sssta.eot');
+  src: url('../fonts/sssta.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/sssta.woff2') format('woff2'),
+  url('../fonts/sssta.woff') format('woff'),
+  url('../fonts/sssta.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.story {
+  font-size: 16px;
+}
 
 .f1, .f3 {
   font-family: "Helvetica Neue LT Pro 93 Black Extended", "HelveticaExtBQ", sans-serif;
 }
 
-
 .f5, .b1, .b2,  {
   font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
 
-
 .story {
   font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
-
 
 .hStd,
 .interview__answer {
   font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
 }
 
-
 .hBlk {
   font-family: "Helvetica Neue LT Pro 93 Black Extended", "HelveticaExtBQ", sans-serif !important;
 }
 
-
 .b4 {
     font-family: "Avenir", sans-serif;
   }
-
 
 .f1 {
     font-size: 4em;
@@ -1167,101 +1204,36 @@ body {
     text-transform: uppercase;
   }
 
-
 .f3 {
     font-size: 1.13em;
     line-height: 1.3em;
     text-transform: uppercase;
   }
 
-
 .f5 {
     font-size: .7em;
     line-height: 1em;
   }
-
 
 .b1 {
     font-size: 1.25em;
     line-height: 1em;
   }
 
-
 .b2 {
     font-size: 18px;
     line-height: 28px;
   }
-
 
 .b4 {
     font-size: 14px;
     line-height: 24px;
   }
 
-
-@media screen and (min-width: 801px) and (max-width: 1300px) {
-  body {
-    color: green !important;
-  }
-  .f1 {
-    font-size: 6.5em;
-    line-height: 0.9em;
-    text-transform: uppercase;
-  }
-
-  .f3 {
-    font-size: 1.2em;
-    line-height: 1.3em;
-    text-transform: uppercase;
-  }
-
-  .f5 {
-    font-size: .8em;
-    line-height: 1em;
-  }
-
-  .b1 {
-    font-size: 1.9em;
-    line-height: 1em;
-  }
-
-  .b2 {
-    font-size: 1.1em;
-    line-height: 1.4em;
-  }
-
-  .b4 {
-    font-size: .9em;
-    line-height: 1.2em;
-  }
-}
-
-
-@media screen and (min-width: 1301px) {
-  body {
-    font-size: 40px;
-  }
-
-  .f3 {
-    font-size: 0.7em;
-    line-height: 1.2em;
-  }
-  .b2 {
-    font-size: .55em;
-    line-height: 1.6em;
-  }
-}
-
-
 body, html {
   height: 100%;
+  margin: 0;
 }
-
-
-.story a {
-  text-decoration: underline !important;
-}
-
 
 .story__title {
   margin: 0;
@@ -1269,9 +1241,7 @@ body, html {
   line-height: 1em;
 }
 
-
 .story__title__gbts    {font-size: 6.5vw;}
-
 
 .story__container {
   max-width: 700px;
@@ -1279,7 +1249,6 @@ body, html {
   padding-left: 30px;
   padding-right: 30px;
 }
-
 
 .story__lead {
   padding: 50px 0px;
@@ -1289,105 +1258,56 @@ body, html {
   padding-right: 30px;
 }
 
-
-@media screen and (min-width: 800px) {
-  .story__container,
-  .story__lead {
-  padding-left: 0px;
-  padding-right: 0px;
-  }
-}
-
-
-@media screen and (min-width: 1301px) {
-  .story__container {
-    max-width: 1000px;
-  }
-  .story__lead {
-    max-width: 1200px;
-    padding: 100px 0;
-  }
-}
-
-
 .story__fullWidthImg img {
   width: 100%;
 }
-
 
 .col3-el {
   width: 100%;
   margin-bottom: 30px;
 }
 
-
 .col3-el img {
   width: 90%;
 }
-
 
 .col3-el:nth-child(2) {
   text-align: center;
 }
 
-
 .col3-el:nth-child(2) img {
   width: 100%;
 }
-
 
 .col3-el:nth-child(3) {
   text-align: right;
   margin-bottom: 0;
 }
 
-
-@media screen and (min-width: 800px) {
-  .col3 {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  .col3-el {
-    width: none;
-    margin-bottom: 0px;
-  }
-  .col3-el img {
-    width: 80%;
-  }
-}
-
-
 .col2 {
   width: 100%;
 }
-
 
 .col2-el {
   width: 100%;
   padding-bottom: 30px;
 }
 
-
 .col2-el:nth-child(2) {
   padding-bottom: 0px;
 }
-
 
 .col2-el:first .img {
   text-align: left;
 }
 
-
 .col2-el:nth-child(2) .img {
   text-align: right;
 }
 
-
 .col2-el .img  img {
   width: 90%;
 }
-
 
 .col2-quote {
   text-align: center;
@@ -1396,43 +1316,13 @@ body, html {
   line-height: 1em;
 }
 
-
-@media screen and (min-width: 800px) {
-  .col2 {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .col2-el {
-    width: 50%;
-  }
-  .col2-el .img  img {
-    width: 80%;
-  }
-  .col2-quote {
-    margin: 140px 0;
-  }
-}
-
-
 .mb-50 {margin-bottom: 50px;}
-
 
 .mt-50 {margin-top: 50px;}
 
-
 .pt-50 {padding-top: 50px;}
 
-
 .pb-50 {padding-bottom: 50px;}
-
-
-@media screen and (min-width: 1301px) {
-  .pt-100-l {padding-top: 100px;}
-  .pb-100-l {padding-bottom: 100px;}
-}
-
 
 .quote,
 .col2-quote {
@@ -1442,36 +1332,25 @@ body, html {
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
-
-@media screen and (min-width: 800px) {
-  .quote {
-    font-size: 56px;
-    line-height: 1em;
-  }
-}
-
-
 .interview__answer,
 .col2-quote {
 
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
 
-
 .story {
   overflow: hidden;
 }
 
-
 </style>
 
-<div class="story bg-yellow cf">
+<div class="story bg-yellow cf w-100">
 
   <div class="f1 story__title story__title__gbts blue">
     GEORGIA BY THE SEA
   </div>
 
-  <div class="story__hero">
+  <div class="story__hero w-100">
     <img class="w-100" src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_hero-min.jpg" />
 
   </div>
@@ -1483,31 +1362,31 @@ body, html {
   <div class="story__container-fw col3 pb-50 pb-100-l">
     <div class="col3-el">
       <div class="img">
-        <a href="">
+        <!-- <a href=""> -->
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_3row-1_col-1-min.jpg" />
-        </a>
+        <!-- </a> -->
         <div class="f5 tl blue pl2">
-          Georgia in <a href="" class="blue">Gold</a>
+          <!-- Georgia in <a href="" class="blue">Gold</a> -->
         </div>
       </div>
     </div>
     <div class="col3-el">
       <div class="img">
-        <a href="">
+        <!-- <a href=""> -->
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_3row-1_col-2-min.jpg" />
-        </a>
+        <!-- </a> -->
         <div class="f5 tl blue pl2 pl0-ns">
-          Earn your <a href="" class="blue">stripes</a>
+          <!-- Earn your <a href="" class="blue">stripes</a> -->
         </div>
       </div>
     </div>
     <div class="col3-el">
       <div class="img">
-        <a href="">
+        <!-- <a href=""> -->
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_3row-1_col-3-min.jpg" />
-        </a>
+        <!-- </a> -->
         <div class="f5 tl blue fr w-90 w-80-ns">
-          Sunshine, blue skies + <a href="" class="blue">The Fiorucci Logo Tee</a>
+          <!-- Sunshine, blue skies + <a href="" class="blue">The Fiorucci Logo Tee</a> -->
         </div>
       </div>
     </div>
@@ -1536,9 +1415,11 @@ body, html {
   <div class="story__container-fw col2 pb-50 pb-100-l">
     <div class="col2-el">
       <div class="img mb-50 mb0-ns">
-        <a href=""><img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_2row-1_col-1-min.jpg" /></a>
+        <!-- <a href=""> -->
+          <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_2row-1_col-1-min.jpg" />
+        <!-- </a> -->
         <div class="f5 tl blue pl2">
-          Hitch a ride, <a href="" class="blue">Angel Crop</a>
+          <!-- Hitch a ride, <a href="" class="blue">Angel Crop</a> -->
         </div>
       </div>
       <div class="col2-quote center blue">
@@ -1603,21 +1484,23 @@ body, html {
   <div class="story__container-fw col2 pb-50 pb-100-l">
     <div class="col2-el">
       <div class="img">
-        <a href="">
+        <!-- <a href=""> -->
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_2row-2_col-1-min.jpg" />
+        <!-- </a> -->
           <div class="f5 tl blue pl2">
-            Wear <a href="" class="blue">Fiorucci Denim</a> In Ocean For Perfect Fit
+            Wear
+            <!-- <a href="" class="blue">Fiorucci Denim</a> In Ocean For Perfect Fit -->
           </div>
         </a>
       </div>
     </div>
     <div class="col2-el">
       <div class="img">
-        <a href="">
+        <!-- <a href=""> -->
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_2row-1_col-2-min.jpg" />
-        </a>
+        <!-- </a> -->
         <div class="f5 tl fr blue w-90 w-80-ns">
-          <a href="" class="blue">Fiorucci Swimsuit</a>, mud proof
+          <!-- <a href="" class="blue">Fiorucci Swimsuit</a>, mud proof -->
         </div>
       </div>
     </div>

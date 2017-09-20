@@ -1,5 +1,16 @@
+.c-header-50 {
+  height: 300px;
+}
+
+@media (--breakpoint-not-small) {
+  .c-header-50 {
+    height: 600px;
+  }
+}
+
 body, html {
   height: 100%;
+  margin: 0;
 }
 
 .story a {
@@ -12,10 +23,11 @@ body, html {
   line-height: 1em;
 }
 
+
 .story__title__gbts    {font-size: 6.5vw;}
 .story__title__tomato  {font-size: 10.7vw;}
 .story__title__archive {font-size: 4.1vw;}
-.story__title__denim {font-size: 6.5vw;}
+.story__title__denim {font-size: 6.3vw;}
 .story__title__underconstruction {font-size: 6vw;}
 
 .story__container {

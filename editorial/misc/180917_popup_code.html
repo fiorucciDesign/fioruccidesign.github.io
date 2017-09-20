@@ -1,3 +1,4 @@
+<style type="text/css">
 /* TACHYONS v4.0.8 | github.com/tachyons-css/tachyons */
 
 
@@ -50,7 +51,7 @@ html {
  */
 
 
-body {
+.story {
   margin: 0;
 }
 
@@ -544,7 +545,7 @@ textarea {
 
 
 html,
-body,
+.story,
 div,
 article,
 section,
@@ -5394,7 +5395,7 @@ img { max-width: 100%; }
 /* @import './_debug'; */
 
 
-body {
+.story {
   color: #000000;
 }
 
@@ -5521,43 +5522,6 @@ body {
 
 .ph-blue::placeholder {color: #005399; opacity: 1;}
 
-
-@font-face {
-  font-family: 'Helvetica Neue LT Pro 93 Black Extended';
-  src: url('../fonts/HelveticaNeueLTPro-BlkEx.eot');
-  src: url('../fonts/HelveticaNeueLTPro-BlkEx.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/HelveticaNeueLTPro-BlkEx.woff2') format('woff2'),
-  url('../fonts/HelveticaNeueLTPro-BlkEx.woff') format('woff'),
-  url('../fonts/HelveticaNeueLTPro-BlkEx.svg#webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Helvetica Neue LT Std 53 Extended';
-  src: url('../fonts/HelveticaNeueLTStd-Ex.eot');
-  src: url('../fonts/HelveticaNeueLTStd-Ex.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/HelveticaNeueLTStd-Ex.woff2') format('woff2'),
-  url('../fonts/HelveticaNeueLTStd-Ex.woff') format('woff'),
-  url('../fonts/HelveticaNeueLTStd-Ex.svg#webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'sssta';
-  src: url('../fonts/sssta.eot');
-  src: url('../fonts/sssta.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/sssta.woff2') format('woff2'),
-  url('../fonts/sssta.woff') format('woff'),
-  url('../fonts/sssta.svg#webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
 .story {
   font-size: 16px;
 }
@@ -5667,9 +5631,6 @@ body {
 
 
 @media screen and (min-width: 801px) and (max-width: 1300px) {
-  body {
-    color: green !important;
-  }
   .f1 {
     font-size: 6.5em;
     line-height: 0.9em;
@@ -5733,7 +5694,7 @@ body {
 
 
 @media screen and (min-width: 1301px) {
-  body {
+  .story {
     font-size: 40px;
   }
 
@@ -5748,19 +5709,7 @@ body {
 }
 
 
-.c-header-50 {
-  height: 300px;
-}
-
-
-@media screen and (min-width: 800px) {
-  .c-header-50 {
-    height: 600px;
-  }
-}
-
-
-body, html {
+.story, html {
   height: 100%;
   margin: 0;
 }
@@ -6072,3 +6021,21 @@ body, html {
   padding-top: 25px;
   padding-bottom: 20px;
 }
+
+
+</style>
+
+<div class="story h-100 bg-yellow blue flex items-center tc pv5">
+  <div class="w-100 pa4 w-80-ns center">
+    <h1 class="f1 mb0 blue">You’re on the&nbsp;list!</h1>
+    <div class="ph4 blue">Here's 15% off. Use this voucher code when you checkout. Make a note. Enjoy.</div>
+    <div class="dib mt3">
+      <div class="bg-blue yellow pa4 f4" style="border: solid 2px #005399;">
+        VOUCHER CODE:
+      </div>
+      <div class="bg-yellow blue pa4 f4" style="border: solid 2px #005399;">
+        ONTHELIST
+      </div>
+    </div>
+  </div>
+</div>

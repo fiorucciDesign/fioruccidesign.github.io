@@ -1,4 +1,43 @@
 <style type="text/css">
+/* TACHYONS v4.0.8 | github.com/tachyons-css/tachyons */
+
+
+/*
+ *    ████████╗ █████╗  ██████╗██╗  ██╗██╗   ██╗ ██████╗ ███╗   ██╗███████╗
+ *    ╚══██╔══╝██╔══██╗██╔════╝██║  ██║╚██╗ ██╔╝██╔═══██╗████╗  ██║██╔════╝
+ *       ██║   ███████║██║     ███████║ ╚████╔╝ ██║   ██║██╔██╗ ██║███████╗
+ *       ██║   ██╔══██║██║     ██╔══██║  ╚██╔╝  ██║   ██║██║╚██╗██║╚════██║
+ *       ██║   ██║  ██║╚██████╗██║  ██║   ██║   ╚██████╔╝██║ ╚████║███████║
+ *       ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+ *
+ *    TABLE OF CONTENTS
+ *
+ *    1. External Library Includes
+ *       - Normalize.css | http://normalize.css.github.io
+ *    2. Tachyons Modules
+ *    3. Variables
+ *       - Media Queries
+ *       - Colors
+ *    4. Debugging
+ *       - Debug all
+ *       - Debug children
+ *
+ */
+
+
+/* External Library Includes */
+
+
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+
+
 html {
   font-family: sans-serif; /* 1 */
   line-height: 1.15; /* 2 */
@@ -12,7 +51,7 @@ html {
  */
 
 
-body {
+.story {
   margin: 0;
 }
 
@@ -280,7 +319,7 @@ img {
 
 
 html,
-body,
+.story,
 div {
   box-sizing: border-box;
 }
@@ -792,6 +831,12 @@ div {
 .pl2 { padding-left: .5rem; }
 
 
+.pt4 { padding-top: 2rem; }
+
+
+.mb2  {  margin-bottom: .5rem; }
+
+
 /*
 
   TABLES
@@ -837,6 +882,9 @@ div {
 
 
 .f1 { font-size: 1.8rem; }
+
+
+.f3 { font-size: 1.5rem; }
 
 
 .f5 { font-size: 1rem; }
@@ -1072,7 +1120,7 @@ img { max-width: 100%; }
 /* @import './_debug'; */
 
 
-body {
+.story {
   color: #000000;
 }
 
@@ -1082,12 +1130,14 @@ body {
 
 .blue {color: #005399;}
 
-body {
+
+
+.story {
   font-size: 16px;
 }
 
 
-.f1 {
+.f1, .f3 {
   font-family: "Helvetica Neue LT Pro 93 Black Extended", "HelveticaExtBQ", sans-serif;
 }
 
@@ -1115,6 +1165,13 @@ body {
   }
 
 
+.f3 {
+    font-size: 1.13em;
+    line-height: 1.3em;
+    text-transform: uppercase;
+  }
+
+
 .f5 {
     font-size: .7em;
     line-height: 1em;
@@ -1134,12 +1191,18 @@ body {
 
 
 @media screen and (min-width: 801px) and (max-width: 1300px) {
-  body {
+  .story {
     color: green !important;
   }
   .f1 {
     font-size: 6.5em;
     line-height: 0.9em;
+    text-transform: uppercase;
+  }
+
+  .f3 {
+    font-size: 1.2em;
+    line-height: 1.3em;
     text-transform: uppercase;
   }
 
@@ -1161,8 +1224,13 @@ body {
 
 
 @media screen and (min-width: 1301px) {
-  body {
+  .story {
     font-size: 40px;
+  }
+
+  .f3 {
+    font-size: 0.7em;
+    line-height: 1.2em;
   }
   .b2 {
     font-size: .55em;
@@ -1171,7 +1239,7 @@ body {
 }
 
 
-body, html {
+.story, html {
   height: 100%;
 }
 
@@ -1330,8 +1398,10 @@ body, html {
   overflow: hidden;
 }
 
-
 </style>
+---
+layout: editorial
+---
 
 <div class="story bg-red blue cf">
 
@@ -1347,7 +1417,6 @@ body, html {
     </div>
     <div class="col3-el">
       <div class="img">
-
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/110917_Denim/old-01-min.jpg" />
       </div>
     </div>
@@ -1360,7 +1429,11 @@ body, html {
 
 
   <div class="story__lead b1 hStd " >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Fiorucci’s Italian-made jeans have come with various claims over the years:
+    – “the best in the world”; “ highly recommended by everyone” – but they’ve
+    always been designed with one goal in mind: making you look phenomenal.
+    That’s still true today. How amazing are they exactly? All we can say is: Marc
+    Jacobs got his first pair in his early teens, and look what happened to him.
   </div>
 
   <div class="story__container pb-50 pb-100-l">
@@ -1368,13 +1441,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/110917_Denim/11.jpg" />
     </a>
     <div class="f5">
-      <a href="" class="blue">Yves Cigarette Jean</a>
+      <!-- <a href="" class="blue">Yves Cigarette Jean</a> -->
     </div>
   </div>
 
   <div class="story__container pb-50 pb-100-l">
     <div class="article b2">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="f3 mb2">
+        THE FIRST DESIGNER JEAN
+      </div>
+      When Elio Fiorucci first opened his Fiorucci store in Milan in the late 60s, the
+      jeans landscape was pretty much terrible. You had Levi’s, you had Lee, you had
+      Wrangler. And that, ladies and gentlemen, was it. Sensing an opportunity,
+      Fiorucci launched his own, more fun take on jeans, working with a bunch of
+      British designers to create the original designer denim brand. Now it’s back:
+      accept no substitutes.
     </div>
   </div>
 
@@ -1390,7 +1471,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/110917_Denim/02.jpg" />
         </a>
         <div class="f5 w-90 w-80-ns fr tl">
-          <a href="" class="blue">Yves Cigarette Jean</a>
+          <!-- <a href="" class="blue">Yves Cigarette Jean</a> -->
         </div>
       </div>
     </div>
@@ -1398,7 +1479,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   <div class="story__container pb-50 pb-100-l">
     <div class="article b2">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="f3 mb2">
+        THE FIRST SKINNY JEAN
+      </div>
+      We take it for granted, like Netflix and Tinder. But pre-1970, there was no such
+      thing as the skinny jean. The drainpipe silhouette was, in fact, another Fiorucci
+      innovation. Sometime in the late 60s, Elio Fiorucci was partying in Ibiza and
+      noticed how great it looked when women wore their jeans in the sea, and
+      emerged with the fabric clinging to their skin. Naturally, he wanted to bring the
+      party back home with him, so he decided to replicate the look, launching his
+      super-skinny Buffalo 70s jean in 1970. To accompany this game-changing
+      garment, photographer Olivier Toscani created a poster in which model Donna
+      Jordan wore the jeans while spraying grafitti on a wall. Today, you can get it on a
+      t-shirt. Plus the jeans, of course. What goes around comes around.
     </div>
   </div>
 
@@ -1409,7 +1502,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <img src="https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/110917_Denim/10.jpg" />
         </a>
         <div class="f5 fl pl2 tl">
-          <a href="" class="blue">Yves Cigarette Jean</a>
+          <!-- <a href="" class="blue">Yves Cigarette Jean</a> -->
         </div>
       </div>
     </div>
@@ -1422,7 +1515,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   <div class="story__container pb-50 pb-100-l">
     <div class="article b2">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      <div class="f3 mb2">
+        THE ORIGINAL STRETCH DENIM
+      </div>
+
+      No, Elio Fiorucci did not invent Lycra too. But, in 1982, when someone else did,
+      he came up with the fun idea of incorporating the pliable fibre into his jeans,
+      creating the incredibly flattering, wonderfully sculpting stretch-denim for which,
+      ever since, the brand has been renowned. In 2017, we’re continuing our
+      founder’s legacy by offering super stretchy jeans in a huge range of fits and cuts,
+      from raw-hemmed denim hot-pants to high-waisted mom jeans. Be kind to your
+
+      bum and treat it to what, back in the day, we called “the first antiaging system in
+      clothing”.
+
+
+      <div class="f3 mb2 pt4">
+        THE MORE IS MORE APPROACH
+      </div>
+
+      Fiorucci gets bored easily. Which is why we’ve always been very into
+      customising our jeans. Sometimes this meant handing a pair over to an artist like
+      Keith Haring, and asking him to go crazy. Sometimes this meant doing a deal
+      with a pop cultural kingpin like Mickey Mouse. Sometimes it just meant throwing
+      a fistful of patches at the situation. The result? Jeans that looked like true
+      originals.
     </div>
   </div>
 
@@ -1460,10 +1578,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   <div class="story__container pb-50 pb-100-l">
     <div class="article b2">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="f3 mb2">
+        THE ONE AND ONLY “SAFETY” JEAN
+      </div>
+
+Why “Safety”? Because they’re completely indestructible? Because they’re non-
+toxic? Because we just liked the look of the label? Any which way, these five-
+pocket jeans became iconic, and the name has stuck to this day. Be responsible,
+and look out for this seal of approval – after all, who knows what kind of scrapes
+you’ll get into next?
     </div>
   </div>
 
 
 </div>
+
+
 
