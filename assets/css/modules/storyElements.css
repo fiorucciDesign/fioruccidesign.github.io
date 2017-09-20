@@ -1,39 +1,39 @@
+.c-home-header {
+  height: 500px;
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_mobile.jpg');
+  background-position: center;
+    background-size: cover;
+}
+/*
+@media (--breakpoint-medium) {
+  .c-home-header  {
+    height: 600px;
+    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_desktop.jpg');
+    }
+}*/
 .c-header-50 {
   height: 300px;
 }
-
 body, html {
   height: 100%;
   margin: 0;
 }
-
-.story a {
-  text-decoration: underline !important;
-}
-
 .story__title {
   margin: 0;
   text-align: center;
   line-height: 1em;
 }
-
 .story__title__gbts    {font-size: 6.5vw;}
-
 .story__title__tomato  {font-size: 10.7vw;}
-
 .story__title__archive {font-size: 4.1vw;}
-
 .story__title__denim {font-size: 6.3vw;}
-
 .story__title__underconstruction {font-size: 6vw;}
-
 .story__container {
   max-width: 700px;
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
 }
-
 .story__lead {
   padding: 50px 0px;
   max-width: 900px;
@@ -41,89 +41,63 @@ body, html {
   padding-left: 30px;
   padding-right: 30px;
 }
-
 .story__fullWidthImg img {
   width: 100%;
 }
-
 .col3-el {
   width: 100%;
   margin-bottom: 30px;
 }
-
 .col3-el img {
   width: 90%;
 }
-
 .col3-el:nth-child(2) {
   text-align: center;
 }
-
 .col3-el:nth-child(2) img {
   width: 100%;
 }
-
 .col3-el:nth-child(3) {
   text-align: right;
   margin-bottom: 0;
 }
-
 .col2 {
   width: 100%;
 }
-
 .col2-el {
   width: 100%;
   padding-bottom: 30px;
 }
-
 .col2-el:nth-child(2) {
   padding-bottom: 0px;
 }
-
 .col2-el:first .img {
   text-align: left;
 }
-
 .col2-el:nth-child(2) .img {
   text-align: right;
 }
-
 .col2-el .img  img {
   width: 90%;
 }
-
 .col2-quote {
   text-align: center;
   width: 100%;
   padding: 0 50px;
   line-height: 1em;
 }
-
 .mb-50 {margin-bottom: 50px;}
-
 .mt-50 {margin-top: 50px;}
-
 .pt-50 {padding-top: 50px;}
-
 .pb-50 {padding-bottom: 50px;}
-
 .mb-100 {margin-bottom: 100px;}
-
 .mt-100 {margin-top: 100px;}
-
 .pt-100 {padding-top: 100px;}
-
 .pb-100 {padding-bottom: 100px;}
-
 .mb-200 {margin-bottom: 200px;}
-
 .mt-200 {margin-top: 200px;}
-
 .pt-200 {padding-top: 200px;}
-
 .pb-200 {padding-bottom: 200px;}
-
 .quote,
 .col2-quote {
   font-size: 40px;
@@ -131,17 +105,14 @@ body, html {
   text-transform: none;
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
-
 .interview__answer,
 .col2-quote {
 
   font-family: 'Helvetica Neue LT Std 53 Extended', 'HelveticaNeueExt';
 }
-
 .story {
   overflow: hidden;
 }
-
 .landingLeft,
 .landingRight {
   background-image:url('http://placehold.it/700x500');
@@ -149,15 +120,12 @@ body, html {
   background-position: center;
   background-size: cover;
 }
-
 .landingRight {
   background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/060917_georgiaByTheSea/0917_GeorgiaByTheSeaside_3row-1_col-3-min.jpg');
 }
-
 .landingLeft {
   background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/editorial/_misc/080917_landing_storeImage.jpg');
 }
-
 .landingButton {
   text-decoration: none;
   font-family: 'Helvetica Neue LT Pro 93 Black Extended', 'HelveticaExtBQ', sans-serif;

@@ -1,3 +1,24 @@
+.c-home-header {
+  height: 500px;
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_mobile.jpg');
+  background-position: center;
+    background-size: cover;
+}
+/*
+@media (--breakpoint-medium) {
+  .c-home-header  {
+    height: 600px;
+    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_desktop.jpg');
+    }
+}*/
+
+@media (--breakpoint-not-small) {
+  .c-home-header  {
+    height: 600px;
+    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_desktop.jpg');
+    }
+}
+
 .c-header-50 {
   height: 300px;
 }
@@ -11,10 +32,6 @@
 body, html {
   height: 100%;
   margin: 0;
-}
-
-.story a {
-  text-decoration: underline !important;
 }
 
 .story__title {

@@ -43,10 +43,13 @@ body {
 
 .bg-denimTan {background: var(--denimTan);}
 
+.bg-mint {background: #3FD4AD;}
+
 
 .grey {color: var(--grey);}
 .black {color: var(--black);}
 .white {color: var(--white);}
+.mint {color: #3FD4AD;}
 
 .green {color: var(--green);}
 .blue {color: var(--blue);}
