@@ -2589,6 +2589,9 @@ code, .code {
 .w5 {    width: 16rem; }
 
 
+.w6 {    width: 22rem; }
+
+
 .w-10 {  width:  10%; }
 
 
@@ -2634,6 +2637,7 @@ code, .code {
   .w3-ns {  width: 4rem; }
   .w4-ns {  width: 8rem; }
   .w5-ns {  width: 16rem; }
+  .w6-ns {    width: 22rem; }
   .w-10-ns { width:  10%; }
   .w-20-ns { width:  20%; }
   .w-25-ns { width:  25%; }
@@ -2655,6 +2659,7 @@ code, .code {
   .w3-m {      width: 4rem; }
   .w4-m {      width: 8rem; }
   .w5-m {      width: 16rem; }
+  .w6-m {    width: 22rem; }
   .w-10-m { width:  10%; }
   .w-20-m { width:  20%; }
   .w-25-m { width:  25%; }
@@ -2676,6 +2681,7 @@ code, .code {
   .w3-l {      width: 4rem; }
   .w4-l {      width: 8rem; }
   .w5-l {      width: 16rem; }
+  .w6-l {    width: 22rem; }
   .w-10-l {    width:  10%; }
   .w-20-l {    width:  20%; }
   .w-25-l {    width:  25%; }
@@ -5756,7 +5762,7 @@ body {
 
 .c-home-header {
   height: 500px;
-  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_mobile.jpg');
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/290917/290917_HEADER_DESKTOP-min.jpg');
   background-position: center;
     background-size: cover;
 }
@@ -5774,7 +5780,7 @@ body {
 @media screen and (min-width: 600px) {
   .c-home-header  {
     height: 600px;
-    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_desktop.jpg');
+    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/290917/290917_HEADER_DESKTOP-min.jpg');
     }
 }
 
@@ -5787,6 +5793,16 @@ body {
 @media screen and (min-width: 600px) {
   .c-header-50 {
     height: 600px;
+  }
+}
+
+
+@media screen and (min-width: 1301px) {
+  .c-header-50 {
+    height: 800px;
+  }
+  .c-home-header  {
+    height: 800px;
   }
 }
 

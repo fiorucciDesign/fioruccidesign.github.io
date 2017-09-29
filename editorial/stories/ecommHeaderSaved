@@ -18,3 +18,10 @@
 
 <div class="btn-men"><a href="$url('Search-Show', 'cgid', 'men-newarrivals')$">Shop Men</a></div>
 </div>
+
+
+<style type="text/css">
+.product-variations .color li a img {
+  border: 1px solid rgba(00,00,00,.2);
+}
+</style>
