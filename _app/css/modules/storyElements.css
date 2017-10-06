@@ -1,16 +1,9 @@
 .c-home-header {
-  height: 500px;
+  height: 400px;
   background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/290917/290917_HEADER_DESKTOP-min.jpg');
   background-position: center;
     background-size: cover;
 }
-/*
-@media (--breakpoint-medium) {
-  .c-home-header  {
-    height: 600px;
-    background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/content/_HOME-HEADER/200917_hero-header_desktop.jpg');
-    }
-}*/
 
 @media (--breakpoint-not-small) {
   .c-home-header  {
@@ -31,17 +24,11 @@
 
 @media (--breakpoint-large) {
   .c-header-50 {
-    height: 800px;
+    height: 733px;
   }
   .c-home-header  {
-    height: 800px;
+    height: 840px;
   }
-}
-
-
-body, html {
-  height: 100%;
-  margin: 0;
 }
 
 .story__title {

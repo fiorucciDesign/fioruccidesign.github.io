@@ -87,8 +87,8 @@
   }
 
 @media (--breakpoint-medium) {
-  body {
-    color: green !important;
+  .story {
+    font-size: 16px;
   }
   .f1 {
     font-size: 6.5em;
@@ -152,8 +152,8 @@
 }
 
 @media (--breakpoint-large) {
-  body {
-    font-size: 40px;
+  .story {
+    font-size: 34px;
   }
 
   .f3 {
