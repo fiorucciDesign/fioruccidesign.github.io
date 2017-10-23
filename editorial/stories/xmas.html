@@ -1,0 +1,45 @@
+---
+layout: editorial
+---
+
+<div class="db fixed bg-yellow w-100 h-100">
+
+  <div class="db bg-blue overflow-hidden fl" style="width: 200px; height 400px;">
+    <div class="db w5 h5 bg-red overflow-hidden"
+      style="width:200px; height: 400px; margin-left: 200px;"
+      data-paroller-factor="1"
+      data-paroller-direction="horizontal"
+      data-paroller-type="foreground"
+    ></div>
+  </div>
+
+  <div class="db h5 bg-green overflow-hidden fl" style="width: 200px; height: 400px;">
+    <div class="db w5 bg-red overflow-hidden"
+      style="width:200px; height: 400px; margin-top: 400px;"
+      data-paroller-factor="1"
+      data-paroller-type="foreground"
+      data-paroller-direction="vertical"
+    ></div>
+  </div>
+
+  <div class="db h5 bg-black overflow-hidden fl" style="width: 200px; height: 400px;">
+    <div class="db w5 bg-blue overflow-hidden"
+      style="width:200px; height: 400px; margin-top: 400px;"
+      data-paroller-factor="-1"
+      data-paroller-type="foreground"
+      data-paroller-direction="vertical"
+    ></div>
+  </div>
+
+</div>
+
+
+<div class="db w5 bg-red" style="height: 2000px;"></div>
+
+
+<script src="https://tgomilar.github.io/paroller.js/dist/jquery.paroller.js"></script>
+<script>
+    $(function () {
+        $(window).paroller();
+    });
+</script>

@@ -1,3 +1,4 @@
+<style>
 /* TACHYONS v4.0.8 | github.com/tachyons-css/tachyons */
 
 
@@ -6102,3 +6103,39 @@ body {
   padding-top: 25px;
   padding-bottom: 20px;
 }
+
+</style>
+
+<div class="db fixed bg-yellow w-100 h-100">
+
+  <div class="db bg-blue overflow-hidden fl" style="width: 200px; height 400px;">
+    <div class="db w5 h5 bg-red overflow-hidden"
+      style="width:200px; height: 400px; margin-left: 200px;"
+      data-paroller-factor="1"
+      data-paroller-direction="horizontal"
+      data-paroller-type="foreground"
+    ></div>
+  </div>
+
+  <div class="db h5 bg-green overflow-hidden fl" style="width: 200px; height: 400px;">
+    <div class="db w5 bg-red overflow-hidden"
+      style="width:200px; height: 400px; margin-top: 400px;"
+      data-paroller-factor="1"
+      data-paroller-type="foreground"
+      data-paroller-direction="vertical"
+    ></div>
+  </div>
+
+  <div class="db h5 bg-black overflow-hidden fl" style="width: 200px; height: 400px;">
+    <div class="db w5 bg-blue overflow-hidden"
+      style="width:200px; height: 400px; margin-top: 400px;"
+      data-paroller-factor="-1"
+      data-paroller-type="foreground"
+      data-paroller-direction="vertical"
+    ></div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="/assets/js/main02.js"></script>

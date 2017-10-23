@@ -251,6 +251,127 @@ module.exports = function () {
 },{}],2:[function(require,module,exports){
 module.exports = function () {
 /**
+ * jQuery plugin paroller.js v1.0
+ * https://github.com/tgomilar/paroller.js
+ * preview: https://tgomilar.github.io/paroller/
+ **/
+
+(function ($) {
+    'use strict';
+
+    var elem = $('[data-paroller-factor]');
+    var setDirection = {
+        bgVertical: function (elem, bgOffset) {
+            return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
+        },
+        bgHorizontal: function (elem, bgOffset) {
+            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
+        },
+        vertical: function (elem, elemOffset) {
+            return elem.css({
+                '-webkit-transform': 'translateY(' + elemOffset + 'px)',
+                '-moz-transform': 'translateY(' + elemOffset + 'px)',
+                'transform': 'translateY(' + elemOffset + 'px)'
+            });
+        },
+        horizontal: function (elem, elemOffset) {
+            return elem.css({
+                '-webkit-transform': 'translateX(' + elemOffset + 'px)',
+                '-moz-transform': 'translateX(' + elemOffset + 'px)',
+                'transform': 'translateX(' + elemOffset + 'px)'
+            });
+        }
+    };
+
+    $.fn.paroller = function (options) {
+        var windowHeight = $(window).height();
+        var documentHeight = $(document).height();
+
+        // default options
+        var options = $.extend({
+            factor: 0, // - to +
+            type: 'background', // foreground
+            direction: 'vertical' // horizontal
+        }, options);
+
+        elem.each(function () {
+            var working = false;
+            var $this = $(this);
+            var offset = $this.offset().top;
+            var height = $this.outerHeight();
+            var dataFactor = $this.data('paroller-factor');
+            var dataType = $this.data('paroller-type');
+            var dataDirection = $this.data('paroller-direction');
+
+            var factor = (dataFactor) ? dataFactor : options.factor;
+            var type = (dataType) ? dataType : options.type;
+            var direction = (dataDirection) ? dataDirection : options.direction;
+            var bgOffset = Math.round(offset * factor);
+            var transform = Math.round((offset - (windowHeight / 2) + height) * factor);
+
+            if (type == 'background') {
+                if (direction == 'vertical') {
+                    setDirection.bgVertical($this, bgOffset);
+                }
+                else if (direction == 'horizontal') {
+                    setDirection.bgHorizontal($this, bgOffset);
+                }
+            }
+            else if (type == 'foreground') {
+                if (direction == 'vertical') {
+                    setDirection.vertical($this, transform);
+                }
+                else if (direction == 'horizontal') {
+                    setDirection.horizontal($this, transform);
+                }
+            }
+
+            var scrollAction = function () {
+                working = false;
+            };
+
+            $(window).on('scroll', function () {
+                if (!working) {
+                    var scrolling = $(this).scrollTop();
+                    bgOffset = Math.round((offset - scrolling) * factor);
+                    transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
+
+                    if (type == 'background') {
+                        if (direction == 'vertical') {
+                            setDirection.bgVertical($this, bgOffset);
+                        }
+                        else if (direction == 'horizontal') {
+                            setDirection.bgHorizontal($this, bgOffset);
+                        }
+                    }
+                    else if ((type == 'foreground') && (scrolling < documentHeight)) {
+                        if (direction == 'vertical') {
+                            setDirection.vertical($this, transform);
+                        }
+                        else if (direction == 'horizontal') {
+                            setDirection.horizontal($this, transform);
+                        }
+                    }
+
+                    window.requestAnimationFrame(scrollAction);
+                    working = true;
+                }
+            }).trigger('scroll');
+        });
+    };
+
+    $(document).ready(function() {
+        alert('roo');
+        $(window).paroller();
+        // $(".square").paroller({ factor: '0.5', type: 'foreground', direction: 'horizontal' });
+    });
+
+})(jQuery);
+}
+
+},{}],3:[function(require,module,exports){
+module.exports = function () {
+/**
  * MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000
  * http://github.com/ezekielaquino/marquee3000
  * Marquees for the new millenium v1.0
@@ -419,7 +540,7 @@ module.exports = function () {
 }));
 }
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var $ = require('jquery');
 var countdown = require('./lib/countdown.js');
 var Marquee3k = require('./lib/marquee3k.js');
@@ -427,14 +548,19 @@ var frame = require('./modules/frame.js');
 var dvd = require('./modules/dvd.js');
 var form = require('./modules/form.js');
 var analytics = require('./modules/analytics.js');
+var par = require('./lib/jquery.paroller.js');
 
-Marquee3k();
-frame();
-dvd();
-form();
-analytics();
 
-},{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/analytics.js":4,"./modules/dvd.js":5,"./modules/form.js":6,"./modules/frame.js":7,"jquery":8}],4:[function(require,module,exports){
+// Marquee3k();
+// frame();
+// dvd();
+// form();
+// analytics();
+// par();
+
+
+
+},{"./lib/countdown.js":1,"./lib/jquery.paroller.js":2,"./lib/marquee3k.js":3,"./modules/analytics.js":5,"./modules/dvd.js":6,"./modules/form.js":7,"./modules/frame.js":8,"jquery":9}],5:[function(require,module,exports){
 module.exports = function () {
   $(document).ready(function(){
 
@@ -488,7 +614,7 @@ module.exports = function () {
 }
 
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function () {
 
 function em(input) {
@@ -634,7 +760,7 @@ $(window).resize( function() {
   // });
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function () {
 
   var email;
@@ -726,7 +852,7 @@ module.exports = function () {
 
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function () {
 
   $('.bodyBg').on("touchmove", function(){
@@ -901,7 +1027,7 @@ module.exports = function () {
   });
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -11156,4 +11282,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[3]);
+},{}]},{},[4]);

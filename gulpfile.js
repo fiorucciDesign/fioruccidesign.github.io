@@ -156,6 +156,7 @@ gulp.task('build:scripts', function() {
     .pipe(source("appJsFilesGlob"))
     .pipe(rename('main02.js'))
     .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('_site/assets/js'))
 });
 
 // Runs Jekyll build
@@ -191,7 +192,6 @@ gulp.task('serve', () => {
 
   // Watch Jekyll html files
   gulp.watch(['*.html', 'editorial/**/*.html', '_includes/**/*.html'], ['jekyll']);
-
 });
 
 gulp.task('default', ['build:images', 'build:scripts', 'build:fonts', 'build:styles', 'build:editorialStyles', 'jekyll', 'serve']);
