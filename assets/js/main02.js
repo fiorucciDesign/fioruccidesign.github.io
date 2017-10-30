@@ -251,127 +251,6 @@ module.exports = function () {
 },{}],2:[function(require,module,exports){
 module.exports = function () {
 /**
- * jQuery plugin paroller.js v1.0
- * https://github.com/tgomilar/paroller.js
- * preview: https://tgomilar.github.io/paroller/
- **/
-
-(function ($) {
-    'use strict';
-
-    var elem = $('[data-paroller-factor]');
-    var setDirection = {
-        bgVertical: function (elem, bgOffset) {
-            return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
-        },
-        bgHorizontal: function (elem, bgOffset) {
-            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
-        },
-        vertical: function (elem, elemOffset) {
-            return elem.css({
-                '-webkit-transform': 'translateY(' + elemOffset + 'px)',
-                '-moz-transform': 'translateY(' + elemOffset + 'px)',
-                'transform': 'translateY(' + elemOffset + 'px)'
-            });
-        },
-        horizontal: function (elem, elemOffset) {
-            return elem.css({
-                '-webkit-transform': 'translateX(' + elemOffset + 'px)',
-                '-moz-transform': 'translateX(' + elemOffset + 'px)',
-                'transform': 'translateX(' + elemOffset + 'px)'
-            });
-        }
-    };
-
-    $.fn.paroller = function (options) {
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
-
-        // default options
-        var options = $.extend({
-            factor: 0, // - to +
-            type: 'background', // foreground
-            direction: 'vertical' // horizontal
-        }, options);
-
-        elem.each(function () {
-            var working = false;
-            var $this = $(this);
-            var offset = $this.offset().top;
-            var height = $this.outerHeight();
-            var dataFactor = $this.data('paroller-factor');
-            var dataType = $this.data('paroller-type');
-            var dataDirection = $this.data('paroller-direction');
-
-            var factor = (dataFactor) ? dataFactor : options.factor;
-            var type = (dataType) ? dataType : options.type;
-            var direction = (dataDirection) ? dataDirection : options.direction;
-            var bgOffset = Math.round(offset * factor);
-            var transform = Math.round((offset - (windowHeight / 2) + height) * factor);
-
-            if (type == 'background') {
-                if (direction == 'vertical') {
-                    setDirection.bgVertical($this, bgOffset);
-                }
-                else if (direction == 'horizontal') {
-                    setDirection.bgHorizontal($this, bgOffset);
-                }
-            }
-            else if (type == 'foreground') {
-                if (direction == 'vertical') {
-                    setDirection.vertical($this, transform);
-                }
-                else if (direction == 'horizontal') {
-                    setDirection.horizontal($this, transform);
-                }
-            }
-
-            var scrollAction = function () {
-                working = false;
-            };
-
-            $(window).on('scroll', function () {
-                if (!working) {
-                    var scrolling = $(this).scrollTop();
-                    bgOffset = Math.round((offset - scrolling) * factor);
-                    transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
-
-                    if (type == 'background') {
-                        if (direction == 'vertical') {
-                            setDirection.bgVertical($this, bgOffset);
-                        }
-                        else if (direction == 'horizontal') {
-                            setDirection.bgHorizontal($this, bgOffset);
-                        }
-                    }
-                    else if ((type == 'foreground') && (scrolling < documentHeight)) {
-                        if (direction == 'vertical') {
-                            setDirection.vertical($this, transform);
-                        }
-                        else if (direction == 'horizontal') {
-                            setDirection.horizontal($this, transform);
-                        }
-                    }
-
-                    window.requestAnimationFrame(scrollAction);
-                    working = true;
-                }
-            }).trigger('scroll');
-        });
-    };
-
-    $(document).ready(function() {
-        alert('roo');
-        $(window).paroller();
-        // $(".square").paroller({ factor: '0.5', type: 'foreground', direction: 'horizontal' });
-    });
-
-})(jQuery);
-}
-
-},{}],3:[function(require,module,exports){
-module.exports = function () {
-/**
  * MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000
  * http://github.com/ezekielaquino/marquee3000
  * Marquees for the new millenium v1.0
@@ -540,7 +419,7 @@ module.exports = function () {
 }));
 }
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var $ = require('jquery');
 var countdown = require('./lib/countdown.js');
 var Marquee3k = require('./lib/marquee3k.js');
@@ -548,7 +427,7 @@ var frame = require('./modules/frame.js');
 var dvd = require('./modules/dvd.js');
 var form = require('./modules/form.js');
 var analytics = require('./modules/analytics.js');
-var par = require('./lib/jquery.paroller.js');
+var storyXmas = require('./modules/xmas.js');
 
 
 // Marquee3k();
@@ -556,11 +435,12 @@ var par = require('./lib/jquery.paroller.js');
 // dvd();
 // form();
 // analytics();
-// par();
+
+storyXmas();
 
 
 
-},{"./lib/countdown.js":1,"./lib/jquery.paroller.js":2,"./lib/marquee3k.js":3,"./modules/analytics.js":5,"./modules/dvd.js":6,"./modules/form.js":7,"./modules/frame.js":8,"jquery":9}],5:[function(require,module,exports){
+},{"./lib/countdown.js":1,"./lib/marquee3k.js":2,"./modules/analytics.js":4,"./modules/dvd.js":5,"./modules/form.js":6,"./modules/frame.js":7,"./modules/xmas.js":8,"jquery":9}],4:[function(require,module,exports){
 module.exports = function () {
   $(document).ready(function(){
 
@@ -614,7 +494,7 @@ module.exports = function () {
 }
 
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = function () {
 
 function em(input) {
@@ -760,7 +640,7 @@ $(window).resize( function() {
   // });
 }
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function () {
 
   var email;
@@ -852,7 +732,7 @@ module.exports = function () {
 
 }
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function () {
 
   $('.bodyBg').on("touchmove", function(){
@@ -1025,6 +905,522 @@ module.exports = function () {
 
     calcImageMarqueesHeight();
   });
+}
+
+},{}],8:[function(require,module,exports){
+module.exports = function () {
+
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+;( function( $, window, document, undefined ) {
+
+    "use strict";
+
+        // undefined is used here as the undefined global variable in ECMAScript 3 is
+        // mutable (ie. it can be changed by someone else). undefined isn't really being
+        // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
+        // can no longer be modified.
+
+        // window and document are passed through as local variables rather than global
+        // as this (slightly) quickens the resolution process and can be more efficiently
+        // minified (especially when both are regularly referenced in your plugin).
+
+        // Create the defaults once
+        var pluginName = "xmas",
+            defaults = {
+                propertyName: "value"
+            };
+
+        // The actual plugin constructor
+        function Xmas ( element, options ) {
+            this.element = element;
+
+            // jQuery has an extend method which merges the contents of two or
+            // more objects, storing the result in the first object. The first object
+            // is generally empty as we don't want to alter the default options for
+            // future instances of the plugin
+            this.settings = $.extend( {}, defaults, options );
+            this._defaults = defaults;
+            this._name = pluginName;
+            this.init();
+        }
+
+        var scrollCalculation = {
+
+          fromRight: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+
+              var elWidth = $(el).width();
+              var elHeight = $(el).height();
+              console.log(elHeight)
+              var triggerTop = triggerAreas[panelIndex][0]
+              var scrollTop = $(window).scrollTop() - triggerTop;
+              var x = (scrollTop/elHeight)*100;
+              var l = elWidth - (x/100)*elWidth;
+              if ( scrollDirection == "FORWARD" ) {
+                return l;
+              } else if ( scrollDirection == "REVERSE" ) {
+                return l;
+              }
+
+          },
+
+          fromLeft: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+              var elWidth = $(el).width();
+              var elHeight = $(el).height();
+              var currentLeft = parseInt($(el).css('left'));
+              var triggerTop = triggerAreas[panelIndex][0]
+              var scrollTop = $(window).scrollTop() - triggerTop;
+              var x = (scrollTop/elHeight)*100;
+              var l = (x/100)*elWidth;
+              return l-elWidth;
+
+          },
+
+          fromTop: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+              var elWidth = $(el).width();
+              var elHeight = $(el).height();
+              var triggerTop = triggerAreas[panelIndex][0]
+              var scrollTop = $(window).scrollTop() - triggerTop;
+              var x = (scrollTop/elHeight)*100;
+              var l = (x/100)*elHeight;
+              return l-elHeight;
+
+          },
+
+          fromBottom: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+              var elWidth = $(el).width();
+              var elHeight = $(el).height();
+              var triggerTop = triggerAreas[panelIndex][0]
+              var scrollTop = $(window).scrollTop() - triggerTop;
+              var x = (scrollTop/elHeight)*100;
+              var l = (x/100)*elHeight;
+              return elHeight-l;
+
+          }
+
+        }
+
+        var scrollPane = {
+
+          scrollFromRight: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+            var newDirection = scrollCalculation.fromRight(el, panelIndex, triggerAreas, scrollDirection);
+            return $(el).children(":first").css({'left': newDirection + 'px'});
+
+          },
+
+          scrollFromLeft: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+            var newDirection = scrollCalculation.fromLeft(el, panelIndex, triggerAreas, scrollDirection);
+            return $(el).children(":first").css({'left': newDirection + 'px'});
+
+          },
+
+          scrollFromTop: function(el, panelIndex, triggerAreas, scrollDirection) {
+
+            var newDirection = scrollCalculation.fromTop(el, panelIndex, triggerAreas, scrollDirection);
+            return $(el).children(":first").css({'top': newDirection + 'px'});
+
+          },
+
+          scrollFromBottom: function(el,panelIndex, triggerAreas, scrollDirection) {
+
+            var newDirection = scrollCalculation.fromBottom(el, panelIndex, triggerAreas, scrollDirection);
+            return $(el).children(":first").css({'top': newDirection + 'px'});
+
+          }
+
+        }
+
+        // Avoid Plugin.prototype conflicts
+        $.extend( Xmas.prototype, {
+            init: function() {
+
+                // Place initialization logic here
+                // You already have access to the DOM element and
+                // the options via the instance, e.g. this.element
+                // and this.settings
+                // you can add more functions like the one below and
+                // call them like the example below
+
+                var wH = $(window).height();
+                var panelsTotal = 11;
+                $('body').height(wH*panelsTotal);
+                var triggerAreas = [
+                  [0, wH*1],
+                  [wH*1, wH*2],
+                  [wH*2, wH*3],
+                  [wH*3, wH*4],
+                  [wH*4, wH*5],
+                  [wH*5, wH*6],
+                  [wH*6, wH*7],
+                  [wH*7, wH*8],
+                  [wH*8, wH*9],
+                  [wH*9, wH*10],
+                  [wH*10, wH*11]
+                ]
+
+                this.positionPanels( triggerAreas );
+                this.initScroll( triggerAreas );
+                this.dev();
+                // this.glitter();
+            },
+
+            dev: function( ) {
+
+            },
+
+            glitter: function() {
+
+              window.setInterval(function(){
+                var wH = $(window).height();
+                var wW = $(window).width();
+                var i;
+                for (i = 0; i < 20; i++) {
+                              var t = Math.floor(Math.random() * wH) + 1;
+                var l = Math.floor(Math.random() * wW) + 1;
+                  console.log(i)
+                  $('body').prepend('<div class="glitter" style="left: '+l+'px; top:'+t+'px;"></div>')
+                }
+              }, 8000);
+
+            },
+
+            positionPanels: function ( triggerAreas ) {
+
+              var i;
+              $(document).ready(function() {
+                for (i = 0; i < triggerAreas.length; ++i) {
+                  var elName = '.panel-' + i.toString();
+                  var winHeight = triggerAreas[0][1];
+
+                  var top = triggerAreas[i][0];
+                  $(elName).height(winHeight).css('height', winHeight + 'px');
+                }
+                $('.gutter').css('height', winHeight*11 + 'px');
+                // $('.gutter-left').css('margin-top', -winHeight*10 + 'px');
+              })
+            },
+
+            scrollPanes: function( panelIndex, triggerAreas, scrollDirection ) {
+              var elName = '.panel-' + panelIndex.toString();
+              var pane = elName + ' .pane';
+
+              $(pane).each(function(index) {
+                var paneEl = elName + ' .pane-' + index;
+                var scrollFrom = $(paneEl).data('scrollfrom');
+                if (scrollFrom == 'right') {
+                  scrollPane.scrollFromRight(this, panelIndex, triggerAreas, scrollDirection);
+                }
+                if (scrollFrom == 'left') {
+                  scrollPane.scrollFromLeft(this, panelIndex, triggerAreas, scrollDirection);
+                }
+                if (scrollFrom == 'top') {
+                  scrollPane.scrollFromTop(this, panelIndex, triggerAreas, scrollDirection);
+                }
+                if (scrollFrom == 'bottom') {
+                  scrollPane.scrollFromBottom(this, panelIndex, triggerAreas, scrollDirection);
+                }
+              });
+
+            },
+
+            initScroll: function( triggerAreas ) {
+
+              var ta = triggerAreas;
+              var $this = this;
+              var winHeight = $(window).height();
+
+              var controller = new ScrollMagic.Controller();
+
+              $(document).ready(function() {
+                // var scene0
+                // ease: Linear.easeNone
+                var tweenPanel1 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-1 .pane-0 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-1 .pane-1 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-1 .pane-2 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-3 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-1 .pane-4 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-1 .pane-5 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-6 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-1 .pane-7 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenPanel2 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-2 > div", 1, {y:"-100%"}),
+                ]);
+
+                var tweenPanel3 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-3 .pane-0 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-3 .pane-1 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-3 .pane-2 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-3 .pane-3 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-3 .pane-4 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-3 .pane-5 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-3 .pane-6 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-3 .pane-7 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenPanel4 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-4 > div", 1, {y:"-100%"}),
+                ]);
+
+                var tweenPanel5 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-5 .pane-0 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-1 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-2 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-3 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-5 .pane-4 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-5 .pane-5 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-6 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-7 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenPanel6 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-6 > div", 1, {y:"-100%"}),
+                ]);
+
+                var tweenPanel7 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-7 .pane-0 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-7 .pane-1 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-7 .pane-2 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-7 .pane-3 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-7 .pane-4 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-7 .pane-5 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-7 .pane-6 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-7 .pane-7 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenPanel8 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-6 > div", 1, {y:"-100%"}),
+                ]);
+
+                var tweenPanel9 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-9 .pane-0 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-9 .pane-1 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-9 .pane-2 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-9 .pane-3 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-9 .pane-4 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-9 .pane-5 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-9 .pane-6 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-9 .pane-7 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenPanel10 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-10 > div", 1, {y:"-100%"}),
+                ]);
+
+                // var tweenGutterLeft = new TimelineMax ()
+                // .add([
+                //   TweenMax.to(".gutter-left", 1, {y:"100%"}),
+                // ]);
+
+
+                var panel1 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-1",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-1').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-1').removeClass('panel-active');
+                })
+                .setTween(tweenPanel1)
+                .addTo(controller);
+
+                var panel2 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-2",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-2').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-2').removeClass('panel-active');
+                })
+                .setTween(tweenPanel2)
+                .addTo(controller);
+
+                var panel3 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-3",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-3').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-3').removeClass('panel-active');
+                })
+                .setTween(tweenPanel3)
+                .addTo(controller);
+
+                var panel4 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-4",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-4').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-4').removeClass('panel-active');
+                })
+                .setTween(tweenPanel4)
+                .addTo(controller);
+
+                var panel5 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-5",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-5').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-5').removeClass('panel-active');
+                })
+                .setTween(tweenPanel5)
+                .addTo(controller);
+
+                var panel6 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-6",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-6').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-6').removeClass('panel-active');
+                })
+                .setTween(tweenPanel6)
+                .addTo(controller);
+
+                var panel7 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-7",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-7').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-7').removeClass('panel-active');
+                })
+                .setTween(tweenPanel7)
+                .addTo(controller);
+
+                var panel8 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-8",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-8').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-8').removeClass('panel-active');
+                })
+                .setTween(tweenPanel8)
+                .addTo(controller);
+
+                var panel9 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-9",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-9').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-9').removeClass('panel-active');
+                })
+                .setTween(tweenPanel9)
+                .addTo(controller);
+
+                var panel10 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-10",
+                  duration: winHeight,
+                })
+                .on("enter", function (event) {
+                  $('.panel-10').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-10').removeClass('panel-active');
+                })
+                .setTween(tweenPanel10)
+                .addTo(controller);
+
+
+                var shimmer1 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-1",
+                  duration: winHeight*10,
+                })
+                .setTween(".shimmer-1", 0.5, {y: "-100%"})
+                .addIndicators()
+                .addTo(controller);
+
+                var shimmer2 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-1",
+                  duration: winHeight*10,
+                })
+                .setTween(".shimmer-2", 1, {y: "-400%"})
+                .addIndicators()
+                .addTo(controller);
+
+                var shimmer1 = new ScrollMagic.Scene({
+                  triggerElement: ".glitter-1",
+                  duration: winHeight*10,
+                })
+                .setTween(".glitter-1", 0.5, {y: "-100%"})
+                .addTo(controller);
+
+                var xmasIcon = new ScrollMagic.Scene({
+                  triggerElement: ".panel-3",
+                  duration: winHeight,
+                })
+                .setTween(".xmasIcon", 0.5, {x: "1400"})
+                .addIndicators()
+                .addTo(controller);
+
+
+                // $(window).scroll(function() {
+                //   $('.gutter-left').css('transform', 'translate3d(0,' + $(this).scrollTop()*2 + 'px, 0)');
+                // });
+              });
+
+            }
+        } );
+
+        // A really lightweight plugin wrapper around the constructor,
+        // preventing against multiple instantiations
+        $.fn.xmas = function( options ) {
+
+          new Xmas( this, options )
+            // return this.each( function() {
+            //     if ( !$.data( this, "plugin_" + pluginName ) ) {
+            //         $.data( this, "plugin_" +
+            //             pluginName, new Xmas( this, options ) );
+            //     }
+            // } );
+        };
+
+$('.this').xmas();
+
+} )( jQuery, window, document );
+
+
+
 }
 
 },{}],9:[function(require,module,exports){
@@ -11282,4 +11678,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[4]);
+},{}]},{},[3]);

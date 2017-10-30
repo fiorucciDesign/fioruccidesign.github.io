@@ -7,7 +7,9 @@
 }
 .f5, .b1, .b2, .b3, {
   font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;
+  color: red;
 }
+
 
 .story {
   font-family: "Helvetica Neue LT Std 53 Extended", "HelveticaNeueExt", sans-serif !important;

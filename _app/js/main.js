@@ -5,7 +5,7 @@ var frame = require('./modules/frame.js');
 var dvd = require('./modules/dvd.js');
 var form = require('./modules/form.js');
 var analytics = require('./modules/analytics.js');
-var par = require('./lib/jquery.paroller.js');
+var storyXmas = require('./modules/xmas.js');
 
 
 // Marquee3k();
@@ -13,6 +13,7 @@ var par = require('./lib/jquery.paroller.js');
 // dvd();
 // form();
 // analytics();
-// par();
+
+storyXmas();
 
 

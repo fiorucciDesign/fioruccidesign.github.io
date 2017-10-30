@@ -1,0 +1,208 @@
+.xHero {
+  position: fixed;
+  top: 0;
+  z-index: 999999999;
+  width: 800px;
+  transform: perspective( 600px ) rotateY( 45deg );
+}
+
+.xHero img {
+  width: 100px;
+  display: block;
+  float:left;
+}
+
+.xmasIcon {
+  position: fixed;
+  top: 400px;
+  left: -150px;
+  z-index: 99999999;
+}
+
+.glitter-1 {
+  display: block;
+  pointer-events: none;
+  width: 100%;
+  height: 1000px;
+  background-image: url('/assets/images/xmas/glitter-1.png');
+  background-size: 100%;
+  z-index: 9999999;
+  position: absolute;
+  top: 1500px;
+}
+
+.shimmer-1 {
+  display: block;
+  pointer-events: none;
+  width: 100%;
+  height: 1000px;
+  background-image: url('/assets/images/xmas/shimmer-8.png');
+  background-size: 100%;
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+}
+
+.shimmer-2 {
+  display: block;
+  pointer-events: none;
+  width: 100%;
+  height: 800px;
+  background-image: url('/assets/images/xmas/shimmer-2.png');
+  background-size: 100%;
+  z-index: 9999999;
+  position: absolute;
+  top: 1000px;
+}
+
+.gutter {
+  width: 5%;
+  position: absolute;
+}
+
+.gutter-right {
+  right: 0;
+  background-image: url('/assets/images/xmas/gutter-right.png');
+  background-size: 100%;
+}
+
+.gutter-left {
+  left: 0;
+  background-image: url('/assets/images/xmas/gutter-left.png');
+  background-size: 100%;
+}
+
+.panes {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+}
+
+.panel-0 {z-index: 0;}
+
+.panel-1 {z-index: 1;}
+
+.panel-2 {z-index: 2;}
+
+.panel-3 {z-index: 3;}
+
+.panel-4 {z-index: 4;}
+
+.panel-5 {z-index: 5;}
+
+.panel {
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+}
+
+.panel-logo > div {
+  background-image:url('/assets/images/xmas/logo_hero2.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 99999999;
+}
+
+.panel-image {
+  position: relative;
+}
+
+.panel-image > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+}
+
+.pane {
+  width: 25%;
+  height: 50%;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.pane > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.pane-sc-r > div { left: 100%;}
+
+.pane-sc-l > div { left: -100%;}
+
+.pane-sc-t > div { top: -100%; left: 0;}
+
+.pane-sc-b > div { top: 100%; left: 0;}
+
+.panel-active .pane-sc-r > div {
+  -webkit-box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
+  -moz-box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
+  box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
+}
+
+.panel-active .pane-sc-l > div {
+  -webkit-box-shadow: 7px 0px 106px 0px #B60C01;
+  -moz-box-shadow: 7px 0px 106px 0px #B60C01;
+  box-shadow: 7px 0px 106px 0px #B60C01;
+}
+
+.panel-active .pane-sc-t > div {
+-webkit-box-shadow: 0px 7px 106px 0px #9926D5;
+-moz-box-shadow: 0px 7px 106px 0px #9926D5;
+box-shadow: 0px 7px 106px 0px #9926D5;
+}
+
+.panel-active .pane-sc-b > div {
+-webkit-box-shadow: 0px -7px 106px 0px #D8C600;
+-moz-box-shadow: 0px -7px 106px 0px #D8C600;
+box-shadow: 0px -7px 106px 0px #D8C600;
+}
+
+.lens-1 {
+  display: block;
+  width: 100%;
+  height: 4000px;
+  position: absolute;
+  pointer-events: none;
+  background-image:url('/assets/images/xmas/shimmer-8.png');
+  z-index: 99999;
+  background-size: 100%;
+  top: 200px;
+}
+
+.glitter {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  background: #fff;
+  z-index: 9999999;
+  opacity: 0;
+  animation: fade 5s linear;
+-webkit-box-shadow: 0 0 20px 10px #ffffff;
+box-shadow: 0 0 20px 10px #ffffff;
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+.guide {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: red;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+}
+
