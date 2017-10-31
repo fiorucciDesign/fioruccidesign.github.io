@@ -6105,17 +6105,53 @@ body {
 }
 
 
-.xHero {
+.xHeroContainer-l {
+  width: 5%;
   position: fixed;
-  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  /*z-index: 9;*/
+}
+
+
+.xHeroContainer-r {
+  width: 5%;
+  position: fixed;
+  right: 0;
+  overflow: hidden;
+  height: 100%;
+  background-image: url('/assets/images/xmas/gold.png');
+  background-size: cover;
+}
+
+
+.xHeroContainer-l .xHero {
+position: fixed;
+    top: -10px;
+    z-index: 999999999;
+    width: 4000px;
+    height: 100%;
+    transform: perspective( 2490px ) rotateY( 75deg );
+    overflow: hidden;
+    left: -620px;
+}
+
+
+.xHeroContainer-r .xHero {
+  position: fixed;
+  top: -10px;
   z-index: 999999999;
-  width: 800px;
-  transform: perspective( 600px ) rotateY( 45deg );
+  width: 4000px;
+  height: 100%;
+  transform: perspective( 2490px ) rotateY( -75deg );
+  overflow: hidden;
+  right: -620px;
 }
 
 
 .xHero img {
-  width: 100px;
+  width: 800px;
   display: block;
   float:left;
 }

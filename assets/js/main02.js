@@ -1393,6 +1393,14 @@ module.exports = function () {
                 .addIndicators()
                 .addTo(controller);
 
+                var xHero = new ScrollMagic.Scene({
+                  triggerElement: ".panel-0",
+                  duration: winHeight*11,
+                })
+                .setTween(".xHeroContainer-l .xHero", 1, {x: "-40%", scale: "1.4"})
+                .addIndicators()
+                .addTo(controller);
+
 
                 // $(window).scroll(function() {
                 //   $('.gutter-left').css('transform', 'translate3d(0,' + $(this).scrollTop()*2 + 'px, 0)');
