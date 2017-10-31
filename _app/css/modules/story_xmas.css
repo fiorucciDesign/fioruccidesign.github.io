@@ -1,46 +1,57 @@
+.xHeroContainer-l,
+.xHeroContainer-r {
+  z-index: 0;
+}
+
 .xHeroContainer-l {
-  width: 5%;
-  position: fixed;
-  left: 0;
-  overflow: hidden;
-  height: 100%;
-  /*z-index: 9;*/
+    width: 6%;
+    position: fixed;
+    left: 0;
+   overflow: hidden;
+    height: 100%;
+    /*z-index: 9;*/
+    transform-origin: 0% 50%;
+    transform: perspective(55px) rotateY(7deg);
 }
 
 .xHeroContainer-r {
-  width: 5%;
-  position: fixed;
-  right: 0;
-  overflow: hidden;
-  height: 100%;
-  background-image: url('/assets/images/xmas/gold.png');
-  background-size: cover;
+    width: 6%;
+    position: fixed;
+    right: 0;
+     overflow: hidden;
+    height: 88%;
+    /* z-index: 9; */
+    transform-origin: 0% 50%;
+    transform: perspective(55px) rotateY(-7deg);
+    top: 6%;
 }
 
 .xHeroContainer-l .xHero {
-position: fixed;
-    top: -10px;
+    position: fixed;
+    /* top: -10px; */
     z-index: 999999999;
-    width: 4000px;
+    width: 5000px;
     height: 100%;
-    transform: perspective( 2490px ) rotateY( 75deg );
+    /* transform: perspective( 2490px ) rotateY( 75deg ); */
     overflow: hidden;
-    left: -620px;
+    /* left: -620px; */
+    background-image: url('/assets/images/xmas/hero-scroll.jpg');
+
 }
 
 .xHeroContainer-r .xHero {
-  position: fixed;
-  top: -10px;
-  z-index: 999999999;
-  width: 4000px;
-  height: 100%;
-  transform: perspective( 2490px ) rotateY( -75deg );
-  overflow: hidden;
-  right: -620px;
+    position: fixed;
+    z-index: 999999999;
+    width: 5000px;
+    height: 100%;
+    overflow: hidden;
+    right: 0;
+    background-image: url('/assets/images/xmas/hero-scroll.jpg');
+    background-position: 70px 0;
 }
 
 .xHero img {
-  width: 800px;
+  height: 100%;
   display: block;
   float:left;
 }
@@ -70,7 +81,7 @@ position: fixed;
   pointer-events: none;
   width: 100%;
   height: 1000px;
-  background-image: url('/assets/images/xmas/shimmer-8.png');
+  background-image: url('/assets/images/xmas/shimmer-1.png');
   background-size: 100%;
   z-index: 9999999;
   position: fixed;
@@ -87,6 +98,19 @@ position: fixed;
   z-index: 9999999;
   position: absolute;
   top: 1000px;
+}
+
+.shimmer-3 {
+  display: block;
+  pointer-events: none;
+  width: 100%;
+  height: 800px;
+  background-image: url('/assets/images/xmas/shimmer-3.png');
+  background-size: 100%;
+  z-index: 9999999;
+  position: fixed;
+  top: 100px;
+  left: 100%;
 }
 
 .gutter {
@@ -132,7 +156,7 @@ position: fixed;
 
 .panel-logo > div {
   background-image:url('/assets/images/xmas/logo_hero2.png');
-  background-size: 80%;
+  background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 99999999;

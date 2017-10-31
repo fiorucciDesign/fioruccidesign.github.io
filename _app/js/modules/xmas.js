@@ -232,14 +232,14 @@ module.exports = function () {
                 // ease: Linear.easeNone
                 var tweenPanel1 = new TimelineMax ()
                 .add([
-                  TweenMax.to(".panel-1 .pane-0 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-1 .pane-1 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-1 .pane-2 > div", 1, {x:"100%"}),
-                  TweenMax.to(".panel-1 .pane-3 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-1 .pane-4 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-1 .pane-5 > div", 1, {x:"100%"}),
-                  TweenMax.to(".panel-1 .pane-6 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-1 .pane-7 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-1 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-1 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-1 .pane-3 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-4 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-5 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-1 .pane-6 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-1 .pane-7 > div", 1, {y:"-100%"}),
                 ]);
 
                 var tweenPanel2 = new TimelineMax ()
@@ -266,14 +266,14 @@ module.exports = function () {
 
                 var tweenPanel5 = new TimelineMax ()
                 .add([
-                  TweenMax.to(".panel-5 .pane-0 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-5 .pane-1 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-5 .pane-2 > div", 1, {x:"100%"}),
-                  TweenMax.to(".panel-5 .pane-3 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-5 .pane-4 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-5 .pane-5 > div", 1, {x:"100%"}),
-                  TweenMax.to(".panel-5 .pane-6 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-5 .pane-7 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-5 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-3 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-4 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-5 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-5 .pane-6 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-7 > div", 1, {y:"-100%"}),
                 ]);
 
                 var tweenPanel6 = new TimelineMax ()
@@ -464,8 +464,15 @@ module.exports = function () {
                   triggerElement: ".panel-1",
                   duration: winHeight*10,
                 })
-                .setTween(".shimmer-2", 1, {y: "-400%"})
+                .setTween(".shimmer-2", 1, {y: "-400%", rotationY: "400"})
                 .addIndicators()
+                .addTo(controller);
+
+                var shimmer1 = new ScrollMagic.Scene({
+                  triggerElement: ".glitter-1",
+                  duration: winHeight*10,
+                })
+                .setTween(".glitter-1", 0.5, {y: "-100%", rotationY: "250"})
                 .addTo(controller);
 
                 var shimmer1 = new ScrollMagic.Scene({
@@ -475,20 +482,33 @@ module.exports = function () {
                 .setTween(".glitter-1", 0.5, {y: "-100%"})
                 .addTo(controller);
 
+                var shimmer3 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-3",
+                  duration: winHeight*5,
+                })
+                .setTween(".shimmer-3", 1, {top: -200, x:"-200%", rotationY: "250"})
+                .addIndicators()
+                .addTo(controller);
+
                 var xmasIcon = new ScrollMagic.Scene({
                   triggerElement: ".panel-3",
                   duration: winHeight,
                 })
                 .setTween(".xmasIcon", 0.5, {x: "1400"})
-                .addIndicators()
                 .addTo(controller);
 
                 var xHero = new ScrollMagic.Scene({
                   triggerElement: ".panel-0",
                   duration: winHeight*11,
                 })
-                .setTween(".xHeroContainer-l .xHero", 1, {x: "-40%", scale: "1.4"})
-                .addIndicators()
+                .setTween(".xHeroContainer-l .xHero", 1, {left: "-4000px"})
+                .addTo(controller);
+
+                var xHero = new ScrollMagic.Scene({
+                  triggerElement: ".panel-0",
+                  duration: winHeight*11,
+                })
+                .setTween(".xHeroContainer-r .xHero", 1, {right: "-4000px"})
                 .addTo(controller);
 
 
