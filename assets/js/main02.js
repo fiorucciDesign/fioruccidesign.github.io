@@ -1099,9 +1099,19 @@ module.exports = function () {
                   var winHeight = triggerAreas[0][1];
 
                   var top = triggerAreas[i][0];
+
                   $(elName).height(winHeight).css('height', winHeight + 'px');
+                  console.log(elName + ' .panel-image')
                 }
+                $('.panel-image').css('margin-top', winHeight/2 + 'px');
                 $('.gutter').css('height', winHeight*11 + 'px');
+
+                $('.panes').css('width', Math.floor(winHeight * (5/7))*2);
+                $('.panes').css('margin-left', Math.floor( -winHeight * (5/7) ));
+                $('.pane').each(function() {
+                  var w = Math.floor( winHeight * (5/7)/2 );
+                  $(this).width(w);
+                });
                 // $('.gutter-left').css('margin-top', -winHeight*10 + 'px');
               })
             },
@@ -1151,6 +1161,7 @@ module.exports = function () {
                   TweenMax.to(".panel-1 .pane-6 > div", 1, {x:"100%"}),
                   TweenMax.to(".panel-1 .pane-7 > div", 1, {y:"-100%"}),
                 ]);
+
 
                 var tweenPanel2 = new TimelineMax ()
                 .add([
@@ -1268,11 +1279,13 @@ module.exports = function () {
                   $('.panel-3').removeClass('panel-active');
                 })
                 .setTween(tweenPanel3)
+                .addIndicators({name: "panel 3"})
                 .addTo(controller);
 
                 var panel4 = new ScrollMagic.Scene({
                   triggerElement: ".panel-4",
                   duration: winHeight,
+                  offset: winHeight/2
                 })
                 .on("enter", function (event) {
                   $('.panel-4').addClass('panel-active');
@@ -1281,6 +1294,7 @@ module.exports = function () {
                   $('.panel-4').removeClass('panel-active');
                 })
                 .setTween(tweenPanel4)
+                .addIndicators({name: "panel 4"})
                 .addTo(controller);
 
                 var panel5 = new ScrollMagic.Scene({
@@ -1307,6 +1321,7 @@ module.exports = function () {
                   $('.panel-6').removeClass('panel-active');
                 })
                 .setTween(tweenPanel6)
+                .addIndicators({name: "panel 6"})
                 .addTo(controller);
 
                 var panel7 = new ScrollMagic.Scene({
@@ -1367,7 +1382,6 @@ module.exports = function () {
                   duration: winHeight*10,
                 })
                 .setTween(".shimmer-1", 0.5, {y: "-100%"})
-                .addIndicators()
                 .addTo(controller);
 
                 var shimmer2 = new ScrollMagic.Scene({
@@ -1375,7 +1389,6 @@ module.exports = function () {
                   duration: winHeight*10,
                 })
                 .setTween(".shimmer-2", 1, {y: "-400%", rotationY: "400"})
-                .addIndicators()
                 .addTo(controller);
 
                 var shimmer1 = new ScrollMagic.Scene({
@@ -1397,7 +1410,6 @@ module.exports = function () {
                   duration: winHeight*5,
                 })
                 .setTween(".shimmer-3", 1, {top: -200, x:"-200%", rotationY: "250"})
-                .addIndicators()
                 .addTo(controller);
 
                 var xmasIcon = new ScrollMagic.Scene({

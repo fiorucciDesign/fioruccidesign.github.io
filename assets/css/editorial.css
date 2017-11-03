@@ -6112,7 +6112,7 @@ body {
 
 
 .xHeroContainer-l {
-    width: 6%;
+    width: 50%;
     position: fixed;
     left: 0;
    overflow: hidden;
@@ -6124,15 +6124,15 @@ body {
 
 
 .xHeroContainer-r {
-    width: 6%;
-    position: fixed;
-    right: 0;
-     overflow: hidden;
-    height: 88%;
-    /* z-index: 9; */
-    transform-origin: 0% 50%;
-    transform: perspective(55px) rotateY(-7deg);
-    top: 6%;
+  width: 50%;
+  position: fixed;
+  right: 0;
+  overflow: hidden;
+  height: 100%;
+  /* z-index: 9; */
+  transform-origin: 100% 50%;
+  transform: perspective(55px) rotateY(-7deg);
+  top: 0;
 }
 
 
@@ -6157,7 +6157,7 @@ body {
     height: 100%;
     overflow: hidden;
     right: 0;
-    background-image: url('/assets/images/xmas/hero-scroll.jpg');
+    background-image: url('/assets/images/xmas/hero-scroll-r.jpg');
     background-position: 70px 0;
 }
 
@@ -6257,7 +6257,7 @@ body {
   flex-wrap: wrap;
   width: 90%;
   height: 100%;
-  left: 5%;
+  left: 50%;
 }
 
 
@@ -6282,7 +6282,13 @@ body {
 .panel {
   width: 90%;
   height: 100%;
-  margin-left: 5%;
+}
+
+
+.panel-logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -6292,26 +6298,34 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 99999999;
+  height: 100%;
 }
 
 
 .panel-image {
   position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 
 .panel-image > div {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 100%;
+  /*position: absolute;*/
+  /*top: 100%;*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
 .pane {
   width: 25%;
   height: 50%;
-  flex-grow: 1;
+  /*flex-grow: 1;*/
   overflow: hidden;
   position: relative;
 }
