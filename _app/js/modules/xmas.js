@@ -156,7 +156,7 @@ module.exports = function () {
 
                 this.positionPanels( triggerAreas );
                 this.initScroll( triggerAreas );
-                this.glitterTime();
+                // this.glitterTime();
                 this.dev();
                 // this.glitter();
             },
@@ -214,16 +214,22 @@ module.exports = function () {
                 for (i = 0; i < 15; ++i) {
                   var elName = '.panel-' + i.toString();
                   var winHeight = $(window).height();
-
                   $(elName).height(winHeight).css('height', winHeight + 'px');
-                  console.log(elName + ' .panel-image')
+
+                  if ( !$(elName + '.panel-image').hasClass('panel-0') ) {
+                    $(elName + '.panel-image').css('margin-top', winHeight/2 + 'px');
+                  }
                 }
-                $('.panel-image').css('margin-top', winHeight/2 + 'px');
                 $('.gutter').css('height', winHeight*11 + 'px');
                 var unit = Math.round(winHeight * (5/7)/2);
                 var fullWidth = unit*4;
-                console.log('fW', fullWidth)
                 var imageWidth = unit*2;
+                var winWidth = $(window).width();
+                var winHeight = $(window).height();
+                $('.xHeroContainer-mask').css({
+                  'width': (winWidth-imageWidth)/2 + 'px',
+                  'height': winHeight + 'px',
+                });
                 $('.panes').css('width', unit*2 + 'px');
                 $('.panes').css('margin-left', -unit + 'px' );
                 $('.imgIntro').css({
@@ -234,7 +240,6 @@ module.exports = function () {
                 $('.pane').each(function() {
                   $(this).width(unit);
                 });
-                // $('.gutter-left').css('margin-top', -winHeight*10 + 'px');
               })
             },
 
@@ -280,113 +285,45 @@ module.exports = function () {
                   TweenMax.to(".panel-1 .pane-3 > div", 1, {x:"-100%"}),
                 ]);
 
+                var tweenScene2 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-2 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-2 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-2 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-2 .pane-3 > div", 1, {x:"100%"}),
+                ]);
+
                 var tweenScene3 = new TimelineMax ()
                 .add([
-                  TweenMax.to(".panel-3 .pane-0 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-3 .pane-1 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-3 .pane-2 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-3 .pane-3 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-5 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-5 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-5 .pane-3 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenScene4 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-7 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-7 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-7 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-7 .pane-3 > div", 1, {x:"100%"}),
+                ]);
+
+                var tweenScene5 = new TimelineMax ()
+                .add([
+                  TweenMax.to(".panel-9 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-9 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-9 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-9 .pane-3 > div", 1, {x:"100%"}),
                 ]);
 
                 var tweenScene6 = new TimelineMax ()
                 .add([
-                  TweenMax.to(".panel-6 .pane-0 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-6 .pane-1 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-6 .pane-2 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-6 .pane-3 > div", 1, {x:"100%"}),
+                  TweenMax.to(".panel-11 .pane-0 > div", 1, {y:"-100%"}),
+                  TweenMax.to(".panel-11 .pane-1 > div", 1, {y:"100%"}),
+                  TweenMax.to(".panel-11 .pane-2 > div", 1, {x:"-100%"}),
+                  TweenMax.to(".panel-11 .pane-3 > div", 1, {x:"100%"}),
                 ]);
-
-                var tweenScene8 = new TimelineMax ()
-                .add([
-                  TweenMax.to(".panel-8 .pane-0 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-8 .pane-1 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-8 .pane-2 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-8 .pane-3 > div", 1, {x:"100%"}),
-                ]);
-
-                var tweenScene10 = new TimelineMax ()
-                .add([
-                  TweenMax.to(".panel-10 .pane-0 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-10 .pane-1 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-10 .pane-2 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-10 .pane-3 > div", 1, {x:"100%"}),
-                ]);
-
-                var tweenScene12 = new TimelineMax ()
-                .add([
-                  TweenMax.to(".panel-12 .pane-0 > div", 1, {y:"-100%"}),
-                  TweenMax.to(".panel-12 .pane-1 > div", 1, {y:"100%"}),
-                  TweenMax.to(".panel-12 .pane-2 > div", 1, {x:"-100%"}),
-                  TweenMax.to(".panel-12 .pane-3 > div", 1, {x:"100%"}),
-                ]);
-
-
-                // var tweenPanel2 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-2 > div", 1, {y:"-100%"}),
-                // ]);
-
-                // var tweenScene4 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-4 .pane-0 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-4 .pane-1 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-4 .pane-2 > div", 1, {x:"-100%"}),
-                //   TweenMax.to(".panel-4 .pane-3 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-4 .pane-4 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-4 .pane-5 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-4 .pane-6 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-4 .pane-7 > div", 1, {y:"-100%"}),
-                // ]);
-                //
-                // var tweenScene6 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-6 .pane-0 > div", 1, {x:"-100%"}),
-                //   TweenMax.to(".panel-6 .pane-1 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-6 .pane-2 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-6 .pane-3 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-6 .pane-4 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-6 .pane-5 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-6 .pane-6 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-6 .pane-7 > div", 1, {x:"100%"}),
-                // ]);
-                //
-                // var tweenScene8 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-8 .pane-0 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-8 .pane-1 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-8 .pane-2 > div", 1, {x:"-100%"}),
-                //   TweenMax.to(".panel-8 .pane-3 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-8 .pane-4 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-8 .pane-5 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-8 .pane-6 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-8 .pane-7 > div", 1, {y:"-100%"}),
-                // ]);
-                //
-                // var tweenScene10 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-10 .pane-0 > div", 1, {x:"-100%"}),
-                //   TweenMax.to(".panel-10 .pane-1 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-10 .pane-2 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-10 .pane-3 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-10 .pane-4 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-10 .pane-5 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-10 .pane-6 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-10 .pane-7 > div", 1, {x:"100%"}),
-                // ]);
-                //
-                // var tweenScene12 = new TimelineMax ()
-                // .add([
-                //   TweenMax.to(".panel-12 .pane-0 > div", 1, {x:"-100%"}),
-                //   TweenMax.to(".panel-12 .pane-1 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-12 .pane-2 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-12 .pane-3 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-12 .pane-4 > div", 1, {y:"100%"}),
-                //   TweenMax.to(".panel-12 .pane-5 > div", 1, {x:"100%"}),
-                //   TweenMax.to(".panel-12 .pane-6 > div", 1, {y:"-100%"}),
-                //   TweenMax.to(".panel-12 .pane-7 > div", 1, {x:"100%"}),
-                // ]);
-
-
 
                 // Panel 0
 
@@ -403,85 +340,143 @@ module.exports = function () {
                 .setTween(tweenScene1)
                 .addTo(controller);
 
-                // Panel 2 - Image
-
-                var panel3 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-3",
+                var panel2 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-2",
                   duration: winHeight,
                 })
+                .on("enter", function (event) {
+                  $('.panel-2').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-2').removeClass('panel-active');
+                })
+                .setTween(tweenScene2)
+                .addTo(controller);
+
+                var panel3 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-4",
+                  offset: -winHeight/2
+                })
+                .setPin(".panel-3")
                 .on("enter", function (event) {
                   $('.panel-3').addClass('panel-active');
                 })
                 .on("leave", function (event) {
                   $('.panel-3').removeClass('panel-active');
                 })
-                .setTween(tweenScene3)
                 .addTo(controller);
 
-                // Panel 4 - img
-                // Panel 5 - Logo
+                // Panel 4 - Logo
 
-
-                var panel6 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-6",
+                var panel4 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-5",
                   duration: winHeight,
                 })
                 .on("enter", function (event) {
-                  $('.panel-6').addClass('panel-active');
+                  $('.panel-5').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-5').removeClass('panel-active');
+                })
+                .setTween(tweenScene3)
+                .addIndicators({name: "panel 5"})
+                .addTo(controller);
+
+                var panel6 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-7",
+                  offset: -winHeight/2
+                })
+                .setPin(".panel-6")
+                .on("enter", function (event) {
+                  $('.panel-6').addClass('panel-activeeee');
                 })
                 .on("leave", function (event) {
                   $('.panel-6').removeClass('panel-active');
                 })
-                .setTween(tweenScene6)
-                .addIndicators({name: "panel 6"})
                 .addTo(controller);
 
-
-                var panel8 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-8",
+                var panel7 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-7",
                   duration: winHeight,
                 })
                 .on("enter", function (event) {
-                  $('.panel-8').addClass('panel-active');
+                  $('.panel-7').addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $('.panel-7').removeClass('panel-active');
+                })
+                .setTween(tweenScene4)
+                .addIndicators({name: "panel 7"})
+                .addTo(controller);
+
+                var panel8 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-9",
+                  offset: -winHeight/2
+                })
+                .setPin(".panel-8")
+                .on("enter", function (event) {
+                  $('.panel-8').addClass('panel-activeeee');
                 })
                 .on("leave", function (event) {
                   $('.panel-8').removeClass('panel-active');
                 })
-                .setTween(tweenScene8)
-                .addIndicators({name: "panel 8"})
                 .addTo(controller);
 
-                // panel 9 - img
-
-                var panel10 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-10",
+                var panel8 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-9",
                   duration: winHeight,
                 })
                 .on("enter", function (event) {
-                  $('.panel-10').addClass('panel-active');
+                  $('.panel-9').addClass('panel-activeeee');
+                })
+                .on("leave", function (event) {
+                  $('.panel-9').removeClass('panel-active');
+                })
+                .setTween(tweenScene5)
+                .addIndicators({name: "panel 9"})
+                .addTo(controller);
+
+                var panel9 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-11",
+                  offset: -winHeight/2
+                })
+                .setPin(".panel-10")
+                .on("enter", function (event) {
+                  $('.panel-10').addClass('panel-activeeee');
                 })
                 .on("leave", function (event) {
                   $('.panel-10').removeClass('panel-active');
                 })
-                .setTween(tweenScene10)
-                .addIndicators({name: "panel 10"})
                 .addTo(controller);
 
                 // panel 11 -img
 
-                var panel12 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-12",
+                var panel10 = new ScrollMagic.Scene({
+                  triggerElement: ".panel-11",
                   duration: winHeight,
                 })
                 .on("enter", function (event) {
-                  $('.panel-12').addClass('panel-active');
+                  $('.panel-11').addClass('panel-active');
                 })
                 .on("leave", function (event) {
-                  $('.panel-12').removeClass('panel-active');
+                  $('.panel-11').removeClass('panel-active');
                 })
-                .setTween(tweenScene12)
-                .addIndicators({name: "panel 12"})
+                .setTween(tweenScene6)
+                .addIndicators({name: "panel 11"})
                 .addTo(controller);
+
+                // var panel9 = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-11",
+                //   offset: -winHeight/2
+                // })
+                // .setPin(".panel-10")
+                // .on("enter", function (event) {
+                //   $('.panel-10').addClass('panel-activeeee');
+                // })
+                // .on("leave", function (event) {
+                //   $('.panel-10').removeClass('panel-active');
+                // })
+                // .addTo(controller);
 
                 //
                 // // Panel 7 - images
@@ -534,65 +529,61 @@ module.exports = function () {
 
 
 
+                // var shimmer1 = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-1",
+                //   duration: winHeight*10,
+                // })
+                // .setTween(".shimmer-1", 0.5, {y: "-100%"})
+                // .addTo(controller);
 
+                // var shimmer2 = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-1",
+                //   duration: winHeight*10,
+                // })
+                // .setTween(".shimmer-2", 1, {y: "-400%", rotationY: "400"})
+                // .addTo(controller);
 
+                // var shimmer1 = new ScrollMagic.Scene({
+                //   triggerElement: ".glitter-1",
+                //   duration: winHeight*10,
+                // })
+                // .setTween(".glitter-1", 0.5, {y: "-100%", rotationY: "250"})
+                // .addTo(controller);
 
+                // var shimmer1 = new ScrollMagic.Scene({
+                //   triggerElement: ".glitter-1",
+                //   duration: winHeight*10,
+                // })
+                // .setTween(".glitter-1", 0.5, {y: "-100%"})
+                // .addTo(controller);
 
-                var shimmer1 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-1",
-                  duration: winHeight*10,
-                })
-                .setTween(".shimmer-1", 0.5, {y: "-100%"})
-                .addTo(controller);
+                // var shimmer3 = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-3",
+                //   duration: winHeight*5,
+                // })
+                // .setTween(".shimmer-3", 1, {top: -200, x:"-200%", rotationY: "250"})
+                // .addTo(controller);
 
-                var shimmer2 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-1",
-                  duration: winHeight*10,
-                })
-                .setTween(".shimmer-2", 1, {y: "-400%", rotationY: "400"})
-                .addTo(controller);
+                // var xmasIcon = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-3",
+                //   duration: winHeight,
+                // })
+                // .setTween(".xmasIcon", 0.5, {x: "1400"})
+                // .addTo(controller);
 
-                var shimmer1 = new ScrollMagic.Scene({
-                  triggerElement: ".glitter-1",
-                  duration: winHeight*10,
-                })
-                .setTween(".glitter-1", 0.5, {y: "-100%", rotationY: "250"})
-                .addTo(controller);
+                // var xHero = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-0",
+                //   duration: winHeight*15,
+                // })
+                // .setTween(".xHeroContainer-l .xHero", 1, {left: "-3700px"})
+                // .addTo(controller);
 
-                var shimmer1 = new ScrollMagic.Scene({
-                  triggerElement: ".glitter-1",
-                  duration: winHeight*10,
-                })
-                .setTween(".glitter-1", 0.5, {y: "-100%"})
-                .addTo(controller);
-
-                var shimmer3 = new ScrollMagic.Scene({
-                  triggerElement: ".panel-3",
-                  duration: winHeight*5,
-                })
-                .setTween(".shimmer-3", 1, {top: -200, x:"-200%", rotationY: "250"})
-                .addTo(controller);
-
-                var xmasIcon = new ScrollMagic.Scene({
-                  triggerElement: ".panel-3",
-                  duration: winHeight,
-                })
-                .setTween(".xmasIcon", 0.5, {x: "1400"})
-                .addTo(controller);
-
-                var xHero = new ScrollMagic.Scene({
-                  triggerElement: ".panel-0",
-                  duration: winHeight*15,
-                })
-                .setTween(".xHeroContainer-l .xHero", 1, {left: "-3700px"})
-                .addTo(controller);
-
-                var xHero = new ScrollMagic.Scene({
-                  triggerElement: ".panel-0",
-                  duration: winHeight*15,
-                })
-                .setTween(".xHeroContainer-r .xHero", 1, {right: "-3700px"})
-                .addTo(controller);
+                // var xHero = new ScrollMagic.Scene({
+                //   triggerElement: ".panel-0",
+                //   duration: winHeight*15,
+                // })
+                // .setTween(".xHeroContainer-r .xHero", 1, {right: "-3700px"})
+                // .addTo(controller);
 
 
                 // $(window).scroll(function() {

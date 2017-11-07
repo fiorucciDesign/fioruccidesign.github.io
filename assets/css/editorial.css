@@ -6104,12 +6104,6 @@ body {
 }
 
 
-body {
-  background-image: url('/assets/images/xmas/glitterBg.jpg');
-  background-size: 50%;
-}
-
-
 .imgIntro {
   position: fixed;
   background-image: url('/assets/images/xmas/placeholder/B-05.jpg');
@@ -6207,8 +6201,8 @@ body {
 
 
 .xHeroContainer-l {
-    width: 100%;
-    position: fixed;
+    width: 500%;
+    position: absolute;
     left: 0;
    overflow: hidden;
     height: 100%;
@@ -6219,8 +6213,8 @@ body {
 
 
 .xHeroContainer-r {
-  width: 100%;
-  position: fixed;
+  width: 500%;
+  position: absolute;
   right: 0;
   overflow: hidden;
   height: 100%;
@@ -6231,17 +6225,62 @@ body {
 }
 
 
+/* The animation code */
+
+
+@keyframes xHeroL {
+   0% {
+     transform: translateX(0);
+   }
+   50% {
+     transform: translateX(-100%);
+   }
+   100% {
+     transform: translateX(0);
+   }
+}
+
+
+@keyframes xHeroR {
+   from {
+     transform: translateX(0);
+   }
+   to {
+     transform: translateX(100%);
+   }
+}
+
+
+.xHeroContainer-mask {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+
+.xHeroContainer-mask-l {
+  left: 0;
+}
+
+
+.xHeroContainer-mask-r {
+  right: 0;
+}
+
+
 .xHeroContainer-l .xHero {
     position: fixed;
     /* top: -10px; */
     z-index: 999999999;
     width: 5000px;
     height: 100%;
-    /* transform: perspective( 2490px ) rotateY( 75deg ); */
     overflow: hidden;
     /* left: -620px; */
     background-image: url('/assets/images/xmas/hero-scroll.jpg');
-
+    animation-name: xHeroL;
+    animation-duration: 500s;
 }
 
 
@@ -6254,6 +6293,8 @@ body {
     right: 0;
     background-image: url('/assets/images/xmas/hero-scroll-r.jpg');
     background-position: 70px 0;
+    animation-name: xHeroR;
+    animation-duration: 500s;
 }
 
 
@@ -6374,9 +6415,37 @@ body {
 .panel-5 {z-index: 5;}
 
 
+.panel-6 {z-index: 6;}
+
+
+.panel-7 {z-index: 7;}
+
+
+.panel-8 {z-index: 8;}
+
+
+.panel-9 {z-index: 9;}
+
+
+.panel-10 {z-index: 10;}
+
+
+.panel-11 {z-index: 11;}
+
+
+.panel-12 {z-index: 12;}
+
+
+.panel-13 {z-index: 13;}
+
+
+.panel-14 {z-index: 14;}
+
+
 .panel {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 
@@ -6403,6 +6472,16 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto;
+}
+
+
+.panel-fixed {
+  position: fixed;
+}
+
+
+.panel-0.panel-image {
+  position: fixed;
 }
 
 
