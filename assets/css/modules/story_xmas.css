@@ -1,10 +1,42 @@
-.imgIntro {
-  position: fixed;
-  background-image: url('/assets/images/xmas/placeholder/B-05.jpg');
-  background-size: cover;
-  left: 50%;
-  z-index: 0;
+.panel-intro {
+  z-index: 999999999999999999;
+
 }
+
+.intro-window {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.scene-0 .panel-0 {
+  position: absolute;
+}
+
+.intro-window-1 {
+  left: 0;
+}
+
+.intro-window-2 {
+  right: 0;
+}
+
+.scene {
+  position: relative;
+}
+
+.scene-1 { z-index: 1;}
+
+.scene-2 { z-index: 2;}
+
+.scene-3 { z-index: 3;}
+
+.scene-4 { z-index: 4;}
+
+.scene-5 { z-index: 5;}
+
+.scene-6 { z-index: 6;}
 
 .glitterTime {
   width: 100%;
@@ -83,50 +115,31 @@
   display: none;
 }*/
 
+.xHero {
+  width: 100%;
+}
+
 .xHeroContainer-l {
-    width: 500%;
+    width: 999999999px;
     position: absolute;
     left: 0;
    overflow: hidden;
     height: 100%;
     /*z-index: 9;*/
     transform-origin: 0% 50%;
-    transform: perspective(65px) rotateY(6deg);
+    transform: perspective(1225px) rotateY(37deg);
 }
 
 .xHeroContainer-r {
-  width: 500%;
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-  height: 100%;
+    width: 999999999px;
+    position: absolute;
+    right: 0;
+   overflow: hidden;
+    height: 100%;
   /* z-index: 9; */
   transform-origin: 100% 50%;
-  transform: perspective(65px) rotateY(-6deg);
+  transform: perspective(1225px) rotateY(-37deg);
   top: 0;
-}
-
-/* The animation code */
-
-@keyframes xHeroL {
-   0% {
-     transform: translateX(0);
-   }
-   50% {
-     transform: translateX(-100%);
-   }
-   100% {
-     transform: translateX(0);
-   }
-}
-
-@keyframes xHeroR {
-   from {
-     transform: translateX(0);
-   }
-   to {
-     transform: translateX(100%);
-   }
 }
 
 .xHeroContainer-mask {
@@ -146,35 +159,23 @@
 }
 
 .xHeroContainer-l .xHero {
-    position: fixed;
+    position: absolute;
     /* top: -10px; */
     z-index: 999999999;
-    width: 5000px;
     height: 100%;
     overflow: hidden;
-    /* left: -620px; */
-    background-image: url('/assets/images/xmas/hero-scroll.jpg');
-    animation-name: xHeroL;
-    animation-duration: 500s;
+    background: green;
+    left: 0;
 }
 
 .xHeroContainer-r .xHero {
-    position: fixed;
+    position: absolute;
     z-index: 999999999;
     width: 5000px;
     height: 100%;
     overflow: hidden;
     right: 0;
-    background-image: url('/assets/images/xmas/hero-scroll-r.jpg');
-    background-position: 70px 0;
-    animation-name: xHeroR;
-    animation-duration: 500s;
-}
-
-.xHero img {
-  height: 100%;
-  display: block;
-  float:left;
+    background: yellow;
 }
 
 .xmasIcon {
@@ -234,8 +235,16 @@
 }
 
 .gutter {
-  width: 5%;
+  width: 100%;
   position: absolute;
+}
+
+.gutter-l {
+  left: 100%;
+}
+
+.gutter-r {
+  right: 100%;
 }
 
 .gutter-right {
@@ -259,8 +268,6 @@
   height: 100%;
   left: 50%;
 }
-
-.panel-0 {z-index: 0;}
 
 .panel-1 {z-index: 1;}
 
@@ -311,7 +318,7 @@
   height: 100%;
 }
 
-.panel-image {
+.panel-hero {
   position: relative;
   width: 100%;
   background-repeat: no-repeat;
@@ -327,7 +334,7 @@
   position: fixed;
 }
 
-.panel-image > div {
+.panel-hero > div {
   width: 100%;
   height: 100%;
   /*position: absolute;*/
@@ -338,7 +345,7 @@
 }
 
 .pane {
-  width: 25%;
+  width: 50%;
   height: 50%;
   /*flex-grow: 1;*/
   overflow: hidden;
