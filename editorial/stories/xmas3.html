@@ -1,0 +1,132 @@
+---
+layout: editorial
+---
+
+<div class="xHeroContainer-mask xHeroContainer-mask-l">
+  <div class="xHeroContainer-l">
+    <div class="xHero">
+      <div class="gutter gutter-l gutter-1 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/A-hero.jpg');"></div>
+      <div class="gutter gutter-l gutter-2 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/B-hero.jpg');"></div>
+      <div class="gutter gutter-l gutter-3 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/C-hero.jpg');"></div>
+      <div class="gutter gutter-l gutter-4 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/D-hero.jpg');"></div>
+      <div class="gutter gutter-l gutter-5 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/E-hero.jpg');"></div>
+      <div class="gutter gutter-l gutter-6 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/F-hero.jpg');"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="xHeroContainer-mask xHeroContainer-mask-r">
+  <div class="xHeroContainer-r">
+    <div class="xHero">
+      <div class="gutter gutter-r gutter-1 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/A-hero.jpg');"></div>
+      <div class="gutter gutter-r gutter-2 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/B-hero.jpg');"></div>
+      <div class="gutter gutter-r gutter-3 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/C-hero.jpg');"></div>
+      <div class="gutter gutter-r gutter-4 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/D-hero.jpg');"></div>
+      <div class="gutter gutter-r gutter-5 bg-green db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/E-hero.jpg');"></div>
+      <div class="gutter gutter-r gutter-6 bg-black db h-100 fl" style="background-image: url('/assets/images/xmas/placeholder/F-hero.jpg');"></div>
+    </div>
+  </div>
+</div>
+
+<div class="scene-0 top-0 absolute">
+  <div class="panel panel-0 panel-intro">
+    <div class="intro-window intro-window-1 bg-white flex items-center tc">
+      <div class="w-100"><a class="pa4 b1 black">
+        <img src="/assets/images/xmas/cta-womens.svg" width="300" />
+      </a></div>
+    </div>
+    <div class="intro-window intro-window-2 bg-white flex items-center tc">
+      <div class="w-100"><a class="pa4 b1 black">
+        <img src="/assets/images/xmas/cta-womens.svg" width="300" />
+      </a></div>
+    </div>
+  </div>
+  <div class="fixed bottom-2 w-100 tc cta-down" style="z-index: 9999999999999999999999;">
+    <a href="" class="cursor-pointer">
+      <img src="/assets/images/down.svg" width="100"/>
+    </a>
+
+  </div>
+</div>
+
+<div class="relative content">
+  <div class="scene scene-1">
+    <div class="scene-cta">
+      <a class="" href="">SHOP WOMENS</a>
+    </div>
+    <!-- <div class="fg"><div></div></div> -->
+    <div class="panel panel-1" data-trigger="panel-1" data-tweenStyle="{{include.tweenStyle}}">
+      <div class="panes">
+        <div class="pane pane-0 pane-sc-t-final db" data-scrollfrom="top">
+          <div style="background-image: url('/assets/images/xmas/placeholder/A-01.jpg')"></div>
+        </div>
+        <div class="pane pane-1 pane-sc-l-final db" data-scrollfrom="left">
+          <div style="background-image: url('/assets/images/xmas/placeholder/A-02.jpg')"></div>
+        </div>
+        <div class="pane pane-2 pane-sc-b-final db" data-scrollfrom="bottom">
+          <div style="background-image: url('/assets/images/xmas/placeholder/A-03.jpg')"></div>
+        </div>
+        <div class="pane pane-3 pane-sc-r-final db" data-scrollfrom="right">
+          <div style="background-image: url('/assets/images/xmas/placeholder/A-04.jpg')"></div>
+        </div>
+      </div>
+    </div>
+    {% include xmas/panel-hero.html panelCount="2" photos='A' tweenStyle='1' %}
+    <div class="panel panel-2 panel-logo">
+
+    </div>
+  </div>
+  <div class="scene scene-2">
+    <div class="scene-cta">
+      <a class="" href="">SHOP MEN</a>
+    </div>
+    <div class="fg"><div></div></div>
+    {% include xmas/panel-panes.html panelCount="3" photos='B-01' tweenStyle='1' %}
+    {% include xmas/panel-hero.html panelCount="4" photos='B' tweenStyle='1' %}
+  </div>
+  <div class="scene scene-3">
+    <div class="scene-cta">
+      <a class="" href="">SHOP VINYLS</a>
+    </div>
+    <div class="fg"><div></div></div>
+    {% include xmas/panel-hero.html panelCount="5" photos='C' tweenStyle='1' %}
+    {% include xmas/panel-panes.html panelCount="6" photos='C-01' tweenStyle='1' %}
+  </div>
+  <div class="scene scene-4">
+    <div class="scene-cta">
+      <a class="" href="">SHOP EVENINGWEAR</a>
+    </div>
+    <div class="fg"><div></div></div>
+    {% include xmas/panel-panes.html panelCount="7" photos='D-01' tweenStyle='1' %}
+    {% include xmas/panel-hero.html panelCount="8" photos='D' tweenStyle='1' %}
+  </div>
+  <div class="scene scene-5 bg-black">
+    <div class="scene-cta">
+      <a class="" href="">SHOP MENS KNIT</a>
+    </div>
+    <div class="fg"><div></div></div>
+    {% include xmas/panel-hero.html panelCount="9" photos='E' tweenStyle='1' %}
+    {% include xmas/panel-panes.html panelCount="10" photos='E-01' tweenStyle='1' %}
+  </div>
+  <div class="scene scene-6">
+    <div class="scene-cta">
+      <a class="" href="">SHOP DENIM</a>
+    </div>
+    <div class="fg"><div></div></div>
+    {% include xmas/panel-hero.html panelCount="11" photos='F' tweenStyle='1' %}
+    {% include xmas/panel-panes.html panelCount="12" photos='F-01' tweenStyle='1' %}
+    <div class="panel panel-19 panel-outro-gradient"></div>
+    <div class="panel panel-20 panel-outro">
+      <div class="panel-outro-logo">
+        <div><div>
+      </div>
+      <div class="panel panel-outro-swipe"></div>
+    </div>
+    <div class="panel panel-21"></div>
+  </div>
+</div>
+
+</div>
+
+

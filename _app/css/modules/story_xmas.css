@@ -1,3 +1,35 @@
+.cta-down {
+-webkit-transition: all 500ms ease-in-out;
+-moz-transition: all 500ms ease-in-out;
+-ms-transition: all 500ms ease-in-out;
+-o-transition: all 500ms ease-in-out;
+transition: all 500ms ease-in-out;
+}
+
+.cta-down-active {
+  transform: translateY(300px);
+}
+
+.comp.comp-xmas input {
+
+  padding: 10px 10px 6px 10px;
+  border: solid 1px #000;
+  width: 100%;
+}
+
+.comp.comp-xmas input[type="checkbox"] {
+  display: inline-block;
+  width: auto !important;
+  padding: 10px 10px 6px 10px;
+  border: solid 1px #000;
+  width: 100%;
+}
+
+.comp.comp-xmas input[type="radio"] {
+  display: inline-block;
+  width: auto;
+}
+
 .panel-intro {
   z-index: 999999999999999999;
 
@@ -16,22 +48,147 @@
 
 .intro-window-1 {
   left: 0;
+  background-image: url('/assets/images/xmas/placeholder/A-hero.jpg');
+  background-size: cover;
 }
 
 .intro-window-2 {
   right: 0;
+  background-image: url('/assets/images/xmas/placeholder/B-hero.jpg');
+  background-size: cover;
 }
 
 .scene {
   position: relative;
 }
 
-.scene-1 { z-index: 1;}
-.scene-2 { z-index: 2;}
-.scene-3 { z-index: 3;}
-.scene-4 { z-index: 4;}
-.scene-5 { z-index: 5;}
-.scene-6 { z-index: 6;}
+.scene-cta {
+  position: fixed;
+  bottom: -200px;
+  z-index: 99999999;
+  text-align: center;
+  width: 100%;
+-webkit-transition: all 500ms ease-in-out;
+-moz-transition: all 500ms ease-in-out;
+-ms-transition: all 500ms ease-in-out;
+-o-transition: all 500ms ease-in-out;
+transition: all 500ms ease-in-out;
+}
+
+.scene-cta-active {
+  /*bottom: 30px;*/
+  transform: translateY(-240px);
+}
+
+.scene-cta a {
+  padding: 15px 20px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+.scene-1 {
+  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
+  background-size: 100px 100px;
+}
+
+.scene-2 {
+  background-image: url('/assets/images/xmas/bg/bg-scene-2.jpg');
+  background-size: contain;
+}
+
+.scene-3 {
+  background-image: url('/assets/images/xmas/bg/bg-scene-3.jpg');
+  background-size: contain;
+}
+
+.scene-4 {
+  background-image: url('/assets/images/xmas/bg/bg-scene-4.jpg');
+  background-size: contain;
+}
+
+.scene-6 {
+  background-image: url('/assets/images/xmas/bg/bg-scene-6.jpg');
+  background-size: contain;
+}
+
+.scene-1 .panel {z-index: 1;}
+.scene-2 .panel {z-index: 2;}
+.scene-3 .panel {z-index: 3;}
+.scene-4 .panel {z-index: 4;}
+.scene-5 .panel {z-index: 5;}
+.scene-6 .panel {z-index: 6;}
+
+.fg {
+  position: fixed;
+  top: -300%;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+}
+
+.fg div {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.scene-1 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-1.svg');
+  background-size: 100%;
+}
+.scene-2 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-2.png');
+  background-size: 100%;
+}
+.scene-3 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-3-01.svg');
+  background-size: 100%;
+}
+.scene-4 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-4.png');
+  background-size: 100%;
+}
+.scene-5 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-5.svg');
+  background-size: 100%;
+}
+.scene-6 .fg div {
+  background-image: url('/assets/images/xmas/fg/fg-scene-6.png');
+  background-size: 100%;
+}
+
+.panel-outro-gradient {
+  width: 100%;
+  height: 200px !important;
+  /*background: red;*/
+  margin-top: 500px;
+  z-index: 9999999999999 !important;
+  background-image: url('/assets/images/xmas/bg/bg-scene-7-fade.png');
+}
+
+.panel-outro {
+  width: 100%;
+  /*background: red;*/
+  z-index: 9999999999999 !important;
+  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
+}
+
+.panel-outro-logo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: green;
+}
+
+.panel-outro-swipe {
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999999 !important;
+  background: red;
+  /*background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');*/
+}
 
 .glitterTime {
   width: 100%;
@@ -145,6 +302,11 @@
   top: 0;
   overflow: hidden;
   z-index: 999999;
+  width: 100%;
+}
+
+.scene .panel {
+  z-index: 9999999;
 }
 
 .xHeroContainer-mask-l {
@@ -293,15 +455,15 @@
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 99999999999999 !important;
 }
 
-.panel-logo > div {
+.panel-logo {
   background-image:url('/assets/images/xmas/logo_hero2.png');
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 99999999;
-  height: 100%;
+  z-index: 99999999999999;
 }
 
 .panel-hero {
@@ -311,6 +473,16 @@
   background-position: center;
   margin: 0 auto;
 }
+
+.panel-hero div {
+  margin-top: 400px;
+}
+
+.panel-1.panel-hero div {
+  margin-top: 0;
+}
+
+
 
 .panel-fixed {
   position: fixed;
@@ -353,6 +525,11 @@
 .pane-sc-l > div { left: -100%;}
 .pane-sc-t > div { top: -100%; left: 0;}
 .pane-sc-b > div { top: 100%; left: 0;}
+
+.pane-sc-r-final > div { left: 0%;}
+.pane-sc-l-final > div { left: 0%;}
+.pane-sc-t-final > div { top: 0%; left: 0;}
+.pane-sc-b-final > div { top: 0%; left: 0;}
 
 /*.panel-active .pane-sc-r > div {
   -webkit-box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
