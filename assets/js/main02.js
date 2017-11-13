@@ -942,6 +942,8 @@ module.exports = function () {
             this.settings = $.extend( {}, defaults, options );
             this._defaults = defaults;
             this._name = pluginName;
+            this.winHeight = $(window).height();
+            this.winWidth = $(window).width();
             this.init();
         }
 
@@ -956,113 +958,144 @@ module.exports = function () {
                 // you can add more functions like the one below and
                 // call them like the example below
 
-                var wH = $(window).height();
-                var panelsTotal = 11;
+                var $this = this;
+                var controller = new ScrollMagic.Controller();
+                var scenes = [];
+                $(document).ready(function() {
+                  $this.positionPanels(
+                    $this.winHeight,
+                    $this.winWidth
+                  );
 
-                this.positionPanels();
-                this.initScroll();
-                // this.glitterTime();
-                this.dev();
-                // this.glitter();
-            },
+                  $this.initScenes(
+                    $this,
+                    controller,
+                    $this.winHeight,
+                    $this.winWidth,
+                    scenes
+                  );
 
+                  console.log(scenes);
 
-            dev: function( ) {
-
-            },
-
-            glitterTime: function( ) {
-              var winH = $(window).height();
-              var winW = $(window).width();
-              var i;
-              console.log('?')
-              $(document).ready(function() {
-                // window.setInterval(function(){
-                  for (i = 0; i < 40; i++) {
-                    var l = Math.floor(Math.random() * winW);
-                    var t = Math.floor(Math.random() * winH);
-                    var moveRan = 1 + Math.floor(Math.random() * (2 - 1 + 1))
-
-                    $('<div class="glitterTime-speckle gT-s-move-'+moveRan+'" style="top: '+t+'px; left: '+l+'px;"></div>')
-                      .appendTo('.glitterTime')
-                      // .delay(3000)
-                      // .queue(function() {
-                      //   $(this).remove();
-                      // });
-                  }
-                // }, 1000);
-              });
-
-            },
-
-
-            glitter: function() {
-
-              window.setInterval(function(){
-                var wH = $(window).height();
-                var wW = $(window).width();
-                var i;
-                for (i = 0; i < 20; i++) {
-                              var t = Math.floor(Math.random() * wH) + 1;
-                var l = Math.floor(Math.random() * wW) + 1;
-                  console.log(i)
-                  $('body').prepend('<div class="glitter" style="left: '+l+'px; top:'+t+'px;"></div>')
-                }
-              }, 8000);
-
-            },
-
-            positionPanels: function ( triggerAreas ) {
-              var i;
-              $(document).ready(function() {
-
-                var winHeight = $(window).height();
-                var winWidth = $(window).width();
-
-                // Panels
-                var panelsLength = $('.panel').length;
-                $('.panel').css('height', winHeight + 'px');
-
-
-                // Panes
-                // Pane Width Unit
-                var unit = Math.round(winHeight * (5/7)/2);
-                // var fullPaneWidth = unit*4;
-                $('.panes').css('width', unit*2 + 'px');
-                $('.panes').css('margin-left', -unit + 'px' );
-                $('.pane').css(unit + 'px');
-
-                // Heroes
-                var heroWidth = unit*2;
-                // $('.panel-hero div').width(heroWidth);
-
-                // Gutters
-                // Gutter sizes
-                var docHeight = $('.content').height();
-                $('.xHero').width(winWidth);
-                $('.xHero').height(winHeight);
-                $('.xHero div').width('1923px');
-                // Gutter mask container
-                $('.xHeroContainer-mask').css({
-                  'height': winHeight + 'px',
+                  $('body').on('click', '.cta-down', function(e) {
+                    e.preventDefault();
+                    $('body,html').animate({ scrollTop: windowHeight + (windowHeight/2) }, 800);
+                  });
                 });
 
-                var i;
-                for (i = 1; i < $('.scene').length; i++) {
-                  var h = $('.scene-' + i).height();
-                  $('.gutter-' + i).width(h*2);
-                }
-              });
+
+                window.onresize = function(event) {
+                  var winHeight = $(window).height();
+                  var winWidth = $(window).width();
+                  $this.positionPanels(
+                    $(window).height(),
+                    $(window).width()
+                  );
+
+                  // controller.removeScene(scenes);
+                  scenes.forEach(function (scene, index) {
+                    // make sure scene wasn't null
+                    if (scene) {
+                      // destroy active scene
+                      scene.destroy(true);
+                    }
+                  });
+                  scenes = [];
+                  console.log(scenes)
+                  $this.initScenes(
+                    $this,
+                    controller,
+                    winHeight,
+                    winWidth,
+                    scenes
+                  );
+                };
+
             },
 
-            initScroll: function( triggerAreas ) {
+            initScenes: function ($this, controller, winHeight, winWidth, scenes) {
+              $this.initIntroScene( controller, winHeight, winWidth, scenes );
+              $this.initPaneScene( controller, winHeight, winWidth, scenes );
+              $this.initForegroundScene( controller, winHeight, winWidth, scenes );
+              $this.initSceneCtaScene( controller, winHeight, winWidth, scenes );
+              $this.initHeroScene( controller, winHeight, winWidth, scenes );
+              $this.initDownScene( controller, winHeight, winWidth, scenes );
+              $this.initGutterScene( controller, winHeight, winWidth, scenes );
+            },
 
-              var winHeight = $(window).height();
-              var controller = new ScrollMagic.Controller();
+            positionPanels: function ( winHeight, winWidth ) {
+              var i;
+              // Panels
+              var panelsLength = $('.panel').length;
+              $('.panel').css('height', winHeight + 'px');
 
+              // Panes
+              // Pane Width Unit
+              var unit = Math.round(winHeight * (5/7)/2);
+              var panesWidth,
+                heroWidth,
+                panesMarginLeft;
+
+              if ( winWidth <= 600 ) {
+                panesWidth = '100%';
+                panesMarginLeft = 0;
+                heroWidth = winWidth;
+              } else {
+                panesWidth = unit*2 + 'px';
+                panesMarginLeft = -unit;
+                heroWidth = unit*2;
+              }
+              $('.panes').css({
+                'width': panesWidth,
+                'margin-left': panesMarginLeft + 'px',
+              })
+
+              // Gutters
+              // Gutter sizes
+              var docHeight = $('#content').height();
+              $('.xHero').width(winWidth).height(winHeight);
+              $('.xHero div').width('1923px');
+              // Gutter mask container
+              $('.xHeroContainer-mask').css({
+                'height': winHeight + 'px',
+              });
+
+              var i;
+              for (i = 1; i < $('#content .scene').length; i++) {
+                var h = $('#scene-' + i).height();
+                $('#gutter-' + i).width(h*2);
+              }
+            },
+
+            initIntroScene: function( controller, winHeight, winWidth, scenes ) {
+              var tweenIntro = new TimelineMax()
+              .add([
+                TweenMax.to($('.intro-window-1'), 1, {x:"-100%"}),
+                TweenMax.to($('.intro-window-2'), 1, {x:"100%"})
+              ]);
+
+              // init intro scroll
+              var $panel0 = $('#panel-0');
+              var introScene = new ScrollMagic.Scene({
+                triggerElement: "#panel-0",
+                duration: "100%",
+                triggerHook: 0,
+              })
+              .on("enter", function (event) {
+                $panel0.addClass('panel-active');
+              })
+              .on("leave", function (event) {
+                $panel0.removeClass('panel-active');
+              })
+              .setTween( tweenIntro )
+              .addTo( controller );
+
+              scenes.push(introScene);
+            },
+
+            initPaneScene: function( controller, winHeight, winWidth, scenes ) {
 
               var getTweenStyle = function (el, style) {
-
                 var tweenStyle1 = new TimelineMax()
                 .add([
                   TweenMax.to($('.pane-0 > div', el), 1, {y:"100%"}),
@@ -1071,191 +1104,199 @@ module.exports = function () {
                   TweenMax.to($('.pane-3 > div', el), 1, {x:"-100%"}),
                 ]);
 
-                console.log(style)
-
                 if ( style == 1 ) {
                   return ( tweenStyle1 );
+                } else {
+                  return false;
                 }
               }
 
-              $(document).ready(function() {
+              // init scroll for each pane
+              var panelPanesLength = $('.panel-panes').length;
+              var els = $('.panel-panes');
+              var x;
 
-                var tweenIntro = new TimelineMax()
-                .add([
-                  TweenMax.to($('.intro-window-1'), 1, {x:"-100%"}),
-                  TweenMax.to($('.intro-window-2'), 1, {x:"100%"})
-                ]);
+              for ( x = 0; x < panelPanesLength; x++ ) {
+                var panelPane = els[x];
+                var $panelPane = $(els[x]);
+                // var $pane = $('#scene-' + i + ' .panel-panes');
+                var triggerElement = $panelPane.attr('data-trigger');
+                var tweenStyle = $panelPane.attr('data-tweenStyle');
+                var fetchedTweenStyle = getTweenStyle(panelPane, tweenStyle);
 
-                // init intro scroll
-                  var introScroll = new ScrollMagic.Scene({
-                    triggerElement: ".panel-0",
-                    duration: "100%",
-                    triggerHook: 0,
-                  })
-                  .on("enter", function (event) {
-                    $('.panel-0').addClass('panel-active');
-                  })
-                  .on("leave", function (event) {
-                    $('.panel-0').removeClass('panel-active');
-                  })
-                  .setTween( tweenIntro )
-                  .addTo(controller);
-
-
-                // init scroll for each pane
-                $('.panel-panes').each(function(index, obj) {
-
-                  var i = index;
-                  var $el = $(this);
-                  var triggerElement = $(this).attr('data-trigger');
-                  var tweenStyle = $el.attr('data-tweenStyle');
-                  var fetchedTweenStyle = getTweenStyle(this, tweenStyle);
-                  var panelPanes = new ScrollMagic.Scene({
-                    triggerElement: "." + triggerElement,
-                    duration: "100%",
-                    triggerHook: 0.5,
-                  })
-                  .on("enter", function (event) {
-                    $el.addClass('panel-active');
-                  })
-                  .on("leave", function (event) {
-                    $el.removeClass('panel-active');
-                  })
-                  .setTween( fetchedTweenStyle )
-                  .addTo(controller);
-
-                });
-
-                $('.fg').each(function(index, obj) {
-                  $(this).height(winHeight*2);
-                  var i = index + 2;
-                  //foregrounds
-                  var panelPanes = new ScrollMagic.Scene({
-                    triggerElement: ".scene-" + i,
-                    duration: "300%",
-                    triggerHook: 1,
-                  })
-                  .on("enter", function (event) {
-
-                  })
-                  .on("leave", function (event) {
-
-                  })
-                  .setTween($('.scene-' + i + ' .fg div'), 1, {y:"200%"})
-                  .addIndicators({name: "fg"})
-                  .addTo(controller);
-                });
-
-                $('.scene-cta').each(function(index, obj) {
-                  var i = index + 1;
-                  //foregrounds
-                  var panelPanes = new ScrollMagic.Scene({
-                    triggerElement: ".scene-" + i,
-                    duration: "300%",
-                    triggerHook: 0,
-                    offset: 100,
-                  })
-                  .on("enter", function (event) {
-                    $('.scene-' + i + ' .scene-cta').addClass('scene-cta-active');
-                  })
-                  .on("progress", function (event) {
-                    if (event.scrollDirection === "FORWARD" && event.progress > 0.7) {
-                      $('.scene-' + i + ' .scene-cta').removeClass('scene-cta-active');
-                    }
-                  })
-                  .on("leave", function (event) {
-                    // console.log('e',event)
-                    $('.scene-' + i + ' .scene-cta').removeClass('scene-cta-active');
-                  })
-                  .addIndicators({name: "fg"})
-                  .addTo(controller);
-
-                });
-
-                // init scroll for each hero
-                $('.panel-hero').each(function(index, obj) {
-
-                  var i = index;
-                  var $el = $(this);
-                  var triggerElement = parseInt($(this).attr('data-trigger')) + 1;
-                  var pinEl = parseInt($(this).attr('data-trigger'));
-                  var setPin = new ScrollMagic.Scene({
-                    triggerElement: ".panel-" + pinEl,
-                    triggerHook: 0,
-                  })
-                  .setPin(".panel-" + pinEl)
-                  .on("enter", function (event) {
-                    $el.addClass('panel-active');
-                  })
-                  .on("leave", function (event) {
-                    $el.removeClass('panel-active');
-                  })
-                  .addTo(controller);
-
-                });
-
-                var pinOutro = new ScrollMagic.Scene({
-                  triggerElement: ".panel-outro",
-                  triggerHook: 0,
-                })
-                .setPin(".panel-outro")
-                .addTo(controller);
-
-                var outroSwipe = new ScrollMagic.Scene({
-                  triggerElement: ".panel-20",
-                  duration: '100%',
-                })
-                .setTween(".panel-outro-swipe", 1, {x: '200%'})
-                .addIndicators()
-                .addTo(controller);
-
-                var ctaDown = new ScrollMagic.Scene({
-                  triggerElement: ".scene-0",
-                  triggerHook: 0,
-                  offset: 50,
+                var panelPaneScene = new ScrollMagic.Scene({
+                  triggerElement: "#" + triggerElement,
+                  duration: "100%",
+                  triggerHook: 0.5,
                 })
                 .on("enter", function (event) {
-                  $('.cta-down').addClass('cta-down-active');
+                  $panelPane.addClass('panel-active');
                 })
                 .on("leave", function (event) {
-                  $('.cta-down').removeClass('cta-down-active');
+                  $panelPane.removeClass('panel-active');
                 })
+                .setTween( fetchedTweenStyle )
+                .addTo( controller );
+                scenes.push(panelPaneScene);
+              }
+            },
+
+            initForegroundScene: function( controller, winHeight, winWidth, scenes ) {
+              // Foregrounds
+              var fgCount = $('.fg').length;
+              var i;
+              for ( i = 1; i < fgCount; i++ ) {
+                $( '#scene-' + i + ' .fg' ).height( winHeight*2 );
+                var foregroundScene = new ScrollMagic.Scene({
+                  triggerElement: "#scene-" + i,
+                  duration: "300%",
+                  triggerHook: 1,
+                })
+                .setTween($('#scene-' + i + ' .fg div'), 1, {y:"200%"})
+                .addIndicators({name: "fg"})
                 .addTo(controller);
 
-                $('.gutter-l').each(function(index, obj) {
-                  console.log('gutter-l')
-                  var scene = index + 1;
-                  var triggerEl = ".scene-" + scene;
+                scenes.push(foregroundScene);
+              }
+            },
+
+            initSceneCtaScene: function( controller, winHeight, winWidth, scenes ) {
+              // var ctaLength = $('.scene-cta').length;
+              // var i;
+              // var els = $('.scene-cta');
+              // for ( i = 0; i < ctaLength; i++ ) {
+              //   console.log('i', els[i]);
+              //   var $cta = $(els[i]);
+              //   var trigger = $cta.parent().attr('id');
+              //   var ctas = new ScrollMagic.Scene({
+              //     triggerElement: '#' + trigger,
+              //     duration: "300%",
+              //     triggerHook: 0,
+              //     offset: 100,
+              //   })
+              //   .on("enter", function (event) {
+              //     $cta.addClass('scene-cta-active');
+              //   })
+              //   .on("progress", function (event) {
+              //     if (event.scrollDirection === "FORWARD" && event.progress > 0.7) {
+              //       $cta.removeClass('scene-cta-active');
+              //     }
+              //   })
+              //   .on("leave", function (event) {
+              //     $cta.removeClass('scene-cta-active');
+              //   })
+              //   .addIndicators({name: "fg"})
+              //   .addTo(controller);
+
+              // }
+
+              $('.scene-cta').each(function(index, obj) {
+                var i = index + 1;
+                //foregrounds
+                var sceneCtaScene = new ScrollMagic.Scene({
+                  triggerElement: "#scene-" + i,
+                  duration: "300%",
+                  triggerHook: 0,
+                  offset: 100,
+                })
+                .on("enter", function (event) {
+                  $('#scene-' + i + ' .scene-cta').addClass('scene-cta-active');
+                })
+                .on("progress", function (event) {
+                  if (event.scrollDirection === "FORWARD" && event.progress > 0.7) {
+                    $('#scene-' + i + ' .scene-cta').removeClass('scene-cta-active');
+                  }
+                })
+                .on("leave", function (event) {
+                  $('#scene-' + i + ' .scene-cta').removeClass('scene-cta-active');
+                })
+                .addIndicators({name: "fg"})
+                .addTo(controller);
+
+                scenes.push(sceneCtaScene);
+              });
+            },
+
+            initHeroScene: function( controller, winHeight, winWidth, scenes ) {
+              var heroLength = $('.panel-hero').length;
+              var i;
+              var els = $('.panel-hero');
+              for ( i = 1; i < heroLength; i++ ) {
+                var $el = $(els[i]);
+                var panelId = $el.attr('id');
+                var pinEl = parseInt($el.attr('data-trigger'));
+                pinEl = pinEl;
+                var setPin = new ScrollMagic.Scene({
+                  triggerElement: "#panel-" + pinEl,
+                  triggerHook: 0,
+                })
+                .setPin('#' + panelId)
+                .on("enter", function (event) {
+                  $el.addClass('panel-active');
+                })
+                .on("leave", function (event) {
+                  $el.removeClass('panel-active');
+                })
+                .addTo(controller);
+              }
+
+              var pinOutro = new ScrollMagic.Scene({
+                triggerElement: ".panel-outro",
+                triggerHook: 0,
+              })
+              .setPin(".panel-outro")
+              .addTo(controller);
+
+              scenes.push(setPin);
+            },
+
+            initDownScene: function( controller, winHeight, winWidth, scenes ) {
+              var ctaDown = new ScrollMagic.Scene({
+                triggerElement: "#scene-0",
+                triggerHook: 0,
+                offset: 50,
+              })
+              .on("enter", function (event) {
+                $('.cta-down').addClass('cta-down-active');
+              })
+              .on("leave", function (event) {
+                $('.cta-down').removeClass('cta-down-active');
+              })
+              .addTo(controller);
+              scenes.push(ctaDown);
+            },
+
+            initGutterScene: function( controller, winHeight, winWidth, scenes ) {
+              console.log(winWidth)
+              if ( winWidth > 600 ) {
+
+                var getGutterTweenStyle = function (i) {
+                  var tweenStyle = new TimelineMax()
+                  .add([
+                    TweenMax.to($('#gutter-l-' + i), 1, {x:"-100%"}),
+                    TweenMax.to($('#gutter-r-' + i), 1, {x:"100%"}),
+                  ]);
+                  return ( tweenStyle );
+                }
+
+                var gutterLlength = $('.gutter-l').length;
+                var i;
+                // var $el = $('#gutt');
+                for ( i = 1; i < gutterLlength; i++ ) {
+                  var triggerEl = ".scene-" + i;
+                  var fetchedGutterTweenStyle = getGutterTweenStyle( i );
                   var xHeroL = new ScrollMagic.Scene({
                     triggerElement: triggerEl,
                     duration: $(triggerEl).height(),
                     triggerHook: 1,
                   })
-                  .setTween(".xHeroContainer-l .gutter-" + scene, 1, {x: '-100%'})
+                  .setTween( fetchedGutterTweenStyle )
                   .addTo(controller);
-                });
+                  scenes.push(xHeroL);
+                }
+              }
+            }
 
-                $('.gutter-r').each(function(index, obj) {
-                  var scene = index + 1;
-                  console.log('gutter-r')
-                  var triggerEl = ".scene-" + scene;
-                  var xHeroR = new ScrollMagic.Scene({
-                    triggerElement: triggerEl,
-                    duration: $(triggerEl).height(),
-                    triggerHook: 1,
-                  })
-                  .setTween(".xHeroContainer-r .gutter-" + scene, 1, {x: '100%'})
-                  .addTo(controller);
-                });
-
-                $('body').on('click', '.cta-down', function(e) {
-                  var wH = $(window).height()
-                  e.preventDefault();
-                  $('body,html').animate({ scrollTop: wH + (wH/2) }, 800);
-                });
-
-              });
-            },
         } );
 
 

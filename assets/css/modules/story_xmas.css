@@ -1,3 +1,8 @@
+.bg-glitter {
+  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
+  background-size: 100px 100px;
+}
+
 .cta-down {
 -webkit-transition: all 500ms ease-in-out;
 -moz-transition: all 500ms ease-in-out;
@@ -64,7 +69,7 @@ transition: all 500ms ease-in-out;
 
 .scene-cta {
   position: fixed;
-  bottom: -200px;
+  bottom: -100px;
   z-index: 99999999;
   text-align: center;
   width: 100%;
@@ -77,7 +82,7 @@ transition: all 500ms ease-in-out;
 
 .scene-cta-active {
   /*bottom: 30px;*/
-  transform: translateY(-240px);
+  transform: translateY(-130px);
 }
 
 .scene-cta a {
@@ -155,7 +160,7 @@ transition: all 500ms ease-in-out;
 }
 
 .scene-4 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-4.png');
+  background-image: url('/assets/images/xmas/fg/fg-scene-4-01.png');
   background-size: 100%;
 }
 
@@ -176,6 +181,9 @@ transition: all 500ms ease-in-out;
   margin-top: 500px;
   z-index: 9999999999999 !important;
   background-image: url('/assets/images/xmas/bg/bg-scene-7-fade.png');
+  background-size: 100px 100px;
+  background-position: bottom;
+  background-repeat-y: no-repeat;
 }
 
 .panel-outro {
@@ -189,7 +197,6 @@ transition: all 500ms ease-in-out;
   width: 100%;
   height: 100%;
   position: absolute;
-  background: green;
 }
 
 .panel-outro-swipe {
@@ -431,9 +438,9 @@ transition: all 500ms ease-in-out;
   top: 0;
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  left: 50%;
+  left: 0;
 }
 
 .panel-1 {z-index: 1;}
@@ -514,7 +521,7 @@ transition: all 500ms ease-in-out;
   height: 100%;
   /*position: absolute;*/
   /*top: 100%;*/
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
