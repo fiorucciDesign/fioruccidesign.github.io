@@ -6311,7 +6311,7 @@ transition: all 500ms ease-in-out;
 
 
 .scene-2 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-2.png');
+  background-image: url('/assets/images/xmas/fg/fg-scene-2.svg');
   background-size: 100%;
 }
 
@@ -6605,6 +6605,7 @@ transition: all 500ms ease-in-out;
 .gutter {
   width: 100%;
   position: absolute;
+  background-size: contain;
 }
 
 
