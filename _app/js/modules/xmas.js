@@ -357,7 +357,6 @@ module.exports = function () {
             },
 
             initGutterScene: function( controller, winHeight, winWidth, scenes ) {
-              console.log(winWidth)
               if ( winWidth > 600 ) {
 
                 var getGutterTweenStyle = function (i) {
@@ -370,11 +369,13 @@ module.exports = function () {
                 }
 
                 var gutterLlength = $('.gutter-l').length;
-                var i;
+                var q;
+                console.log(gutterLlength);
                 // var $el = $('#gutt');
-                for ( i = 1; i < gutterLlength; i++ ) {
-                  var triggerEl = ".scene-" + i;
-                  var fetchedGutterTweenStyle = getGutterTweenStyle( i );
+                for ( q = 1; q <= gutterLlength; q++ ) {
+                  console.log('gutter',q);
+                  var triggerEl = ".scene-" + q;
+                  var fetchedGutterTweenStyle = getGutterTweenStyle( q );
                   var xHeroL = new ScrollMagic.Scene({
                     triggerElement: triggerEl,
                     duration: $(triggerEl).height(),
