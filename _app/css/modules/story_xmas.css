@@ -1,3 +1,10 @@
+.btn-hover:hover,
+.btn-hover-img:hover > img {
+  border: solid 4px #000;
+  cursor: pointer;
+}
+
+
 .bg-glitter {
   background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
   background-size: 100px 100px;
@@ -42,9 +49,16 @@ transition: all 500ms ease-in-out;
 
 .intro-window {
   position: fixed;
-  top: 0;
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 50%;
+}
+
+@media (--breakpoint-not-small) {
+  .intro-window {
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
 }
 
 .scene-0 .panel-0 {
@@ -55,12 +69,21 @@ transition: all 500ms ease-in-out;
   left: 0;
   background-image: url('/assets/images/xmas/placeholder/A-hero.jpg');
   background-size: cover;
+  top: 0;
 }
 
 .intro-window-2 {
   right: 0;
   background-image: url('/assets/images/xmas/placeholder/B-hero.jpg');
   background-size: cover;
+  top: 50%;
+}
+
+@media (--breakpoint-not-small) {
+  .intro-window-1,
+  .intro-window-2 {
+    top: 0;
+  }
 }
 
 .scene {
@@ -86,7 +109,7 @@ transition: all 500ms ease-in-out;
 }
 
 .scene-cta a {
-  padding: 15px 20px;
+  padding: 15px 20px 6px 20px;
   background: #fff;
   color: #000;
   text-decoration: none;
@@ -130,6 +153,7 @@ transition: all 500ms ease-in-out;
   width: 100%;
   height: 100%;
   z-index: 999999999;
+  pointer-events: none;
 }
 
 .fg div {
@@ -495,8 +519,6 @@ transition: all 500ms ease-in-out;
   margin-top: 0;
 }
 
-
-
 .panel-fixed {
   position: fixed;
 }
@@ -510,17 +532,11 @@ transition: all 500ms ease-in-out;
 .panel-hero > div {
   width: 100%;
   height: 100%;
-  /*position: absolute;*/
-  /*top: 100%;*/
+  position: absolute;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-@media (--breakpoint-not-small) {
-  .panel-hero > div {
-    background-size: contain;
-  }
+  left: 50%;
 }
 
 .pane {

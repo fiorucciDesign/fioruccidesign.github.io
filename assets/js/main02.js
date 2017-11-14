@@ -1028,6 +1028,7 @@ module.exports = function () {
               // Panels
               var panelsLength = $('.panel').length;
               $('.panel').css('height', winHeight + 'px');
+              $('.panel-panes').css('height', winHeight*2 + 'px');
 
               // Panes
               // Pane Width Unit
@@ -1048,6 +1049,14 @@ module.exports = function () {
               $('.panes').css({
                 'width': panesWidth,
                 'margin-left': panesMarginLeft + 'px',
+              })
+              $('.panel-hero > div').css({
+                'width': heroWidth,
+                'margin-left': panesMarginLeft + 'px',
+
+              })
+              $('.panel-hero').css({
+                'margin-top': winHeight + 'px',
               })
 
               // Gutters
@@ -1126,7 +1135,8 @@ module.exports = function () {
 
                 var panelPaneScene = new ScrollMagic.Scene({
                   triggerElement: "#" + triggerElement,
-                  duration: "100%",
+                  duration: "150%",
+                  offset: winHeight/2,
                   triggerHook: 0.5,
                 })
                 .on("enter", function (event) {
@@ -1144,19 +1154,22 @@ module.exports = function () {
             initForegroundScene: function( controller, winHeight, winWidth, scenes ) {
               // Foregrounds
               var fgCount = $('.fg').length;
-              var i;
-              for ( i = 1; i < fgCount; i++ ) {
-                $( '#scene-' + i + ' .fg' ).height( winHeight*2 );
+              var z;
+              console.log(fgCount)
+              for ( z = 1; z <= fgCount + 1; z++ ) {
+
+                var sc = z + 1;
+                $( '#scene-' + z + ' .fg' ).height( winHeight*2 );
                 var foregroundScene = new ScrollMagic.Scene({
-                  triggerElement: "#scene-" + i,
-                  duration: "300%",
+                  triggerElement: "#scene-" + sc,
+                  duration: "500%",
                   triggerHook: 1,
                 })
-                .setTween($('#scene-' + i + ' .fg div'), 1, {y:"200%"})
+                .setTween($('#fg-' + z + ' div'), 1, {y:"200%"})
                 .addIndicators({name: "fg"})
                 .addTo(controller);
-
                 scenes.push(foregroundScene);
+                console.log(sc, '#fg-' + z + ' div')
               }
             },
 
@@ -1192,10 +1205,9 @@ module.exports = function () {
 
               $('.scene-cta').each(function(index, obj) {
                 var i = index + 1;
-                //foregrounds
                 var sceneCtaScene = new ScrollMagic.Scene({
                   triggerElement: "#scene-" + i,
-                  duration: "300%",
+                  duration: "400%",
                   triggerHook: 0,
                   offset: 100,
                 })
@@ -1229,14 +1241,17 @@ module.exports = function () {
                 var setPin = new ScrollMagic.Scene({
                   triggerElement: "#panel-" + pinEl,
                   triggerHook: 0,
+                  duration: '50%',
+                  offset: 0,
+
                 })
-                .setPin('#' + panelId)
                 .on("enter", function (event) {
                   $el.addClass('panel-active');
                 })
                 .on("leave", function (event) {
                   $el.removeClass('panel-active');
                 })
+                // .setPin('#' + panelId)
                 .addTo(controller);
               }
 
