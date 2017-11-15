@@ -6216,6 +6216,7 @@ transition: all 500ms ease-in-out;
   z-index: 99999999;
   text-align: center;
   width: 100%;
+  z-index: 999999999999999999;
 -webkit-transition: all 500ms ease-in-out;
 -moz-transition: all 500ms ease-in-out;
 -ms-transition: all 500ms ease-in-out;
@@ -6476,7 +6477,7 @@ transition: all 500ms ease-in-out;
    overflow: hidden;
     height: 100%;
     /*z-index: 9;*/
-    transform-origin: 0% 50%;
+    transform-origin: 0 50vh;
     transform: perspective(1225px) rotateY(37deg);
 }
 
@@ -6484,13 +6485,58 @@ transition: all 500ms ease-in-out;
 .xHeroContainer-r {
     width: 999999999px;
     position: absolute;
-    right: 0;
+    left: 0;
    overflow: hidden;
     height: 100%;
   /* z-index: 9; */
-  transform-origin: 100% 50%;
+  transform-origin: 100vw 50vh;
   transform: perspective(1225px) rotateY(-37deg);
   top: 0;
+}
+
+
+.xHeroContainer-l .xHero {
+    position: absolute;
+    /* top: -10px; */
+    z-index: 999999999;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+}
+
+
+.xHeroContainer-r .xHero {
+    position: absolute;
+    z-index: 999999999;
+    width: 5000px;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+}
+
+
+@-moz-document url-prefix() {
+
+  .xHeroContainer-r .xHero {
+    right: auto !important;
+    left: 0 !important;
+  }
+
+  .xHeroContainer-r {
+    background: red;
+      width: 999999999px;
+      position: absolute;
+      left: 0;
+
+     overflow: hidden;
+      height: 100%;
+    /* z-index: 9; */
+    transform-origin: 100vw 50vh;
+
+    -moz-transform: perspective(1225px) rotateY(-37deg);
+    transform: perspective(1225px) rotateY(-37deg);
+    top: 0;
+  }
 }
 
 
@@ -6516,26 +6562,6 @@ transition: all 500ms ease-in-out;
 
 .xHeroContainer-mask-r {
   right: 0;
-}
-
-
-.xHeroContainer-l .xHero {
-    position: absolute;
-    /* top: -10px; */
-    z-index: 999999999;
-    height: 100%;
-    overflow: hidden;
-    left: 0;
-}
-
-
-.xHeroContainer-r .xHero {
-    position: absolute;
-    z-index: 999999999;
-    width: 5000px;
-    height: 100%;
-    overflow: hidden;
-    right: 0;
 }
 
 
@@ -6751,7 +6777,13 @@ transition: all 500ms ease-in-out;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  left: 50%;
+}
+
+
+@media screen and (min-width: 600px) {
+  .panel-hero > div {
+    left: 50%;
+  }
 }
 
 
@@ -6863,4 +6895,21 @@ box-shadow: 0 0 20px 10px #ffffff;
   position: absolute;
   z-index: 9;
   top: 0;
+}
+
+
+.fg {
+  display: none;
+}
+
+
+@media screen and (min-width: 600px) {
+  .fg {
+    display: block;
+  }
+}
+
+
+.gutter-r-6-end {
+  transform: translate(99%, 0%) translate3d(0px, 0px, 0px) !important;
 }

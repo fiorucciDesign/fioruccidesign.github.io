@@ -32,9 +32,8 @@ module.exports = function () {
             this.settings = $.extend( {}, defaults, options );
             this._defaults = defaults;
             this._name = pluginName;
-            this.winHeight = $(window).height();
-            this.winWidth = $(window).width();
             this.init();
+
         }
 
         // Avoid Plugin.prototype conflicts
@@ -51,30 +50,9 @@ module.exports = function () {
                 var $this = this;
                 var controller = new ScrollMagic.Controller();
                 var scenes = [];
-                $(document).ready(function() {
-                  $this.positionPanels(
-                    $this.winHeight,
-                    $this.winWidth
-                  );
 
-                  $this.initScenes(
-                    $this,
-                    controller,
-                    $this.winHeight,
-                    $this.winWidth,
-                    scenes
-                  );
-
-                  console.log(scenes);
-
-                  $('body').on('click', '.cta-down', function(e) {
-                    e.preventDefault();
-                    $('body,html').animate({ scrollTop: windowHeight + (windowHeight/2) }, 800);
-                  });
-                });
-
-
-                window.onresize = function(event) {
+                var rerenderPage = function() {
+                  console.log('rerender');
                   var winHeight = $(window).height();
                   var winWidth = $(window).width();
                   $this.positionPanels(
@@ -99,6 +77,43 @@ module.exports = function () {
                     winWidth,
                     scenes
                   );
+                }
+
+                $(document).ready(function() {
+
+                  var winHeight = $(window).height();
+                  var winWidth = $(window).width();
+
+                  $this.positionPanels(
+                    winHeight,
+                    winWidth
+                  );
+
+                  $this.initScenes(
+                    $this,
+                    controller,
+                    winHeight,
+                    winWidth,
+                    scenes
+                  );
+
+                  console.log(scenes);
+
+                  $('body').on('click', '.cta-down', function(e) {
+                    e.preventDefault();
+                    $('body,html').animate({ scrollTop: windowHeight + (windowHeight/2) }, 800);
+                  });
+
+                  $('body').on('click', '.header-banner, .header-banner-close', function(e) {
+                    e.preventDefault();
+                    $('.header-banner').hide();
+                    rerenderPage();
+                  });
+                });
+
+
+                window.onresize = function(event) {
+                  rerenderPage();
                 };
 
             },
@@ -116,10 +131,24 @@ module.exports = function () {
             positionPanels: function ( winHeight, winWidth ) {
               var i;
               // Panels
+              var headerHeight = $('header').height();
+              $('#content').css('margin-top', headerHeight + 'px');
+
+              // Correct height based on fixed header
+              winHeight = winHeight - headerHeight;
+
+              $('.intro-window').css({
+                'height': winHeight + 'px',
+                'margin-top': headerHeight + 'px',
+              });
+
               var panelsLength = $('.panel').length;
               $('.panel').css('height', winHeight + 'px');
               $('.panel-panes').css('height', winHeight*2 + 'px');
-
+              $('.panes').css({
+                'height': winHeight + 'px',
+                'margin-top': headerHeight + 'px',
+              })
               // Panes
               // Pane Width Unit
               var unit = Math.round(winHeight * (5/7)/2);
@@ -157,6 +186,7 @@ module.exports = function () {
               // Gutter mask container
               $('.xHeroContainer-mask').css({
                 'height': winHeight + 'px',
+                'margin-top': headerHeight + 'px',
               });
 
               var i;
@@ -249,24 +279,25 @@ module.exports = function () {
             },
 
             initForegroundScene: function( controller, winHeight, winWidth, scenes ) {
-              // Foregrounds
-              var fgCount = $('.fg').length;
-              var z;
-              console.log(fgCount)
-              for ( z = 1; z <= fgCount + 1; z++ ) {
+              if ( winWidth > 600 ) {
+                // Foregrounds
+                var fgCount = $('.fg').length;
+                var z;
+                console.log(fgCount)
+                for ( z = 1; z <= fgCount + 1; z++ ) {
 
-                var sc = z + 1;
-                $( '#scene-' + z + ' .fg' ).height( winHeight*2 );
-                var foregroundScene = new ScrollMagic.Scene({
-                  triggerElement: "#scene-" + sc,
-                  duration: "500%",
-                  triggerHook: 1,
-                })
-                .setTween($('#fg-' + z + ' div'), 1, {y:"200%"})
-                .addIndicators({name: "fg"})
-                .addTo(controller);
-                scenes.push(foregroundScene);
-                console.log(sc, '#fg-' + z + ' div')
+                  var sc = z + 1;
+                  $( '#scene-' + z + ' .fg' ).height( winHeight*2 );
+                  var foregroundScene = new ScrollMagic.Scene({
+                    triggerElement: "#scene-" + sc,
+                    duration: "500%",
+                    triggerHook: 1,
+                  })
+                  .setTween($('#fg-' + z + ' div'), 1, {y:"200%"})
+                  .addTo(controller);
+                  scenes.push(foregroundScene);
+                  console.log(sc, '#fg-' + z + ' div')
+                }
               }
             },
 
@@ -319,7 +350,6 @@ module.exports = function () {
                 .on("leave", function (event) {
                   $('#scene-' + i + ' .scene-cta').removeClass('scene-cta-active');
                 })
-                .addIndicators({name: "fg"})
                 .addTo(controller);
 
                 scenes.push(sceneCtaScene);
@@ -352,14 +382,19 @@ module.exports = function () {
                 .addTo(controller);
               }
 
+              var headerHeight = $('header').height();
               var pinOutro = new ScrollMagic.Scene({
-                triggerElement: ".panel-outro",
+                triggerElement: ".panel-13",
                 triggerHook: 0,
+                offset: -headerHeight,
               })
-              .setPin(".panel-outro")
+              .setPin(".panel-13")
               .addTo(controller);
 
+
+
               scenes.push(setPin);
+              scenes.push(pinOutro);
             },
 
             initDownScene: function( controller, winHeight, winWidth, scenes ) {
@@ -385,7 +420,7 @@ module.exports = function () {
                   var tweenStyle = new TimelineMax()
                   .add([
                     TweenMax.to($('#gutter-l-' + i), 1, {x:"-100%"}),
-                    TweenMax.to($('#gutter-r-' + i), 1, {x:"100%"}),
+                    TweenMax.to($('#gutter-r-' + i), 1, {x:"99%",}),
                   ]);
                   return ( tweenStyle );
                 }
