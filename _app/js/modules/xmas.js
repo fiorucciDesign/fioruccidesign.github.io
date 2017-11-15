@@ -162,10 +162,13 @@ module.exports = function () {
               var i;
               for (i = 1; i < $('#content .scene').length; i++) {
                 var h = $('#scene-' + i).height();
-                var gutterWidth = (h*2)*2);
-                $('#gutter-' + i).css({
+                var gutterWidth = h*2;
+                console.log('gW', gutterWidth)
+                $('#gutter-l-' + i).css({
                   "width": gutterWidth + 'px',
-                  "margin-left": -gutterWidth/2 + 'px'
+                });
+                $('#gutter-r-' + i).css({
+                  "width": gutterWidth + 'px',
                 });
               }
             },

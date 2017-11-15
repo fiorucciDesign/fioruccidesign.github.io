@@ -1072,7 +1072,14 @@ module.exports = function () {
               var i;
               for (i = 1; i < $('#content .scene').length; i++) {
                 var h = $('#scene-' + i).height();
-                $('#gutter-' + i).width(h*2);
+                var gutterWidth = h*2;
+                console.log('gW', gutterWidth)
+                $('#gutter-l-' + i).css({
+                  "width": gutterWidth + 'px',
+                });
+                $('#gutter-r-' + i).css({
+                  "width": gutterWidth + 'px',
+                });
               }
             },
 

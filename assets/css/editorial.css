@@ -6525,7 +6525,6 @@ transition: all 500ms ease-in-out;
     z-index: 999999999;
     height: 100%;
     overflow: hidden;
-    background: green;
     left: 0;
 }
 
@@ -6537,7 +6536,6 @@ transition: all 500ms ease-in-out;
     height: 100%;
     overflow: hidden;
     right: 0;
-    background: yellow;
 }
 
 
