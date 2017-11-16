@@ -52,7 +52,6 @@ module.exports = function () {
                 var scenes = [];
 
                 var rerenderPage = function() {
-                  console.log('rerender');
                   var winHeight = $(window).height();
                   var winWidth = $(window).width();
                   $this.positionPanels(
@@ -69,7 +68,7 @@ module.exports = function () {
                     }
                   });
                   scenes = [];
-                  console.log(scenes)
+
                   $this.initScenes(
                     $this,
                     controller,
@@ -79,7 +78,16 @@ module.exports = function () {
                   );
                 }
 
+
                 $(document).ready(function() {
+                  function hideload(){
+                    $('.load').remove();
+                    $('.product-listing-homepage').addClass('load-active');
+                    $('#footer').addClass('load-active');
+
+                  }
+                  setTimeout(hideload, 3000);
+
 
                   var winHeight = $(window).height();
                   var winWidth = $(window).width();
@@ -96,8 +104,6 @@ module.exports = function () {
                     winWidth,
                     scenes
                   );
-
-                  console.log(scenes);
 
                   $('body').on('click', '.cta-down', function(e) {
                     e.preventDefault();
@@ -131,16 +137,23 @@ module.exports = function () {
             positionPanels: function ( winHeight, winWidth ) {
               var i;
               // Panels
-              var headerHeight = $('header').height();
+              var headerHeight = 102;
               $('#content').css('margin-top', headerHeight + 'px');
+
 
               // Correct height based on fixed header
               winHeight = winHeight - headerHeight;
 
-              $('.intro-window').css({
-                'height': winHeight + 'px',
-                'margin-top': headerHeight + 'px',
-              });
+              if ( winWidth <= 600 ) {
+                $('.intro-window').css( 'height', winHeight/2 + 'px' );
+                $('.intro-window-1').css( 'margin-top', headerHeight + 'px' );
+                $('.intro-window-2').css( 'top', winHeight/2 + headerHeight + 'px' );
+              } else {
+                $('.intro-window').css({
+                  'height': winHeight + 'px',
+                  'margin-top': headerHeight + 'px'
+                });
+              }
 
               var panelsLength = $('.panel').length;
               $('.panel').css('height', winHeight + 'px');
@@ -193,7 +206,6 @@ module.exports = function () {
               for (i = 1; i < $('#content .scene').length; i++) {
                 var h = $('#scene-' + i).height();
                 var gutterWidth = h*2;
-                console.log('gW', gutterWidth)
                 $('#gutter-l-' + i).css({
                   "width": gutterWidth + 'px',
                 });
@@ -283,7 +295,6 @@ module.exports = function () {
                 // Foregrounds
                 var fgCount = $('.fg').length;
                 var z;
-                console.log(fgCount)
                 for ( z = 1; z <= fgCount + 1; z++ ) {
 
                   var sc = z + 1;
@@ -296,7 +307,6 @@ module.exports = function () {
                   .setTween($('#fg-' + z + ' div'), 1, {y:"200%"})
                   .addTo(controller);
                   scenes.push(foregroundScene);
-                  console.log(sc, '#fg-' + z + ' div')
                 }
               }
             },
@@ -306,7 +316,6 @@ module.exports = function () {
               // var i;
               // var els = $('.scene-cta');
               // for ( i = 0; i < ctaLength; i++ ) {
-              //   console.log('i', els[i]);
               //   var $cta = $(els[i]);
               //   var trigger = $cta.parent().attr('id');
               //   var ctas = new ScrollMagic.Scene({
@@ -427,10 +436,8 @@ module.exports = function () {
 
                 var gutterLlength = $('.gutter-l').length;
                 var q;
-                console.log(gutterLlength);
                 // var $el = $('#gutt');
                 for ( q = 1; q <= gutterLlength; q++ ) {
-                  console.log('gutter',q);
                   var triggerEl = ".scene-" + q;
                   var fetchedGutterTweenStyle = getGutterTweenStyle( q );
                   var xHeroL = new ScrollMagic.Scene({

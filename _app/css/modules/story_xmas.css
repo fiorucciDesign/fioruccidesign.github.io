@@ -1,13 +1,34 @@
+.load {
+  background-color: #fbd524;
+  z-index: 99999999999999999;
+  top: 102px;
+}
+.load img {
+-webkit-animation: spin 3s infinite linear;
+animation: spin 3s infinite linear;
+-moz-animation: spin 3s infinite linear;
+margin-top: -102px;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+
 .btn-hover:hover,
 .btn-hover-img:hover > img {
   border: solid 4px #000;
   cursor: pointer;
-}
-
-
-.bg-glitter {
-  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
-  background-size: 100px 100px;
 }
 
 .cta-down {
@@ -18,7 +39,7 @@
 transition: all 500ms ease-in-out;
 }
 
-.cta-down-active {
+.cta-down.cta-down-active {
   transform: translateY(300px);
 }
 
@@ -43,7 +64,7 @@ transition: all 500ms ease-in-out;
 }
 
 .panel-intro {
-  z-index: 999999999999999999;
+  z-index: 999;
 
 }
 
@@ -67,14 +88,14 @@ transition: all 500ms ease-in-out;
 
 .intro-window-1 {
   left: 0;
-  background-image: url('/assets/images/xmas/placeholder/A-hero.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/INTRO/INTRO-WOMEN.jpg');
   background-size: cover;
   top: 0;
 }
 
 .intro-window-2 {
   right: 0;
-  background-image: url('/assets/images/xmas/placeholder/B-hero.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/INTRO/INTRO-MEN.jpg');
   background-size: cover;
   top: 50%;
 }
@@ -93,10 +114,9 @@ transition: all 500ms ease-in-out;
 .scene-cta {
   position: fixed;
   bottom: -100px;
-  z-index: 99999999;
   text-align: center;
   width: 100%;
-  z-index: 999999999999999999;
+  z-index: 99;
 -webkit-transition: all 500ms ease-in-out;
 -moz-transition: all 500ms ease-in-out;
 -ms-transition: all 500ms ease-in-out;
@@ -104,56 +124,55 @@ transition: all 500ms ease-in-out;
 transition: all 500ms ease-in-out;
 }
 
-.scene-cta-active {
+.scene-cta.scene-cta-active {
   /*bottom: 30px;*/
   transform: translateY(-130px);
 }
 
 .scene-cta a {
-  padding: 15px 20px 6px 20px;
+  padding: 15px 20px 15px 20px;
   background: #fff;
   color: #000;
   text-decoration: none;
 }
 
 .scene-1 {
-  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-1-BG.jpg');
   background-size: 100px 100px;
 }
 
 .scene-2 {
-  background-image: url('/assets/images/xmas/bg/bg-scene-2.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-2-BG.jpg');
   background-size: contain;
 }
 
 .scene-3 {
-  background-image: url('/assets/images/xmas/bg/bg-scene-3.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-3-BG.jpg');
   background-size: contain;
 }
 
 .scene-4 {
-  background-image: url('/assets/images/xmas/bg/bg-scene-4.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-4-BG.jpg');
   background-size: contain;
 }
+
+.scene-5 {
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-5-BG.jpg');
+  background-size: contain;
+}
+
 
 .scene-6 {
-  background-image: url('/assets/images/xmas/bg/bg-scene-2.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/BACKGROUNDS/SCENE-6-BG.jpg');
   background-size: contain;
 }
-
-.scene-1 .panel {z-index: 1;}
-.scene-2 .panel {z-index: 2;}
-.scene-3 .panel {z-index: 3;}
-.scene-4 .panel {z-index: 4;}
-.scene-5 .panel {z-index: 5;}
-.scene-6 .panel {z-index: 6;}
 
 .fg {
   position: fixed;
   top: -300%;
   width: 100%;
   height: 100%;
-  z-index: 999999999;
+  /*z-index: 999999999;*/
   pointer-events: none;
 }
 
@@ -165,89 +184,28 @@ transition: all 500ms ease-in-out;
 }
 
 .scene-1 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-1.svg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-2-FG.svg');
   background-size: 100%;
 }
 .scene-2 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-2-2.svg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-2-FG.svg');
   background-size: 100%;
 }
 .scene-3 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-3-01.svg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-3-FG.svg');
   background-size: 100%;
 }
 .scene-4 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-4-01.png');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-4-FG.png');
   background-size: 100%;
 }
 .scene-5 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-5.svg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-5-FG.svg');
   background-size: 100%;
 }
 .scene-6 .fg div {
-  background-image: url('/assets/images/xmas/fg/fg-scene-6.png');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/FOREGROUNDS/SCENE-6-FG.svg');
   background-size: 150%;
-}
-
-.panel-outro-gradient {
-  width: 100%;
-  height: 200px !important;
-  /*background: red;*/
-  margin-top: 500px;
-  z-index: 9999999999999 !important;
-  background-image: url('/assets/images/xmas/bg/bg-scene-7-fade.png');
-  background-size: 100px 100px;
-  background-position: bottom;
-  background-repeat-y: no-repeat;
-}
-
-.panel-outro {
-  width: 100%;
-  /*background: red;*/
-  z-index: 9999999999999 !important;
-  background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');
-}
-
-.panel-outro-logo {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.panel-outro-swipe {
-  width: 100%;
-  height: 100%;
-  z-index: 9999999999999 !important;
-  background: red;
-  /*background-image: url('/assets/images/xmas/bg/bg-scene-1.jpg');*/
-}
-
-.glitterTime {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 999999999;
-}
-
-.glitterTime-speckle {
-  display: block;
-  width: 6px;
-  height: 6px;
-  position: fixed;
-  border-radius: 3px;
-  background: #FFEEB7;
-  box-shadow: 0 0 5px 2px #FFEEB7;
-  opacity: 0;
-  /*-webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  -o-filter: blur(1px);
-  -ms-filter: blur(1px);
-  filter: blur(1px);*/
-  /*animation:
-    fade 2s linear infinite,
-    move-1 2s linear infinite;*/
-  /*animation-timing-function: ease-in-out;*/
 }
 
 .gT-s-move-1 {
@@ -287,11 +245,6 @@ transition: all 500ms ease-in-out;
   100% { transform: translate(-20px, -20px); }
 }
 
-.xHeroContainer-l,
-.xHeroContainer-r {
-  z-index: 0;
-}
-
 /*.pane-1,
 .pane-4,
 .pane-6,
@@ -309,9 +262,7 @@ transition: all 500ms ease-in-out;
     left: 0;
    overflow: hidden;
     height: 100%;
-    /*z-index: 9;*/
     transform-origin: 0 50vh;
-    transform: perspective(1225px) rotateY(37deg);
 }
 
 .xHeroContainer-r {
@@ -320,16 +271,31 @@ transition: all 500ms ease-in-out;
     left: 0;
    overflow: hidden;
     height: 100%;
-  /* z-index: 9; */
   transform-origin: 100vw 50vh;
-  transform: perspective(1225px) rotateY(-37deg);
   top: 0;
+}
+
+@media (--breakpoint-medium) {
+  .xHeroContainer-l {
+    transform: perspective(750px) rotateY(37deg);
+  }
+  .xHeroContainer-r {
+    transform: perspective(750px) rotateY(-37deg);
+  }
+}
+@media (--breakpoint-large) {
+  .xHeroContainer-l {
+    transform: perspective(1200px) rotateY(37deg);
+  }
+  .xHeroContainer-r {
+    transform: perspective(1200px) rotateY(-37deg);
+  }
 }
 
 .xHeroContainer-l .xHero {
     position: absolute;
     /* top: -10px; */
-    z-index: 999999999;
+    /*z-index: 999999999;*/
     height: 100%;
     overflow: hidden;
     left: 0;
@@ -337,7 +303,7 @@ transition: all 500ms ease-in-out;
 
 .xHeroContainer-r .xHero {
     position: absolute;
-    z-index: 999999999;
+    /*z-index: 999999999;*/
     width: 5000px;
     height: 100%;
     overflow: hidden;
@@ -359,7 +325,6 @@ transition: all 500ms ease-in-out;
 
      overflow: hidden;
       height: 100%;
-    /* z-index: 9; */
     transform-origin: 100vw 50vh;
 
     -moz-transform: perspective(1225px) rotateY(-37deg);
@@ -375,12 +340,12 @@ transition: all 500ms ease-in-out;
   height: 100%;
   top: 0;
   overflow: hidden;
-  z-index: 999999;
+  z-index: 1;
   width: 100%;
 }
 
 .scene .panel {
-  z-index: 9999999;
+  /*z-index: 9999999;*/
 }
 
 .xHeroContainer-mask-l {
@@ -391,62 +356,6 @@ transition: all 500ms ease-in-out;
   right: 0;
 }
 
-
-.xmasIcon {
-  position: fixed;
-  top: 400px;
-  left: -150px;
-  z-index: 99999999;
-}
-
-.glitter-1 {
-  display: block;
-  pointer-events: none;
-  width: 100%;
-  height: 1000px;
-  background-image: url('/assets/images/xmas/glitter-1.png');
-  background-size: 100%;
-  z-index: 9999999;
-  position: absolute;
-  top: 1500px;
-}
-
-.shimmer-1 {
-  display: block;
-  pointer-events: none;
-  width: 100%;
-  height: 1000px;
-  background-image: url('/assets/images/xmas/shimmer-1.png');
-  background-size: 100%;
-  z-index: 9999999;
-  position: fixed;
-  top: 0;
-}
-
-.shimmer-2 {
-  display: block;
-  pointer-events: none;
-  width: 100%;
-  height: 800px;
-  background-image: url('/assets/images/xmas/shimmer-2.png');
-  background-size: 100%;
-  z-index: 9999999;
-  position: absolute;
-  top: 1000px;
-}
-
-.shimmer-3 {
-  display: block;
-  pointer-events: none;
-  width: 100%;
-  height: 800px;
-  background-image: url('/assets/images/xmas/shimmer-3.png');
-  background-size: 100%;
-  z-index: 9999999;
-  position: fixed;
-  top: 100px;
-  left: 100%;
-}
 
 .gutter {
   width: 100%;
@@ -464,13 +373,11 @@ transition: all 500ms ease-in-out;
 
 .gutter-right {
   right: 0;
-  background-image: url('/assets/images/xmas/gutter-right.png');
   background-size: 100%;
 }
 
 .gutter-left {
   left: 0;
-  background-image: url('/assets/images/xmas/gutter-left.png');
   background-size: 100%;
 }
 
@@ -516,15 +423,15 @@ transition: all 500ms ease-in-out;
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 99999999999999 !important;
+  /*z-index: 99999999999999 !important;*/
 }
 
 .panel-logo {
-  background-image:url('/assets/images/xmas/logo_hero2.png');
+  background-image:url('https://s3-eu-west-1.amazonaws.com/fiorucci/FESTIVE/LOGOS/SCENE-1-LOGO.png');
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 99999999999999;
+  /*z-index: 99999999999999;*/
 }
 
 .panel-hero {
@@ -595,45 +502,6 @@ transition: all 500ms ease-in-out;
 .pane-sc-t-final > div { top: 0%; left: 0;}
 .pane-sc-b-final > div { top: 0%; left: 0;}
 
-/*.panel-active .pane-sc-r > div {
-  -webkit-box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
-  -moz-box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
-  box-shadow: -7px 0px 106px 0px rgba(5,47,255,0.72);
-}
-
-.panel-active .pane-sc-l > div {
-  -webkit-box-shadow: 7px 0px 106px 0px #B60C01;
-  -moz-box-shadow: 7px 0px 106px 0px #B60C01;
-  box-shadow: 7px 0px 106px 0px #B60C01;
-}
-
-.panel-active .pane-sc-t > div {
--webkit-box-shadow: 0px 7px 106px 0px #9926D5;
--moz-box-shadow: 0px 7px 106px 0px #9926D5;
-box-shadow: 0px 7px 106px 0px #9926D5;
-}
-
-
-.panel-active .pane-sc-b > div {
--webkit-box-shadow: 0px -7px 106px 0px #D8C600;
--moz-box-shadow: 0px -7px 106px 0px #D8C600;
-box-shadow: 0px -7px 106px 0px #D8C600;
-}*/
-
-
-
-.lens-1 {
-  display: block;
-  width: 100%;
-  height: 4000px;
-  position: absolute;
-  pointer-events: none;
-  background-image:url('/assets/images/xmas/shimmer-8.png');
-  z-index: 99999;
-  background-size: 100%;
-  top: 200px;
-}
-
 .glitter {
   position: fixed;
   width: 1px;
@@ -663,6 +531,7 @@ box-shadow: 0 0 20px 10px #ffffff;
 
 .fg {
   display: none;
+  z-index: 9;
 }
 
 @media (--breakpoint-not-small) {
@@ -671,6 +540,41 @@ box-shadow: 0 0 20px 10px #ffffff;
   }
 }
 
-.gutter-r-6-end {
-  transform: translate(99%, 0%) translate3d(0px, 0px, 0px) !important;
+
+/*// Production overwrites----------*/
+
+header {
+  z-index: 999;
 }
+
+.home-page-wrap {
+  z-index: 1;
+  position: relative;
+}
+
+.left-column,
+.right-column,
+.marquee-wrapper {
+  display: none;
+}
+
+.product-listing-homepage,
+.marquee-wrapper,
+#footer {
+  z-index: 99;
+  position: relative;
+}
+
+.home-page-wrap .container-homepage-image img {
+  width: fit-content;
+}
+
+.homepage-men {
+  margin-bottom: 0 !important;
+  padding-bottom: 75px;
+}
+
+.xmas {
+  font-size: 30px;
+}
+
